@@ -1,0 +1,63 @@
+$header-font-size-search-form: 14px
+$header-font-family-telephone: $roboto-slab
+$header-font-size-telephone: 24px
+$header-font-color-callback: $red
+
+$header-navbar-background: #fdfcf9
+
+.header
+  .logo
+    margin-top: 14px
+
+  .search
+    margin-top: 86px
+    font-size: $header-font-size-search-form
+
+    #query, .btn
+      height: 40px
+
+    #query
+      width: 75%
+      float: left
+
+    .btn
+      text-transform: uppercase
+      width: 100px
+
+  .contacts
+    .social
+      padding-left: 64px
+
+      .icon
+        display: inline-block
+        margin-right: 13px
+
+    .telephone
+      margin-top: 24px
+      padding-left: 13px
+
+      img
+        float: left
+        margin-right: 8px
+        margin-top: 8px
+
+      span
+        font-size: $header-font-size-telephone
+        font-family: $header-font-family-telephone
+
+    .schedule p
+      font-size: 14px
+      margin-top: 14px
+      margin-left: 50px
+
+    .call-back
+      margin-top: 13px
+
+      a
+        text-transform: uppercase
+        text-decoration: underline
+        color: $header-font-color-callback
+
+  .navbar
+    background: $header-navbar-background
+    height: 55px

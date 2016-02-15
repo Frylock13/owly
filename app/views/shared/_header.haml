@@ -1,0 +1,32 @@
+.container
+  .row
+    .col-md-4.logo
+      .logo
+        = image_tag 'header/logo.png'
+
+    .col-md-5.search
+      = form_tag root_path do
+        = text_field_tag :query, nil, placeholder: 'Поиск по сайту'
+        = submit_tag 'Найти', class: 'btn btn-green'
+
+    .col-md-3.contacts
+      .social
+        .icon= link_to image_tag('header/email.png'), root_path
+        .icon= link_to image_tag('header/vk.png'), root_path
+        .icon= link_to image_tag('header/instagram.png'), root_path
+        .icon= link_to image_tag('header/twitter.png'), root_path
+        .icon= link_to image_tag('header/facebook.png'), root_path
+
+      .telephone
+        = image_tag 'header/phone.png'
+        %span +7 (812) 498-10-00
+
+      .schedule
+        %p Мы работаем с 1000 до 1800
+
+      .call-back
+        = link_to 'Заказать обратный звонок', root_path
+
+  .row.navbar
+    .container
+      as

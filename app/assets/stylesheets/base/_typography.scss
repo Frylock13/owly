@@ -1,0 +1,33 @@
+body {
+  color: $base-font-color;
+  font-family: $roboto;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $roboto-slab;
+  font-size: $base-font-size;
+  line-height: $heading-line-height;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  transition: color $base-duration $base-timing;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
