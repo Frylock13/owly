@@ -15,6 +15,6 @@ end
 
 if Post.count < minimum_count
   minimum_count.times do 
-    Post.create!(title: Faker::Lorem.word, desc: Faker::Lorem.sentence)
+    Post.create!(title: Faker::Lorem.word, desc: Faker::Lorem.sentences(5))
   end
 end

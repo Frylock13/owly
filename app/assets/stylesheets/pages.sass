@@ -21,6 +21,10 @@ $home-blog-created-at-size: 1.4rem
 $home-blog-title-size: 1.8rem
 $home-blog-title-color: $red
 
+$home-whats-new-title-size: 2.4rem
+$home-whats-new-title-color: $red
+$home-whats-new-title-font-family: $roboto-slab
+
 .home
   h1
     color: $red
@@ -132,9 +136,6 @@ $home-blog-title-color: $red
         .post
           margin-bottom: 40px
 
-        .date, .desc p
-          font-weight: 300
-          
         .date
           font-size: $home-blog-created-at-size
 
@@ -148,3 +149,27 @@ $home-blog-title-color: $red
           a
             font-size: $home-blog-title-size
             color: $home-blog-title-color
+
+
+    .whats-new
+      margin-top: 60px
+
+      .img
+        img
+          display: block
+          margin: 0 auto
+
+      .title
+        font-size: $home-whats-new-title-size
+        color: $home-whats-new-title-color
+        font-family: $home-whats-new-title-font-family
+        margin-bottom: 21px
+
+      .subscribe
+        margin-top: 37px
+
+        .btn
+          width: 130px
+
+        input
+          width: 71%

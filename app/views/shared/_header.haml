@@ -4,7 +4,7 @@
       .logo
         = image_tag 'header/logo.png'
 
-    .col-md-5.search
+    .col-md-5.search.form
       = form_tag root_path do
         = text_field_tag :query, nil, placeholder: 'Поиск по сайту'
         = submit_tag 'Найти', class: 'btn btn-green'
