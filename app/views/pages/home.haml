@@ -15,8 +15,97 @@
             Узнать больше об Оули
             = image_tag 'home/about-arrow.png'
 
-  .our-products 
-    %h1.text-center
-      Наши изделия
+  .our-products.row
+    .container
+      %h1.text-center
+        Наши изделия
 
-    .categories
+      .categories
+        - @categories.each do |category|
+          .category.col-md-3.col-xs-6
+            = image_tag category.preview.url(:medium)
+
+            .title.text-center.uppercase
+              = category.name
+
+  .choices-from-our-customers.row
+    .container
+      %h1.text-center
+        Выбор наших покупателей:
+
+      .products.row
+        - @products.each do |product|
+          .col-md-4
+            .product
+              .top
+                = image_tag Faker::Avatar.image
+                
+                .name.text-center
+                  = link_to product.name, root_path
+
+                .rating.text-center
+                  = image_tag "home/ratings/#{product.rating.to_i}.png", class: 'rating'
+                
+                .price.text-center
+                  %strong
+                    = product.price
+                    %span руб.
+
+              .bottom
+                .favorite
+                  = link_to image_tag('home/favorite.png'), root_path
+
+                .add-to-cart.text-center.uppercase
+                  = link_to 'Добавить в корзину', root_path
+
+  .owly-blog.row
+    .container
+      %h1.text-center
+        Блог Оули
+
+      .blog.row
+        .col-md-6
+          .posts
+            - @posts.each do |post|
+              .date
+                = post.created_at
+
+              .title
+                = link_to post.title, root_path
+
+              .desc
+                %p= post.desc
+
+
+        .col-md-6
+
+
+
+
+:javascript
+  $('.menu').addClass('original').clone().insertAfter('.menu').addClass('cloned').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('original').hide();
+
+  scrollIntervalID = setInterval(stickIt, 10);
+
+
+  function stickIt() {
+
+    var orgElementPos = $('.original').offset();
+    orgElementTop = orgElementPos.top;               
+
+    if ($(window).scrollTop() >= (orgElementTop)) {
+      // scrolled past the original position; now only show the cloned, sticky element.
+
+      // Cloned element should always have same left position and width as original element.     
+      orgElement = $('.original');
+      coordsOrgElement = orgElement.offset();
+      leftOrgElement = coordsOrgElement.left;  
+      widthOrgElement = orgElement.css('width');
+      $('.cloned').css('left',leftOrgElement+'px').css('top',0).css('width',widthOrgElement).show();
+      $('.original').css('visibility','hidden');
+    } else {
+      // not scrolled past the menu; only show the original menu.
+      $('.cloned').hide();
+      $('.original').css('visibility','visible');
+    }
+  }
