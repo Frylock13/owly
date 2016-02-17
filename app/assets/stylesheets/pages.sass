@@ -17,6 +17,9 @@ $home-add-to-cart-font-color: $red
 $home-add-to-cart-font-weight: 300
 
 $home-blog-background: #f6f3ee
+$home-blog-created-at-size: 1.4rem
+$home-blog-title-size: 1.8rem
+$home-blog-title-color: $red
 
 .home
   h1
@@ -126,5 +129,22 @@ $home-blog-background: #f6f3ee
     background: $home-blog-background
     .blog
       .posts
+        .post
+          margin-bottom: 40px
+
+        .date, .desc p
+          font-weight: 300
+          
+        .date
+          font-size: $home-blog-created-at-size
+
         .desc p
           max-width: 560px
+
+        .title
+          margin-top: 18px
+          margin-bottom: 18px
+
+          a
+            font-size: $home-blog-title-size
+            color: $home-blog-title-color

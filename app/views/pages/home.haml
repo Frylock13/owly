@@ -67,14 +67,15 @@
         .col-md-6
           .posts
             - @posts.each do |post|
-              .date
-                = post.created_at
+              .post
+                .date
+                  = post.created_at
 
-              .title
-                = link_to post.title, root_path
+                .title
+                  = link_to post.title, root_path
 
-              .desc
-                %p= post.desc
+                .desc
+                  %p= post.desc
 
 
         .col-md-6
