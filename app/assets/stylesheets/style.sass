@@ -1,9 +1,12 @@
-$header-font-size-search-form: 14px
-$header-font-family-telephone: $roboto-slab
-$header-font-size-telephone: 24px
-$header-font-color-callback: $red
+$header-font-size-search-form: 1.4rem
+$header-font-size-telephone: 2.4rem
+$header-callback-font-size: 1.2rem
 
-$header-navbar-background: #fdfcf9
+$header-font-family-telephone: $roboto-slab
+
+$header-font-color-callback: $red
+$header-navbar-background-color: $cream
+$header-navbar-font-color: $dark-gray
 
 .header
   .logo
@@ -49,15 +52,32 @@ $header-navbar-background: #fdfcf9
       font-size: 14px
       margin-top: 14px
       margin-left: 50px
+      font-weight: 300
 
     .call-back
       margin-top: 13px
+      font-size: $header-callback-font-size
+      padding-left: 60px
 
       a
         text-transform: uppercase
         text-decoration: underline
         color: $header-font-color-callback
 
-  .navbar
-    background: $header-navbar-background
-    height: 55px
+  .menu
+    background: $header-navbar-background-color
+    min-height: 55px
+
+    .navbar
+      ul li
+        font-weight: 300
+
+        &:hover
+          border-bottom: 3px solid #277770
+
+        a
+          color: $header-navbar-font-color
+
+      .actions
+        &:hover
+          border-bottom: none

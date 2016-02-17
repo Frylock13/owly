@@ -1,5 +1,5 @@
-.container
-  .row
+.col-md-12
+  .container
     .col-md-4.logo
       .logo
         = image_tag 'header/logo.png'
@@ -27,6 +27,20 @@
       .call-back
         = link_to 'Заказать обратный звонок', root_path
 
-  .row.navbar
-    .container
-      as
+.col-md-12.menu
+  .container
+    .navbar
+      %ul
+        %li= link_to 'Главная', root_path
+        %li= link_to 'Наши изделия', root_path
+        %li= link_to 'Как заказать', root_path
+        %li= link_to 'Кто такая Оули?', root_path
+        %li= link_to 'Блог Оули', root_path
+        %li= link_to 'Контакты', root_path
+        %li.actions
+          = link_to image_tag('favorite.png'), root_path
+          (12)
+        %li.actions
+          = link_to image_tag('cart.png'), root_path
+          (12)
+    

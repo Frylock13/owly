@@ -1,3 +1,40 @@
-// Place all the styles related to the pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$home-description-text-weight: 300
+$home-heading-color: $red
+$home-heading-font-size: 2.4rem
+$home-heading-font-weight: 400
+
+.home
+  h1
+    color: $red
+    font-size: $home-heading-font-size
+    font-weight: $home-heading-font-weight
+
+  .kid
+    background: url('home/kid.jpg')
+    height: 614px
+    background-size: 100% auto
+    background-repeat: no-repeat
+
+  .about.row
+    background: url('home/about-bg.jpg')!important
+    padding-top: 28px
+    height: 415px
+    background: $cream
+
+    .slogan
+      margin-bottom: 37px
+
+    .text
+      max-width: 566px
+      font-weight: $home-description-text-weight
+      margin-bottom: 39px
+
+    .about-btn
+      a
+        padding-right: 15px
+
+      img
+        margin-left: 20px
+
+  .our-products
+    padding-top: 50px
