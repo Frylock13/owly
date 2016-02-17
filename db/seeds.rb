@@ -12,3 +12,9 @@ if Product.count < minimum_count
                     rating: rand(1.1..4.9))
   end
 end
+
+if Post.count < minimum_count
+  minimum_count.times do 
+    Post.create!(title: Faker::Lorem.word, desc: Faker::Lorem.sentence)
+  end
+end
