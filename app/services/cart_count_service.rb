@@ -14,13 +14,14 @@ class CartCountService
     $redis.incr @cart_count_name
   end
 
-end
 
 
-private
+  private
 
-def parse_cart_count_name
-  # split cart name: cart_MD5 => MD5 (session[:guest_id])
-  splitted = @cart.split('_').last
-  "count_#{splitted}"
+  def parse_cart_count_name
+    # split cart name: cart_MD5 => MD5 (session[:guest_id])
+    splitted = @cart.split('_').last
+    "count_#{splitted}"
+  end
+
 end

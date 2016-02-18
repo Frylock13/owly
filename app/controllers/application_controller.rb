@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :check_session
-  before_action :set_cart
+  before_action :get_cart_count
 
   def check_session
     unless session[:guest_id]
@@ -12,7 +12,14 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def set_cart
-    @cart_count = $redis.scard "cart#{session[:guest_id]}"
+  def get_cart_count
+    cart_count_name = CartCountService.new("cart_#{session[:guest_id]}").send(:parse_cart_count_name)
+    cart_count = $redis.get cart_count_name
+
+    @cart_count =   if cart_count
+                      cart_count
+                    else
+                      0
+                    end
   end
 end
