@@ -1,10 +1,7 @@
 class AddNewSubscription
-  def initialize(email)
-    @email = email
-  end
 
-  def call
-    subscription = Subscription.new(email: @email)
+  def self.call(email)
+    subscription = Subscription.new(email: email)
 
     if subscription.valid?
       subscription.key = SecureRandom.hex # key for unsubscribe
@@ -13,4 +10,5 @@ class AddNewSubscription
       false
     end
   end
+  
 end
