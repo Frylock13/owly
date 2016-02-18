@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'pages#home'
 
   namespace :subscriptions do
-    post :add
+    post :create
     get :remove
   end
 end

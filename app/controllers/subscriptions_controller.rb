@@ -1,6 +1,7 @@
 class SubscriptionsController < ApplicationController
-  def add
-    if AddNewSubscription.call(params[:email])
+
+  def create
+    if CreateSubscription.call(params[:email])
       redirect_to :back
       flash[:success] = 'Вы подписались на новости.'
     else
@@ -19,4 +20,5 @@ class SubscriptionsController < ApplicationController
       flash[:danger] = 'Произошла ошибка. Возможно, вы не подписаны.'
     end
   end
+
 end

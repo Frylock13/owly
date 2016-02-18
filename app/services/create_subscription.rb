@@ -1,4 +1,4 @@
-class AddNewSubscription
+class CreateSubscription
 
   def self.call(email)
     subscription = Subscription.new(email: email)
