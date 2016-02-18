@@ -1,1 +1,35 @@
-.footer
+.col-md-12
+  .container
+    .col-md-4
+      .logo
+        = image_tag 'footer/owly.png'
+
+    .col-md-6
+      .contacts.row
+        .col-md-5
+          .left
+            .phone
+              .img= image_tag 'footer/phone.png'
+              %p +7 (812) 498-10-00
+
+            .email
+              .img= image_tag 'footer/email.png'
+              %p owly@gmail.com
+
+        .col-md-7
+          .right
+            .img= image_tag 'footer/location.png'
+            %p.address
+              197022, Санкт-Петербург, 
+              %br/
+              ул. Льва Толстого, д. 9, 
+              %br/
+              Бизнес центр "Толстой сквер"
+
+
+    .col-md-2
+      .social
+        .icon= link_to image_tag('footer/vk.png'), root_path
+        .icon= link_to image_tag('footer/instagram.png'), root_path
+        .icon= link_to image_tag('footer/twitter.png'), root_path
+        .icon= link_to image_tag('footer/facebook.png'), root_path
