@@ -1,6 +1,6 @@
 .home.col-md-12
   .kid.row
-
+  
   .about.row
     .container
       .description
@@ -58,7 +58,7 @@
                     = link_to image_tag('home/favorite.png'), root_path
 
                   .add-to-cart.text-center.uppercase
-                    = link_to 'Добавить в корзину', root_path
+                    = link_to 'Добавить в корзину', add_to_cart_path(product_id: product.id), method: :put
 
   .owly-blog.row
     .container
