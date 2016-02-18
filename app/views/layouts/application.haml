@@ -9,11 +9,13 @@
     %link{:href => "https://fonts.googleapis.com/css?family=Roboto:300,400,500&subset=latin,cyrillic", :rel => "stylesheet", :type => "text/css"}/
     %link{:href => "https://fonts.googleapis.com/css?family=Roboto+Slab:400,300&subset=latin,cyrillic", :rel => "stylesheet", :type => "text/css"}/
   %body{{"ng-app"=>"Commit"}}
-    .container-fluid.home
+    .container-fluid.home     
       .row.header
         = render partial: 'shared/header'
+        //= render partial: 'shared/flashes'
 
       .row.content
+        = render partial: 'shared/flashes'
         = yield
         
       .row.footer

@@ -22,11 +22,12 @@
 
       .categories
         - @categories.each do |category|
-          .category.col-md-3.col-xs-6
-            = image_tag category.preview.url(:medium)
+          - cache category do
+            .category.col-md-3.col-xs-6
+              = image_tag category.preview.url(:medium)
 
-            .title.text-center.uppercase
-              = category.name
+              .title.text-center.uppercase
+                = category.name
 
   .choices-from-our-customers.row
     .container
@@ -35,28 +36,29 @@
 
       .products.row
         - @products.each do |product|
-          .col-md-4
-            .product
-              .top
-                = image_tag Faker::Avatar.image
-                
-                .name.text-center
-                  = link_to product.name, root_path
+          - cache product do
+            .col-md-4
+              .product
+                .top
+                  = image_tag Faker::Avatar.image
+                  
+                  .name.text-center
+                    = link_to product.name, root_path
 
-                .rating.text-center
-                  = image_tag "home/ratings/#{product.rating.to_i}.png", class: 'rating'
-                
-                .price.text-center
-                  %strong
-                    = product.price
-                    %span руб.
+                  .rating.text-center
+                    = image_tag "home/ratings/#{product.rating.to_i}.png", class: 'rating'
+                  
+                  .price.text-center
+                    %strong
+                      = product.price
+                      %span руб.
 
-              .bottom
-                .favorite
-                  = link_to image_tag('home/favorite.png'), root_path
+                .bottom
+                  .favorite
+                    = link_to image_tag('home/favorite.png'), root_path
 
-                .add-to-cart.text-center.uppercase
-                  = link_to 'Добавить в корзину', root_path
+                  .add-to-cart.text-center.uppercase
+                    = link_to 'Добавить в корзину', root_path
 
   .owly-blog.row
     .container
@@ -67,15 +69,16 @@
         .col-md-6
           .posts
             - @posts.each do |post|
-              .post
-                .date
-                  %p= post.created_at
+              - cache post do
+                .post
+                  .date
+                    %p= post.created_at
 
-                .title
-                  = link_to post.title, root_path
+                  .title
+                    = link_to post.title, root_path
 
-                .desc
-                  %p= post.desc
+                  .desc
+                    %p= post.desc
 
 
         .col-md-5.col-md-offset-1
@@ -91,7 +94,7 @@
                 Узнайте самым первым о наших новых изделиях, скидках, мастерклассах и жизни Оули!
 
             .subscribe.form
-              = form_tag root_path do
+              = form_tag subscriptions_add_path, method: :post do
                 = text_field_tag :email, nil, placeholder: 'Ваш e-mail'
                 = submit_tag 'Быть в курсе', class: 'btn btn-green'
 

@@ -29,12 +29,12 @@ gem 'redis-namespace'
 
 group :development, :test do
   gem 'bullet'
-  gem 'web-console', '~> 2.0'
+  gem 'web-console'
   gem 'spring'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem "awesome_print"
-  gem 'rails_db'
+  #gem 'rails_db'
   gem 'byebug'
   gem 'rack-mini-profiler'
 end
