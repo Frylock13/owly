@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  get 'carts/show'
-
   root 'pages#home'
 
   namespace :subscriptions do
@@ -8,8 +6,13 @@ Rails.application.routes.draw do
     get :remove
   end
 
-  resource :cart, only: [:show] do
-    put 'add/:product_id', to: 'carts#add', as: :add_to
-    put 'remove/:product_id', to: 'carts#remove', as: :remove_from
+  get 'cart' => 'carts#show'
+
+  namespace :api, defaults: { format: :json } do
+    scope :cart do
+      put 'add', to: 'carts#add'
+      put 'remove', to: 'carts#remove'
+      get 'count', to: 'carts#count'
+    end
   end
 end

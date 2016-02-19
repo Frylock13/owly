@@ -1,11 +1,18 @@
 app.controller('HomeCtrl', HomeCtrl)
 
-function HomeCtrl() {
+function HomeCtrl(cartService) {
   var vm = this;
 
-  vm.test = 1;
-  
-  vm.setStep = function(step) {
-    vm.step = step;
+  vm.getCartCount = function() {
+    cartService.getCartCount().then(function(res) {
+      vm.cartCount = res;
+    });
+  }
+
+  vm.getCartCount();
+
+  vm.addToCart = function(cartId, productId) {
+    cartService.addToCart(cartId, productId);
+    vm.getCartCount();
   }
 }

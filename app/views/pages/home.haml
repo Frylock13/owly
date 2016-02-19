@@ -1,4 +1,4 @@
-.home.col-md-12{{'ng-controller'=>'HomeCtrl as home'}}
+.home.col-md-12
   .kid.row
 
   .about.row
@@ -57,7 +57,7 @@
                   = link_to image_tag('home/favorite.png'), root_path
 
                 .add-to-cart.text-center.uppercase
-                  = product.cart_status(get_cart_id, product.id)
+                  = link_to 'Добавить в корзину', "javascript:void(0);", method: :put, data: { "ng-click"=>"home.addToCart('#{get_cart_id}', #{product.id})" }
 
   .owly-blog.row
     .container

@@ -5,3 +5,5 @@ var app = angular.module('Owly', ['restangular'])
     //RestangularProvider.setRequestSuffix('.json');
     //RestangularProvider.setDefaultHttpFields({xsrfCookieName:'csrftoken', xsrfHeaderName:'X-CSRFToken'});
 });
+
+_.contains = _.includes
