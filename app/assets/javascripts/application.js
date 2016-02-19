@@ -10,6 +10,9 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require lodash
+//= require angular
+//= require_tree ./angular
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
