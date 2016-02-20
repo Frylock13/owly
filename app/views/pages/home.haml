@@ -54,7 +54,7 @@
 
               .bottom
                 .favorite
-                  = link_to image_tag('home/favorite.png'), root_path
+                  = link_to image_tag('home/favorite.png'), "javascript:void(0);", method: :put, data: { "ng-click"=>"app.switchFavorite('#{get_favorites_id}', #{product.id})" }
 
                 .add-to-cart.text-center.uppercase
                   = link_to 'Добавить в корзину', "javascript:void(0);", method: :put, data: { "ng-click"=>"app.addToCart('#{get_cart_id}', #{product.id})" }
@@ -125,3 +125,14 @@
       $('.original').css('visibility','visible');
     }
   }
+
+:javascript
+  $('.favorite img').click(function() {
+    if($(this).hasClass("actived")) {
+      $(this).attr("src", "#{asset_path 'home/favorite.png'}");
+    } else {
+      $(this).attr("src", "#{asset_path 'active-favorite.png'}");
+    }
+
+    $(this).toggleClass('actived');
+  });

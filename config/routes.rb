@@ -14,5 +14,10 @@ Rails.application.routes.draw do
       put 'remove', to: 'carts#remove'
       get 'count', to: 'carts#count'
     end
+
+    resource :favorites, only: [:create, :delete] do
+      put :add
+      get :count
+    end
   end
 end

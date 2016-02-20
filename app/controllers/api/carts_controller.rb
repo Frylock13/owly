@@ -8,13 +8,13 @@ class Api::CartsController < ApplicationController
   end
 
   def remove
-    $redis.srem current_user_cart, params[:product_id]
+    $redis.srem cart_id, params[:product_id]
     redirect_to :back
   end
 
   def count
     # parse count name in redis
-    cart_count_name = CartCountService.new(current_user_cart).send(:parse_cart_count_name)
+    cart_count_name = CartCountService.new(cart_id).send(:parse_cart_count_name)
     cart_count = $redis.get cart_count_name
 
     # get count if products in the cart > 0 or define 0
@@ -25,7 +25,7 @@ class Api::CartsController < ApplicationController
 
   private
 
-  def current_user_cart
+  def cart_id
     "cart_#{session[:guest_id]}"
   end
 end
