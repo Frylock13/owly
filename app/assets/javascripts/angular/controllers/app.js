@@ -1,6 +1,6 @@
-app.controller('HomeCtrl', HomeCtrl)
+app.controller('AppCtrl', AppCtrl)
 
-function HomeCtrl(cartService) {
+function AppCtrl(cartService) {
   var vm = this;
 
   vm.getCartCount = function() {
