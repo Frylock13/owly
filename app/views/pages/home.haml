@@ -54,7 +54,8 @@
 
               .bottom
                 .favorite
-                  = link_to image_tag('home/favorite.png'), "javascript:void(0);", method: :put, data: { "ng-click"=>"app.switchFavorite('#{get_favorites_id}', #{product.id})" }
+                  = link_to "javascript:void(0);", method: :put, data: { "ng-click"=>"app.switchFavorite('#{get_favorites_id}', #{product.id})" } do
+                    = product.favorite_status(get_favorites_id)
 
                 .add-to-cart.text-center.uppercase
                   = link_to 'Добавить в корзину', "javascript:void(0);", method: :put, data: { "ng-click"=>"app.addToCart('#{get_cart_id}', #{product.id})" }
@@ -128,11 +129,11 @@
 
 :javascript
   $('.favorite img').click(function() {
-    if($(this).hasClass("actived")) {
+    if($(this).hasClass("active")) {
       $(this).attr("src", "#{asset_path 'home/favorite.png'}");
     } else {
       $(this).attr("src", "#{asset_path 'active-favorite.png'}");
     }
 
-    $(this).toggleClass('actived');
+    $(this).toggleClass('active');
   });
