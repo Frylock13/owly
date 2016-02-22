@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   get 'cart' => 'carts#show'
+  get 'categories/:slug' => 'categories#show', as: 'category'
 
   namespace :api, defaults: { format: :json } do
     scope :cart do

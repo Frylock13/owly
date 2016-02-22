@@ -1,0 +1,51 @@
+$home-choices-slider-background: $light-blue
+$home-choices-slider-product-background: $white
+$home-choices-slider-product-color: $turquoise
+
+.products
+  .product
+    display: inline-block
+    background: $home-choices-slider-product-background
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.1)
+    margin-bottom: 60px
+
+    .top
+      padding-top: 10px
+
+      .name a
+        color: $home-choices-slider-product-color
+
+      .rating
+        margin: 0 auto
+
+      .price
+
+        span
+          font-size: 1.4rem
+          font-weight: normal
+
+    .bottom
+      border-top: 1px solid $light-blue
+      max-height: 40px
+
+      .favorite, .add-to-cart
+        display: inline-block
+        height: 40px
+
+      .favorite
+        border-right: 1px solid $light-blue
+        width: 80px
+
+        img
+          margin-left: 30px
+          margin-top: 9px
+
+      .add-to-cart
+        font-size: $home-add-to-cart-font-size
+        font-weight: $home-add-to-cart-font-weight
+        position: absolute
+        margin-top: 9px
+        
+        a
+          color: $home-add-to-cart-font-color
+          margin-left: 8px

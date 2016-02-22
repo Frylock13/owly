@@ -1,0 +1,15 @@
+.category.col-md-12
+  .header.row{style: "background: url(#{@category.background.url})"}
+    .container
+      %h1= @category.name
+      %p= @category.desc
+
+  .container
+    .products.row
+      .sort-options.col-md-12
+        %span.uppercase Сортировать по:
+        = link_to 'Цене', root_path, class: 'uppercase'
+        = link_to 'Новизне', root_path, class: 'uppercase'
+        = link_to 'Популярности', root_path, class: 'uppercase'
+
+      = render @products

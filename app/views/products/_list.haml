@@ -1,0 +1,23 @@
+%div{class: "col-md-#{col}"}
+  .product
+    .top
+      = image_tag product.image.url(:medium)
+      
+      .name.text-center
+        = link_to product.name, root_path
+
+      .rating.text-center
+        = image_tag "ratings/#{product.rating.to_i}.png", class: 'rating'
+      
+      .price.text-center
+        %strong
+          = product.price
+          %span руб.
+
+    .bottom
+      .favorite
+        = link_to "javascript:void(0);", method: :put, data: { "ng-click"=>"app.switchFavorite('#{get_favorites_id}', #{product.id})" } do
+          = product.favorite_status(get_favorites_id)
+
+      .add-to-cart.text-center.uppercase
+        = link_to 'Добавить в корзину', "javascript:void(0);", method: :put, data: { "ng-click"=>"app.addToCart('#{get_cart_id}', #{product.id})" }

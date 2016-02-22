@@ -15,7 +15,6 @@ gem 'faker'
 gem 'active_admin_theme'
 gem "paperclip", "~> 4.3"
 gem 'pg_search'
-gem 'turbolinks'
 gem 'quiet_assets'
 gem 'bourbon'
 gem 'bitters'

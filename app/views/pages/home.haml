@@ -27,38 +27,15 @@
               = image_tag category.preview.url(:medium)
 
               .title.text-center.uppercase
-                = category.name
+                = link_to category.name, category_path(slug: category.slug)
 
   .choices-from-our-customers.row
     .container
       %h1.text-center
         Выбор наших покупателей:
 
-      .products.row
-        - @products.each do |product|
-          .col-md-4
-            .product
-              .top
-                = image_tag Faker::Avatar.image
-                
-                .name.text-center
-                  = link_to product.name, root_path
-
-                .rating.text-center
-                  = image_tag "home/ratings/#{product.rating.to_i}.png", class: 'rating'
-                
-                .price.text-center
-                  %strong
-                    = product.price
-                    %span руб.
-
-              .bottom
-                .favorite
-                  = link_to "javascript:void(0);", method: :put, data: { "ng-click"=>"app.switchFavorite('#{get_favorites_id}', #{product.id})" } do
-                    = product.favorite_status(get_favorites_id)
-
-                .add-to-cart.text-center.uppercase
-                  = link_to 'Добавить в корзину', "javascript:void(0);", method: :put, data: { "ng-click"=>"app.addToCart('#{get_cart_id}', #{product.id})" }
+      .products.pattern
+        = render 'products/list', collection: @products
 
   .owly-blog.row
     .container
@@ -97,43 +74,3 @@
               = form_tag subscriptions_create_path, method: :post do
                 = text_field_tag :email, nil, placeholder: 'Ваш e-mail'
                 = submit_tag 'Быть в курсе', class: 'btn btn-green'
-
-
-:javascript
-  $('.menu').addClass('original').clone().insertAfter('.menu').addClass('cloned').css('position','fixed').css('top','0').css('margin-top','0').css('z-index','500').removeClass('original').hide();
-
-  scrollIntervalID = setInterval(stickIt, 10);
-
-
-  function stickIt() {
-
-    var orgElementPos = $('.original').offset();
-    orgElementTop = orgElementPos.top;               
-
-    if ($(window).scrollTop() >= (orgElementTop)) {
-      // scrolled past the original position; now only show the cloned, sticky element.
-
-      // Cloned element should always have same left position and width as original element.     
-      orgElement = $('.original');
-      coordsOrgElement = orgElement.offset();
-      leftOrgElement = coordsOrgElement.left;  
-      widthOrgElement = orgElement.css('width');
-      $('.cloned').css('left',leftOrgElement+'px').css('top',0).css('width',widthOrgElement).show();
-      $('.original').css('visibility','hidden');
-    } else {
-      // not scrolled past the menu; only show the original menu.
-      $('.cloned').hide();
-      $('.original').css('visibility','visible');
-    }
-  }
-
-:javascript
-  $('.favorite img').click(function() {
-    if($(this).hasClass("active")) {
-      $(this).attr("src", "#{asset_path 'home/favorite.png'}");
-    } else {
-      $(this).attr("src", "#{asset_path 'active-favorite.png'}");
-    }
-
-    $(this).toggleClass('active');
-  });
