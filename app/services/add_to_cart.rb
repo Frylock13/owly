@@ -6,7 +6,7 @@ class AddToCart
   end
   
   def call
-    if product_already_added?
+    if product_is_added?
       # increment quantity of this product in the cart
       $redis.hincrby(@cart, @product, 1)
     else
@@ -21,7 +21,7 @@ class AddToCart
 
   private
 
-  def product_already_added?
+  def product_is_added?
     # if a product already has been added in a cart 
     true if $redis.hexists(@cart, @product)
   end

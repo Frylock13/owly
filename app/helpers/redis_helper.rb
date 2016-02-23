@@ -2,7 +2,7 @@ module RedisHelper
 
   # Define all methods for uniq ids for redis database.
   # For example: favorites_longguestid0129302198 in redis will store all of its favorites products.
-  components = %w( cart favorites )
+  components = %w( cart favorites viewed )
   
   components.each do |component|
     define_method "get_#{component}_id" do

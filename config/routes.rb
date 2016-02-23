@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'products/show'
+
   root 'pages#home'
 
   namespace :subscriptions do
