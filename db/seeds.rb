@@ -20,3 +20,6 @@ if Post.count < DEFAULT_COUNT
     Post.create!(title: Faker::Lorem.word, desc: Faker::Lorem.sentences(5))
   end
 end
+
+Page.create(slug: 'blog', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/blog-bg.jpg"),
+            heading: 'Добро пожаловать в блог Оули!')

@@ -1,0 +1,9 @@
+.post
+  .date
+    %p= post.created_at
+
+  .title
+    = link_to post.title, root_path
+
+  .desc
+    %p= post.desc

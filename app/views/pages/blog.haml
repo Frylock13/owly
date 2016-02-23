@@ -1,0 +1,15 @@
+.blog.page.col-md-12
+  .header.row{style: "background: url(#{@page.image.url}) no-repeat"}
+    .container
+      %h1= @page.heading
+      %p.text= @page.text
+      %p Узнайте самым первым о наших новых изделиях, скидках, мастерклассах и жизни Оули!
+
+      .subscribe.form
+        = form_tag subscriptions_create_path, method: :post do
+          = text_field_tag :email, nil, placeholder: 'Ваш e-mail'
+          = submit_tag 'Быть в курсе', class: 'btn btn-green'
+
+  .posts.cream-bg.row
+    .container
+      = render @posts

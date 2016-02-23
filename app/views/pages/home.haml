@@ -1,4 +1,4 @@
-.home.col-md-12
+.home.page.col-md-12
   .kid.row
 
   .about.row
@@ -36,7 +36,7 @@
 
       = render 'products/viewed', products: @popular_products
 
-  .owly-blog.row
+  .owly-blog.cream-bg.row
     .container
       %h1.text-center
         Блог Оули
@@ -44,17 +44,7 @@
       .blog.row
         .col-md-6
           .posts
-            - @posts.each do |post|
-              - cache post do
-                .post
-                  .date
-                    %p= post.created_at
-
-                  .title
-                    = link_to post.title, root_path
-
-                  .desc
-                    %p= post.desc
+            = render @posts
 
 
         .col-md-5.col-md-offset-1

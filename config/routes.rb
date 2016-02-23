@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'products/show'
 
   root 'pages#home'
 
@@ -11,6 +10,7 @@ Rails.application.routes.draw do
   get 'cart' => 'carts#show'
   get 'categories/:slug' => 'categories#show', as: 'category'
   get 'products/:id' => 'products#show', as: 'product'
+  get 'blog' => 'pages#blog', as: 'blog'
 
   namespace :api, defaults: { format: :json } do
     scope :cart do
@@ -24,4 +24,5 @@ Rails.application.routes.draw do
       get :count
     end
   end
+
 end

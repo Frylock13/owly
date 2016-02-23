@@ -1,9 +1,5 @@
 $home-description-text-weight: 300
 
-$home-heading-color: $red
-$home-heading-font-size: 2.4rem
-$home-heading-font-weight: 400
-
 $home-category-title-font-family: $roboto-slab
 $home-category-title-font-size: 1.8rem
 $home-category-title-font-color: $turquoise
@@ -21,12 +17,9 @@ $home-whats-new-title-size: 2.4rem
 $home-whats-new-title-color: $red
 $home-whats-new-title-font-family: $roboto-slab
 
-.home
-  h1
-    color: $red
-    font-size: $home-heading-font-size
-    font-weight: $home-heading-font-weight
+$blog-heading-color: $red
 
+.home
   .kid
     background: url('home/kid.jpg')
     height: 614px
@@ -73,29 +66,11 @@ $home-whats-new-title-font-family: $roboto-slab
         color: $home-category-title-font-color
 
   .owly-blog
-    background: $home-blog-background
-    .blog
-      .posts
-        .post
-          margin-bottom: 40px
-
-        .date
-          font-size: $home-blog-created-at-size
-
-        .desc p
-          max-width: 560px
-
-        .title
-          margin-top: 18px
-          margin-bottom: 18px
-
-          a
-            font-size: $home-blog-title-size
-            color: $home-blog-title-color
-
-
     .whats-new
       margin-top: 60px
+
+      .desc p
+        margin-bottom: 37px
 
       .img
         img
@@ -108,11 +83,41 @@ $home-whats-new-title-font-family: $roboto-slab
         font-family: $home-whats-new-title-font-family
         margin-bottom: 21px
 
-      .subscribe
-        margin-top: 37px
+.blog
+  .header
+    padding-bottom: 13px
 
-        .btn
-          width: 130px
+    h1
+      color: $blog-heading-color
 
-        input
-          width: 71%
+    p
+      max-width: 660px
+
+    .text
+      margin-bottom: 18px
+
+    .subscribe
+      margin-top: 18px
+
+      #email
+        max-width: 270px
+
+  .posts
+    padding-top: 70px
+
+    .post
+      margin-bottom: 40px
+
+    .date p
+      font-size: $home-blog-created-at-size
+
+    .desc p
+      max-width: 560px
+
+    .title
+      margin-top: 8px
+      margin-bottom: 14px
+
+      a
+        font-size: $home-blog-title-size
+        color: $home-blog-title-color
