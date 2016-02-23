@@ -1,0 +1,22 @@
+.blog-posts.posts.page.col-md-12
+  .header.row{style: "background: url(#{@post.image.url})"}
+  
+  .container
+    = render @post
+
+    .tags
+      - @post.tags.split(',').each do |tag|
+        = link_to tag, blog_path(tag: tag)
+
+    .actions.row
+      .col-md-6
+        - unless @previous_post.nil?
+          .left
+            = image_tag 'blog/previous.png'
+            = link_to 'Предыдущая статья', post_path(@previous_post.id)
+
+      .col-md-6
+        - unless @next_post.nil?
+          .right
+            = link_to 'Следующая статья', post_path(@next_post.id)
+            = image_tag 'blog/next.png'

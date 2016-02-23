@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'categories/:slug' => 'categories#show', as: 'category'
   get 'products/:id' => 'products#show', as: 'product'
   get 'blog' => 'pages#blog', as: 'blog'
+  get 'posts/:id' => 'posts#show', as: 'post'
 
   namespace :api, defaults: { format: :json } do
     scope :cart do

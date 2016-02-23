@@ -3,7 +3,7 @@
     %p= post.created_at
 
   .title
-    = link_to post.title, root_path
+    = link_to post.title, post_path(post)
 
   .desc
-    %p= post.desc
+    %p= raw(post.text)

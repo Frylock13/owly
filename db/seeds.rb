@@ -17,9 +17,11 @@ end
 
 if Post.count < DEFAULT_COUNT
   DEFAULT_COUNT.times do 
-    Post.create!(title: Faker::Lorem.word, desc: Faker::Lorem.sentences(5))
+    Post.create!(title: Faker::Lorem.word, text: Faker::Lorem.sentences(5), tags: 'tag1, tag2',
+                 image: File.new("#{Rails.root}/app/assets/images/blog/post-bg.jpg"))
   end
 end
 
-Page.create(slug: 'blog', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/blog-bg.jpg"),
+Page.destroy_all
+Page.create(slug: 'blog', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/blog/bg.jpg"),
             heading: 'Добро пожаловать в блог Оули!')

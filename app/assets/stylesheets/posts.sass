@@ -1,0 +1,44 @@
+$post-created-at-size: 1.4rem
+$post-title-size: 1.8rem
+$post-title-color: $red
+$post-link-title-color: $turquoise
+$post-link-title-size: 1.4rem
+
+.posts
+  .post
+    margin-bottom: 40px
+
+    &:first-child
+      margin-top: 70px
+
+  .date p
+    font-size: $post-created-at-size
+
+  .desc p
+    max-width: 560px
+
+  .title
+    margin-top: 8px
+    margin-bottom: 14px
+
+    a
+      font-size: $post-title-size
+      color: $post-title-color
+
+.blog-posts
+  .header
+    min-height: 298px
+
+  .tags, .actions
+    a
+      color: $post-link-title-color
+      font-size: $post-link-title-size
+
+  .tags
+    margin-bottom: 140px
+
+  .actions
+    margin-bottom: 125px
+
+    .right
+      float: right
