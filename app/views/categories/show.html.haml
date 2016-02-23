@@ -1,4 +1,4 @@
-.category.col-md-12
+.category.page.col-md-12
   .header.row{style: "background: url(#{@category.background.url})"}
     .container
       %h1= @category.name
@@ -15,10 +15,11 @@
 
       = render partial: @products, locals: { col: 3 }
 
-  .recent-showed.cream-bg.row
-    .container
-      %h1.text-center Вы недавно смотрели:
-      
-      = render 'products/viewed', products: @viewed_products
+  - if get_viewed_list.count > 0
+    .recent-showed.cream-bg.row
+      .container
+        %h1.text-center Вы недавно смотрели:
+        
+        = render 'products/viewed', products: @viewed_products
 
-    = image_tag 'owly.png', class: 'owly-img'
+      = image_tag 'owly.png', class: 'owly-img'
