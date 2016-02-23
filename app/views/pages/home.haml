@@ -34,8 +34,8 @@
       %h1.text-center
         Выбор наших покупателей:
 
-      .products.pattern
-        = render 'products/list', collection: @products
+      .products.pattern.col-md-12
+        = render partial: @products, locals: { col: 4 }
 
   .owly-blog.row
     .container

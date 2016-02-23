@@ -8,8 +8,9 @@
     .products.row
       .sort-options.col-md-12
         %span.uppercase Сортировать по:
-        = link_to 'Цене', root_path, class: 'uppercase'
-        = link_to 'Новизне', root_path, class: 'uppercase'
-        = link_to 'Популярности', root_path, class: 'uppercase'
+        = link_to 'Цене', category_path(@category.slug, sort: 'cheapest'), class: 'uppercase'
+        = link_to 'Цене', category_path(@category.slug, sort: 'most_expensive'), class: 'uppercase'
+        = link_to 'Новизне', category_path(@category.slug, sort: 'newest'), class: 'uppercase'
+        = link_to 'Популярности', category_path(@category.slug, sort: 'most_popular'), class: 'uppercase'
 
-      = render @products
+      = render partial: @products, locals: { col: 3 }
