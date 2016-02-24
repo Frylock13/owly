@@ -5,8 +5,9 @@
     = render @post
 
     .tags
-      - @post.tags.split(',').each do |tag|
-        = link_to tag, blog_path(tag: tag)
+      - if @post.tags
+        - @post.tags.split(',').each do |tag|
+          = link_to tag, pages_blog_path(tag: tag)
 
     .actions.row
       .col-md-6

@@ -1,6 +1,6 @@
 DEFAULT_COUNT = 10
 
-if Category.count < DEFAULT_COUNT
+if Category.count < 4
   DEFAULT_COUNT.times do |count|
     Category.create!(name: Faker::Lorem.word, preview: Faker::Avatar.image, 
                      background: 'https://marciepettitta2.files.wordpress.com/2011/11/backgroun-effect.jpg', 
@@ -25,3 +25,5 @@ end
 Page.destroy_all
 Page.create(slug: 'blog', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/blog/bg.jpg"),
             heading: 'Добро пожаловать в блог Оули!')
+Page.create(slug: 'our_products', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/pages/our-products-bg.jpg"),
+            heading: 'Изделия от оули -')

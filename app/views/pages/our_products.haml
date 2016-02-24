@@ -1,0 +1,17 @@
+.our-products.page.col-md-12
+  .header.row{style: "background: url(#{@page.image.url}) no-repeat"}
+    .container
+      %h1= @page.heading
+      %p.text= @page.text
+
+  .our-products-list.cream-bg.row
+    .container
+      .categories-list.row
+        %h1.text-center Наши изделия
+        = render @categories
+
+      .products-list.row
+        %h1.our-customers-choice.text-center Выбор наших покупателей
+        = render 'products/viewed', products: @popular_products
+
+    = image_tag 'owly.png', class: 'owly-img'
