@@ -130,6 +130,7 @@ $footer-contacts-font-color: #f8f5f0
   background-repeat: no-repeat
   background: url('home/choices-bg.jpg')
   padding: 68px
+  max-height: 505px
 
 .cream-bg
   background: #fbfaf7
@@ -163,3 +164,32 @@ $footer-contacts-font-color: #f8f5f0
 
   input
     width: 71%
+
+.owl-carousel
+  .carousel-item
+    width: 100%
+
+  .owl-pagination
+    display: none
+
+  .owl-prev, .owl-next
+    margin-top: -280px!important
+    color: transparent!important
+    height: 43px
+    padding: 0px 0px!important
+
+  .owl-prev
+    float: left
+    margin-left: -50px!important
+    background: url('carousel-left.png') no-repeat !important
+
+  .owl-next
+    float: right
+    margin-left: -50px!important
+    background: url('carousel-right.png') no-repeat !important
+
+  .product.item
+    display: block
+
+    .lazyOwl
+      display: block

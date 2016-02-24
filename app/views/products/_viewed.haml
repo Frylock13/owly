@@ -1,9 +1,9 @@
-.products.pattern.col-md-12
+.products.pattern.owl-carousel.col-md-12
   - products.each do |product|
-    .col-md-4
-      .product
+    .col-md-4.carousel-item.carousel-item
+      .product.item
         .top
-          = image_tag product.image.url(:medium)
+          = image_tag product.image.url(:medium), class: 'lazyOwl'
           
           .name.text-center
             = link_to product.name, product_path(product)
@@ -23,3 +23,14 @@
 
           .add-to-cart.text-center.uppercase
             = link_to 'Добавить в корзину', "javascript:void(0);", method: :put, data: { "ng-click"=>"app.addToCart('#{get_cart_id}', #{product.id})" }
+
+:javascript
+  $(document).ready(function() {
+   
+    $(".owl-carousel").owlCarousel({
+      items : 3,
+      lazyLoad : true,
+      navigation : true
+    }); 
+   
+  });
