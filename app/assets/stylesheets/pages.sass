@@ -12,6 +12,19 @@ $home-whats-new-title-font-family: $roboto-slab
 
 $blog-heading-color: $red
 
+$about-how-we-work-h2-size: 1.8rem
+$about-how-we-work-h2-color: $red
+$about-how-we-work-h2-family: $roboto-slab
+$about-more-information-size: 1.8rem
+$about-advantages-title-size: 1.4rem
+$about-advantages-title-color: $turquoise
+$about-advantages-title-weight: 300
+$about-whats-new-title-font-family: $roboto-slab
+$about-whats-new-title-font-size: 2.4rem
+$about-whats-new-title-font-color: $red
+$about-whats-new-subscribe-p-weight: 300
+$about-whats-new-subscribe-p-size: 1.8rem
+
 .home
   .kid
     background: url('home/kid.jpg')
@@ -32,13 +45,6 @@ $blog-heading-color: $red
       max-width: 566px
       font-weight: $home-description-text-weight
       margin-bottom: 39px
-
-    .about-btn
-      a
-        padding-right: 15px
-
-      img
-        margin-left: 20px
 
   .our-products
     margin-bottom: 136px
@@ -80,3 +86,58 @@ $blog-heading-color: $red
 .our-products.page
   .products-list
     margin-top: 145px
+
+.about
+  .about-us
+    padding-top: 68px
+    padding-bottom: 137px
+
+    .how-we-work
+      .title
+        font-size: $about-how-we-work-h2-size
+        color: $about-how-we-work-h2-color
+        font-family: $about-how-we-work-h2-family
+        margin-bottom: 28px
+
+      .more-information
+        margin-top: 54px
+        margin-bottom: 40px
+        font-size: $about-more-information-size
+
+  .why-we-are-loved
+    .title
+      color: $red
+
+    .advantages
+      margin-top: 80px
+
+      .img
+        min-height: 75px 
+
+        img
+          display: block
+          margin: 0 auto
+
+      .advantage-title
+        margin-top: 50px
+        margin-bottom: 40px
+        font-size: $about-advantages-title-size
+        color: $about-advantages-title-color
+        font-weight: $about-advantages-title-weight
+
+      .made-in
+        margin-top: -29px
+
+  .whats-new
+    padding-bottom: 80px
+
+    .title
+      color: $about-whats-new-title-font-color
+      font-size: $about-whats-new-title-font-size
+      text-transform: none
+
+    .desc
+      font-weight: $about-whats-new-subscribe-p-weight
+      font-size: $about-whats-new-subscribe-p-size
+      margin-top: 21px
+      margin-bottom: 37px

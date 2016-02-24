@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   namespace :pages, path: '/' do
     get :blog
     get :our_products
+    get :about
   end
 
   get 'cart' => 'carts#show'

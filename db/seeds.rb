@@ -25,5 +25,7 @@ end
 Page.destroy_all
 Page.create(slug: 'blog', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/blog/bg.jpg"),
             heading: 'Добро пожаловать в блог Оули!')
-Page.create(slug: 'our_products', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/pages/our-products-bg.jpg"),
+Page.create(slug: 'our_products', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/pages/our-products/bg.jpg"),
             heading: 'Изделия от оули -')
+Page.create(slug: 'about', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/pages/about/bg.jpg"),
+            heading: 'Знакомьтесь, Это Оули!')

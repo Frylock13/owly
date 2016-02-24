@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  before_action :set_page, only: [:blog, :our_products]
+  before_action :set_page, only: [:blog, :our_products, :about]
 
   def home
     @categories = Category.all
@@ -14,6 +14,11 @@ class PagesController < ApplicationController
 
   def our_products
     @categories = Category.all
+    @popular_products = Product.most_popular
+  end
+
+  def about
+
   end
 
 
@@ -21,6 +26,5 @@ class PagesController < ApplicationController
 
   def set_page
     @page = Page.find_by(slug: params[:action])
-    @popular_products = Product.most_popular
   end
 end
