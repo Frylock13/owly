@@ -5,6 +5,10 @@ class CreateProducts < ActiveRecord::Migration
       t.text :desc
       t.integer :price
       t.float :rating
+      t.integer :height
+      t.integer :width
+      t.integer :depth
+      t.text :material
       t.references :category, index: true, foreign_key: true
 
       t.timestamps null: false

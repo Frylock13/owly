@@ -2,6 +2,16 @@ $home-choices-slider-background: $light-blue
 $home-choices-slider-product-background: $white
 $home-choices-slider-product-color: $turquoise
 
+$product-item-name-size: 1.6rem
+$product-item-params-span-size: 300
+$product-item-price-color: $turquoise
+$product-item-price-weight: 400
+$product-item-price-span-color: $dark-gray
+$product-item-price-span-weight: 500
+$product-item-price-span-size: 2.4rem
+$product-item-price-second-span-size: 1.8rem
+$product-item-price-second-span-weight: 300
+
 .products
   .product
     display: inline-block
@@ -49,3 +59,50 @@ $home-choices-slider-product-color: $turquoise
         a
           color: $home-add-to-cart-font-color
           margin-left: 8px
+
+.product-item
+  .name
+    font-size: $product-item-name-size
+    margin-top: 28px
+    margin-bottom: 13px
+
+  .product-card
+    margin-top: 20px
+
+  .right
+    .params, .material
+      margin-top: 36px
+
+      span
+        font-weight: $product-item-params-span-size
+
+    .img
+      float: left
+      min-height: 68px
+      min-width: 75px
+
+    .price
+      margin-top: 46px
+
+      p
+        font-weight: $product-item-price-weight
+        color: $product-item-price-color
+
+        span
+          margin-left: 33px
+          color: $product-item-price-span-color
+          font-weight: $product-item-price-span-weight
+          font-size: $product-item-price-span-size
+
+          .rub
+            margin: 0
+            font-size: $product-item-price-second-span-size
+            font-weight: $product-item-price-second-span-weight
+
+    .actions
+      .add-to-cart, .favorite
+        display: inline-block
+        margin-right: 29px
+
+      .add-to-cart
+        margin-top: 35px

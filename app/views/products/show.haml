@@ -1,2 +1,66 @@
-= @product.id
-= get_viewed_list
+.product-item.page.cream-bg
+  .container
+    .item
+      %h1.name= @product.name
+      = image_tag "ratings/#{@product.rating.to_i}.png", class: 'rating'
+
+      .product-card.row
+        .col-md-4
+          .left
+            = image_tag @product.image.url(:large)
+
+        .col-md-6.col-md-offset-1
+          .right
+            %p.desc= @product.desc
+            
+            - if @product.height || @product.width || @product.depth
+              .params
+              .img
+                = image_tag 'products/params.png'
+
+              .stats
+                - if @product.height
+                  %strong 
+                    Высота:
+                    %span= @product.height
+                  %br/
+
+                - if @product.width
+                  %strong 
+                    Ширина:
+                    %span= @product.width
+                  %br/
+
+                - if @product.depth
+                  %strong 
+                    Глубина:
+                    %span= @product.depth
+
+            - if @product.material
+              .material
+                .img
+                  = image_tag 'products/material.png'
+
+                .stats
+                  %p= @product.material
+
+            .price
+              %p
+                Цена:
+                %span
+                  = @product.price
+                  %span.rub руб.
+
+            .actions
+              .add-to-cart
+                = link_to 'Добавить в корзину', "javascript:void(0);", method: :put, data: { "ng-click"=>"app.addToCart('#{get_cart_id}', #{@product.id})" }, class: 'btn btn-red'
+
+              .favorite
+                = link_to "javascript:void(0);", method: :put, data: { "ng-click"=>"app.switchFavorite('#{get_favorites_id}', #{@product.id})" } do
+                  = @product.decorate.favorite_status(get_favorites_id)
+
+      .reviews.row
+        .col-md-6
+          dsf
+        .col-md-6
+          sdf
