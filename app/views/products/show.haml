@@ -1,10 +1,11 @@
 .product-item.page.cream-bg
-  .container
-    .item
-      %h1.name= @product.name
-      = image_tag "ratings/#{@product.rating.to_i}.png", class: 'rating'
+  .item
+    .product-card
+      .container
+        .col-md-12
+          %h1.name= @product.name
+          = image_tag "ratings/#{@product.rating.to_i}.png", class: 'rating'
 
-      .product-card.row
         .col-md-4
           .left
             = image_tag @product.image.url(:large)
@@ -59,8 +60,38 @@
                 = link_to "javascript:void(0);", method: :put, data: { "ng-click"=>"app.switchFavorite('#{get_favorites_id}', #{@product.id})" } do
                   = @product.decorate.favorite_status(get_favorites_id)
 
-      .reviews.row
+    .reviews
+      .container
         .col-md-6
-          dsf
+          %h1.text-center Кто уже приобрел:
+
+          - if @reviews.present?
+            .reviews-list
+              - @reviews.each do |review|
+                .review
+                  %p.date= review.created_at
+                  %p.text= review.text
+                  %p.author= review.name
+
+          - else
+            %p.text-center Пока нет отзывов
+
+
         .col-md-6
-          sdf
+          .add-review{{'ng-if'=>'app.reviewTab === 1'}}
+            .img
+              = image_tag 'mini-owly.png'
+            .title.text-center Оставьте свой отзыв!
+            %p.text-center Тут Вы можете написать отзыв о нашем изделии и оценить его!
+            = link_to 'Оставить отзыв', 'javascript:void();', class: 'btn btn-green', data: { 'ng-click'=>'app.getReviewForm()' }
+
+          .review-form{{'ng-if'=>'app.reviewTab === 2'}}
+            .title.text-center Ваш отзыв:
+
+            .form.col-md-10.col-md-offset-2
+              = form_for Review.new do |f|
+                = f.text_field :name, placeholder: 'Ваше имя'
+                = f.text_field :email, placeholder: 'Ваш e-mail'
+                = f.text_area :text, placeholder: 'Ваш отзыв'
+                = f.hidden_field :product_id, value: params[:id]
+                = f.submit 'Отправить отзыв', class: 'btn btn-green'

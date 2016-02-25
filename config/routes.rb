@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
+  resources :reviews, only: [:new, :create]
+
   namespace :subscriptions do
     post :create
     get :remove

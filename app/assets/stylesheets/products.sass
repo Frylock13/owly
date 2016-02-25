@@ -11,6 +11,15 @@ $product-item-price-span-weight: 500
 $product-item-price-span-size: 2.4rem
 $product-item-price-second-span-size: 1.8rem
 $product-item-price-second-span-weight: 300
+$product-item-reviews-background: $light-cream
+$product-item-review-date-size: 1.4rem
+$product-item-review-date-weight: 300
+$product-item-review-date-family: $roboto-slab
+$product-item-review-author-size: 1.4rem
+$product-item-add-review-title-size: 2.4rem
+$product-item-add-review-p-size: 1.8rem
+$product-item-add-review-title-family: $roboto-slab
+$product-item-add-review-title-color: $red
 
 .products
   .product
@@ -67,37 +76,37 @@ $product-item-price-second-span-weight: 300
     margin-bottom: 13px
 
   .product-card
-    margin-top: 20px
+    padding-bottom: 105px
 
-  .right
-    .params, .material
-      margin-top: 36px
-
-      span
-        font-weight: $product-item-params-span-size
-
-    .img
-      float: left
-      min-height: 68px
-      min-width: 75px
-
-    .price
-      margin-top: 46px
-
-      p
-        font-weight: $product-item-price-weight
-        color: $product-item-price-color
+    .right
+      .params, .material
+        margin-top: 36px
 
         span
-          margin-left: 33px
-          color: $product-item-price-span-color
-          font-weight: $product-item-price-span-weight
-          font-size: $product-item-price-span-size
+          font-weight: $product-item-params-span-size
 
-          .rub
-            margin: 0
-            font-size: $product-item-price-second-span-size
-            font-weight: $product-item-price-second-span-weight
+      .img
+        float: left
+        min-height: 68px
+        min-width: 75px
+
+      .price
+        margin-top: 46px
+
+        p
+          font-weight: $product-item-price-weight
+          color: $product-item-price-color
+
+          span
+            margin-left: 33px
+            color: $product-item-price-span-color
+            font-weight: $product-item-price-span-weight
+            font-size: $product-item-price-span-size
+
+            .rub
+              margin: 0
+              font-size: $product-item-price-second-span-size
+              font-weight: $product-item-price-second-span-weight
 
     .actions
       .add-to-cart, .favorite
@@ -106,3 +115,55 @@ $product-item-price-second-span-weight: 300
 
       .add-to-cart
         margin-top: 35px
+
+  .reviews
+    padding-bottom: 77px
+    background: $product-item-reviews-background
+
+    .review
+      margin-bottom: 30px
+
+      .date
+        margin-bottom: 25px
+        font-size: $product-item-review-date-size
+        font-weight: $product-item-review-date-weight
+        font-family: $product-item-review-date-family
+
+      .author
+        font-size: $product-item-review-author-size
+        font-style: italic
+        text-align: right
+        margin-top: 27px
+
+    .add-review, .review-form
+      margin-top: 190px
+
+      .img img
+        display: block
+        margin: 0 auto
+
+      .title
+        margin-bottom: 27px
+        font-size: $product-item-add-review-title-size
+        font-family: $product-item-add-review-title-family
+        color: $product-item-add-review-title-color
+
+      p
+        font-size: 1.8rem
+
+      .btn
+        display: block
+        max-width: 170px
+        margin: 0 auto
+        margin-top: 37px
+
+      .form
+        input
+          margin-bottom: 20px
+
+        textarea
+          margin-bottom: 15px
+
+        .btn
+          margin: 0 auto
+          max-width: 100%

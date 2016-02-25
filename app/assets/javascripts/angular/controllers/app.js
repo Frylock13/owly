@@ -3,6 +3,8 @@ app.controller('AppCtrl', AppCtrl)
 function AppCtrl(cartService, favoriteService) {
   var vm = this;
 
+  vm.reviewTab = 1;
+
   vm.getCartCount = function() {
     cartService.getCartCount().then(function(res) {
       vm.cartCount = nilGuard(res);
@@ -13,6 +15,10 @@ function AppCtrl(cartService, favoriteService) {
     favoriteService.getFavoritesCount().then(function(res) {
       vm.favoritesCount = nilGuard(res);
     });
+  }
+
+  vm.getReviewForm = function() {
+    vm.reviewTab = 2;
   }
 
   //////////////////////////////////
