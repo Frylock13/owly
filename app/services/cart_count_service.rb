@@ -14,7 +14,9 @@ class CartCountService
     $redis.incr @cart_count_name
   end
 
-
+  def decrement
+    $redis.decr @cart_count_name
+  end
 
   private
 

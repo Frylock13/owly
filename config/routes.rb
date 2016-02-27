@@ -15,16 +15,23 @@ Rails.application.routes.draw do
     get :about
   end
 
-  get 'cart' => 'carts#show'
+  #get 'cart' => 'carts#show'
   get 'categories/:slug' => 'categories#show', as: 'category'
   get 'products/:id' => 'products#show', as: 'product'
   get 'posts/:id' => 'posts#show', as: 'post'
 
+
+  scope :cart do
+    get '/' => 'carts#show', as: 'cart'
+    post ':product_id/increment' => 'carts#increment', as: 'increment'
+    post ':product_id/decrement' => 'carts#decrement', as: 'decrement'
+  end
+
   namespace :api, defaults: { format: :json } do
     scope :cart do
+      get 'count', to: 'carts#count'
       put 'add', to: 'carts#add'
       put 'remove', to: 'carts#remove'
-      get 'count', to: 'carts#count'
     end
 
     resource :favorites, only: [:create, :delete] do

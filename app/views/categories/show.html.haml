@@ -4,22 +4,27 @@
       %h1= @category.name
       %p= @category.desc
 
-  .products.cream-bg.row
-    .container
-      .sort-options.col-md-12
-        %span.uppercase Сортировать по:
-        = link_to 'Цене', category_path(@category.slug, sort: 'cheapest'), class: 'uppercase'
-        = link_to 'Цене', category_path(@category.slug, sort: 'most_expensive'), class: 'uppercase'
-        = link_to 'Новизне', category_path(@category.slug, sort: 'newest'), class: 'uppercase'
-        = link_to 'Популярности', category_path(@category.slug, sort: 'most_popular'), class: 'uppercase'
-
-      = render partial: @products, locals: { col: 3 }
-
-  - if get_viewed_list.count > 0
-    .recent-showed.cream-bg.row
+  - if @product.present?
+    .products.cream-bg.row
       .container
-        %h1.text-center Вы недавно смотрели:
-        
-        = render 'products/viewed', products: @viewed_products
+        .sort-options.col-md-12
+          %span.uppercase Сортировать по:
+          = link_to 'Цене', category_path(@category.slug, sort: 'cheapest'), class: 'uppercase'
+          = link_to 'Цене', category_path(@category.slug, sort: 'most_expensive'), class: 'uppercase'
+          = link_to 'Новизне', category_path(@category.slug, sort: 'newest'), class: 'uppercase'
+          = link_to 'Популярности', category_path(@category.slug, sort: 'most_popular'), class: 'uppercase'
 
-      = image_tag 'owly.png', class: 'owly-img'
+        = render partial: @products, locals: { col: 3 }
+
+    - unless get_viewed_list.count == 0
+      = get_viewed_list
+      .recent-showed.cream-bg.row
+        .container
+          %h1.text-center Вы недавно смотрели:
+          
+          = render 'products/viewed', products: @viewed_products
+
+        = image_tag 'owly.png', class: 'owly-img'
+
+  - else
+    %h1.text-center В этой категории пока нет товаров

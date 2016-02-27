@@ -1,4 +1,5 @@
 class Api::CartsController < ApplicationController
+
   def add
     if AddToCart.new(params[:cart_id], params[:product_id]).call
       render nothing: true, status: 200
@@ -28,4 +29,5 @@ class Api::CartsController < ApplicationController
   def cart_id
     "cart_#{session[:guest_id]}"
   end
+
 end

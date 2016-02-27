@@ -1,0 +1,99 @@
+$cart-header-h1-size: 1.8rem
+$cart-items-title-size: 1.8rem
+$cart-items-title-font: $roboto-slab
+$cart-items-title-weight: 300
+$cart-items-product-name-color: $turquoise
+$cart-items-product-name-font: $roboto-slab
+$cart-items-product-name-weight: 300
+$cart-items-product-price-color: $dark-gray
+$cart-items-product-price-weight: 500
+$cart-items-product-price-span-weight: 300
+$cart-items-product-actions-hover-background: #efefef
+$cart-items-product-actions-border-color: #efefef
+$cart-items-product-total-weight: 400
+$cart-items-product-total-size: 1.8rem
+$cart-items-product-total-font: $roboto-slab
+$cart-items-product-total-span-weight: 500
+$cart-items-product-total-span-size: 2.4rem
+
+.cart
+  .header
+    padding-bottom: 35px
+    background: url('pages/cart/cart-bg.jpg')
+
+    h1
+      margin-bottom: 30px
+      font-size: $cart-header-h1-size
+
+  .cart-items
+    padding-top: 55px
+
+    .title
+      font-size: $cart-items-title-size
+      font-family: $cart-items-title-font
+      font-weight: $cart-items-title-weight
+      margin-bottom: 40px
+
+    .product
+      min-height: 100px
+
+      .product-name, .product-price, .product-calc, .final-price, .delete
+        min-width: 145px
+        display: inline-block
+
+      .first-block, .second-block
+        margin-top: 40px
+
+        a
+          color: $cart-items-product-name-color
+          font-family: $cart-items-product-name-font
+          font-weight: $cart-items-product-name-weight
+
+      .product-price, .final-price
+        strong
+          color: $cart-items-product-price-color
+          font-weight: $cart-items-product-price-weight
+
+          span
+            font-weight: $cart-items-product-price-span-weight
+
+      .product-calc
+        border: 1px solid #efefef
+        display: inline
+        padding: 10px 0px 9px 0px
+
+        .value, .actions
+          display: inline-block
+
+        .value
+          padding: 0px 40px 0 15px
+
+        .actions
+          position: absolute
+          margin-top: -8px
+
+        .increment, .decrement
+          width: 30px
+          height: 20px
+          border: 1px solid $cart-items-product-actions-border-color
+
+          img
+            margin-left: 7px
+            margin-top: -7px
+
+          &:hover
+            cursor: pointer
+            background: $cart-items-product-actions-hover-background
+
+    .total
+      margin-top: 90px
+
+      p
+        font-weight: $cart-items-product-total-weight
+        font-size: $cart-items-product-total-size
+        font-family: $cart-items-product-total-font
+
+        span
+          margin-left: 10px
+          font-weight: $cart-items-product-total-span-weight
+          font-size: $cart-items-product-total-span-size
