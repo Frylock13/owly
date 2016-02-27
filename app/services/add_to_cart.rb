@@ -14,7 +14,7 @@ class AddToCart
       $redis.hset(@cart, @product, 1)
     end
 
-    increment_cart_count
+    reset_cart_count
   end
 
 
@@ -26,8 +26,8 @@ class AddToCart
     true if $redis.hexists(@cart, @product)
   end
 
-  def increment_cart_count
-    CartCountService.new(@cart).increment
+  def reset_cart_count
+    CartCountService.new(@cart).reset
   end
 
 end

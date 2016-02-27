@@ -26,6 +26,11 @@ class CartsController < ApplicationController
     end
   end
 
+  def delete
+    CartProductsService.new(cart_id, params[:product_id]).delete
+    redirect_to :back
+  end
+
   private
 
   def cart_id

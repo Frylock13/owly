@@ -23,6 +23,7 @@ gem 'lodash-rails'
 gem 'friendly_id', '~> 5.1.0'
 gem 'draper'
 gem 'owlcarousel-rails'
+gem 'russian'
 
 gem 'redis-rails'
 gem 'redis-namespace'

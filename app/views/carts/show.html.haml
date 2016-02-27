@@ -9,7 +9,10 @@
 
   .cart-items.row
     .container
-      .title У Вас в Корзине 3 изделия:
+      .title
+        У Вас в Корзине
+        = get_cart_count
+        = Russian.p(get_cart_count.to_i, "изделие:", "изделия:", "изделий:")
 
       .list
         - @products.each do |product|
@@ -34,7 +37,7 @@
                 .actions
                   .increment
                     = link_to image_tag('pages/cart/increment.png'), increment_path(product_id: product.id), method: :put
-                  
+
                   .decrement
                     = link_to image_tag('pages/cart/decrement.png'), decrement_path(product_id: product.id), method: :put
 
@@ -45,10 +48,11 @@
                   %span руб.
 
               .delete
-                = image_tag 'pages/cart/delete.png'
+                = link_to image_tag('pages/cart/delete.png'), product_delete_path(product_id: product.id), method: :delete
 
-      .total
-        %p
-          Итого:
-          %span= get_total_amount(@products)
-          руб.
+      - if @products.count > 0
+        .total
+          %p
+            Итого:
+            %span= get_total_amount(@products)
+            руб.

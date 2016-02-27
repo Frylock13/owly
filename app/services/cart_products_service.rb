@@ -20,7 +20,7 @@ class CartProductsService
 
   def increment
     $redis.hincrby(@cart_id, @product_id, 1)
-    make_cart_count :increment
+    reset_cart_count
   end
 
   def decrement
@@ -30,15 +30,24 @@ class CartProductsService
       $redis.hincrby(@cart_id, @product_id, -1)
     end
 
-    make_cart_count :decrement
+    reset_cart_count
+  end
+
+  def delete
+    $redis.hdel(@cart_id, @product_id)
+    reset_cart_count
   end
 
   def set_count(new_count)
     $redis.hset(@cart_id, @product_id, new_count)
+    reset_cart_count
   end
 
-  def make_cart_count(action)
-    CartCountService.new(@cart_id).send(action)
+
+  private
+
+  def reset_cart_count
+    CartCountService.new(@cart_id).reset
   end
 
 end

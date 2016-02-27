@@ -10,12 +10,14 @@ class CartCountService
     end
   end
 
-  def increment
-    $redis.incr @cart_count_name
-  end
+  def reset
+    total_count = 0
 
-  def decrement
-    $redis.decr @cart_count_name
+    ($redis.hgetall @cart).values.map do |count|
+      total_count += count.to_i  
+    end
+
+    $redis.set @cart_count_name, total_count
   end
 
   private
