@@ -27,6 +27,7 @@ $cart-items-product-total-span-size: 2.4rem
 
   .cart-items
     padding-top: 55px
+    padding-bottom: 250px
 
     .title
       font-size: $cart-items-title-size
@@ -91,15 +92,21 @@ $cart-items-product-total-span-size: 2.4rem
             cursor: pointer
             background: $cart-items-product-actions-hover-background
 
-    .total
-      margin-top: 90px
+    .bottom-block
+      min-width: 250px
+      margin-right: 180px
+      float: right
 
-      p
-        font-weight: $cart-items-product-total-weight
-        font-size: $cart-items-product-total-size
-        font-family: $cart-items-product-total-font
+      .total
+        margin-top: 90px
+        margin-bottom: 65px
 
-        span
-          margin-left: 10px
-          font-weight: $cart-items-product-total-span-weight
-          font-size: $cart-items-product-total-span-size
+        p
+          font-weight: $cart-items-product-total-weight
+          font-size: $cart-items-product-total-size
+          font-family: $cart-items-product-total-font
+
+          span
+            margin-left: 10px
+            font-weight: $cart-items-product-total-span-weight
+            font-size: $cart-items-product-total-span-size

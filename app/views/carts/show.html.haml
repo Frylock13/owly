@@ -51,8 +51,12 @@
                 = link_to image_tag('pages/cart/delete.png'), product_delete_path(product_id: product.id), method: :delete
 
       - if @products.count > 0
-        .total
-          %p
-            Итого:
-            %span= get_total_amount(@products)
-            руб.
+        .bottom-block
+          .total
+            %p
+              Итого:
+              %span= get_total_amount(@products)
+              руб.
+
+          .create-order
+            = link_to 'Оформить заказ', "javascript:void(0);", class: 'btn btn-red'
