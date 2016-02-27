@@ -6,4 +6,15 @@ module CartsHelper
     cart_count ? cart_count : 0
   end
   
+  def get_total_amount(products)
+    total_amount = 0
+    
+    products.map do |product|
+      result = product.price * product.count.to_i
+      total_amount += result
+    end
+
+    total_amount
+  end
+
 end

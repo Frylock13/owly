@@ -9,13 +9,11 @@ class CartsController < ApplicationController
   def increment
     CartProductsService.new(cart_id).increment(params[:product_id])
     redirect_to :back
-    flash[:success] = 'Товар успешно добавлен в корзину'
   end
 
   def decrement
     CartProductsService.new(cart_id).decrement(params[:product_id])
     redirect_to :back
-    flash[:success] = 'Товар успешно удален из корзины'
   end
 
   private
@@ -23,4 +21,5 @@ class CartsController < ApplicationController
   def cart_id
     "cart_#{session[:guest_id]}"
   end
+  
 end

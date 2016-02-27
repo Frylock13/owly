@@ -1,7 +1,7 @@
 class SwitchFavorite
 
   def self.call(favorites_id, product_id)
-    # If the product already in the set
+    # If the product already in the set(favorites)
     if $redis.sismember(favorites_id, product_id)
       $redis.srem(favorites_id, product_id)
     else

@@ -28,19 +28,20 @@
 
               .product-calc
                 .value
-                  2
+                  = form_tag set_count_path(product_id: product.id) do
+                    = number_field_tag :count, product.count
 
                 .actions
                   .increment
-                    = link_to image_tag('pages/cart/increment.png'), increment_path(product_id: product.id), method: :post
+                    = link_to image_tag('pages/cart/increment.png'), increment_path(product_id: product.id), method: :put
 
                   .decrement
-                    = link_to image_tag('pages/cart/decrement.png'), decrement_path(product_id: product.id), method: :post
+                    = link_to image_tag('pages/cart/decrement.png'), decrement_path(product_id: product.id), method: :put
 
             .col-md-5.second-block
               .final-price
                 %strong
-                  = product.price
+                  = product.price * product.count.to_i
                   %span руб.
 
               .delete
@@ -49,5 +50,5 @@
       .total
         %p
           Итого:
-          %span 5000
+          %span= get_total_amount(@products)
           руб.
