@@ -25,7 +25,7 @@ Rails.application.routes.draw do
     get '/' => 'carts#show', as: 'cart'
     put ':product_id/increment' => 'carts#increment', as: 'increment'
     put ':product_id/decrement' => 'carts#decrement', as: 'decrement'
-    put ':product_id/set_count' => 'carts#set_count', as: 'set_count'
+    patch ':product_id/set_count' => 'carts#set_count', as: 'set_count'
   end
 
   namespace :api, defaults: { format: :json } do
