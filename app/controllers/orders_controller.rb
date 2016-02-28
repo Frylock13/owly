@@ -4,6 +4,15 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @order = Order.new(order_params)
+
+    if @order.save
+      redirect_to :back
+      flash[:success] = 'Вы успешно оформили заказ'
+    else
+      redirect_to :back
+      flash[:danger] = 'Произошла ошибка'
+    end
   end
 
   private

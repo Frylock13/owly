@@ -119,8 +119,8 @@
                     .apartment
                       = f.text_field :building, placeholder: 'Дом'
                       = f.text_field :block, placeholder: 'Корпус'
-                      = f.text_field :block, placeholder: 'Квартира'
-                      = f.number_field :street, placeholder: 'Этаж'
+                      = f.text_field :apt, placeholder: 'Квартира'
+                      = f.number_field :floor, placeholder: 'Этаж'
 
                     = f.text_area :comment, placeholder: 'Дополнительный комментарий', class: 'comment'
 
