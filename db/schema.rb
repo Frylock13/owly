@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160225200113) do
+ActiveRecord::Schema.define(version: 20160228140550) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,23 @@ ActiveRecord::Schema.define(version: 20160225200113) do
     t.integer  "background_file_size"
     t.datetime "background_updated_at"
     t.string   "slug"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "name"
+    t.string   "tel"
+    t.string   "email"
+    t.string   "city"
+    t.string   "street"
+    t.string   "building"
+    t.string   "block"
+    t.integer  "apt"
+    t.integer  "floor"
+    t.text     "comment"
+    t.string   "company_name"
+    t.string   "inn"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
   create_table "pages", force: :cascade do |t|

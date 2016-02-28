@@ -1,0 +1,86 @@
+$order-title-size: 1.8rem
+$order-title-weight: 300
+$order-title-color: $turquoise
+$order-options-color: #ababab
+$order-options-border-color: #efefef
+$order-options-active-color: $dark-gray
+$order-options-active-border-color: $turquoise
+$order-cancel-link-color: #ababab
+$order-background-color: $white
+
+.order
+  background: $order-background-color
+
+  h1
+    margin-top: 62px
+
+  input, textarea
+    font-style: italic
+    margin-bottom: 20px
+
+  .title
+    font-size: $order-title-size
+    font-weight: $order-title-weight
+    color: $order-title-color
+    margin-bottom: 30px
+    margin-top: 50px
+
+  .options-heading
+    border-bottom: solid 1px $order-options-border-color
+    margin-bottom: 30px
+
+    .option
+      cursor: pointer
+      display: inline
+      margin-right: 115px
+      color: $order-options-color
+
+      &:last-child
+        margin-right: 0px
+
+      &.active
+        color: $order-options-active-color
+        border-bottom: 3px solid $order-options-active-border-color
+
+  .options-delivery
+    strong
+      font-size: 1.6rem
+
+    .by-myself
+      .map
+        margin-top: 34px
+
+    .need-delivery
+      .info
+        margin-bottom: 42px
+
+      .address
+        margin-top: 24px
+
+        .apartment
+          input
+            width: 100px
+            display: inline-block
+            margin-right: 43px
+
+            &:last-child
+              margin-right: 0px
+
+      .comment
+        height: 114px
+
+  .payment
+    .details
+      margin-top: 30px
+
+  .btn.create-order
+    font-style: normal
+    max-width: 170px
+
+  .cancel-link
+    color: $order-cancel-link-color
+    text-decoration: underline
+    margin-left: 100px
+
+  .actions  
+    margin-top: 45px

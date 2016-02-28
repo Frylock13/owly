@@ -29,6 +29,8 @@ Rails.application.routes.draw do
     delete ':product_id/delete' => 'carts#delete', as: 'product_delete'
   end
 
+  resources :orders, only: [:new, :create]
+
   namespace :api, defaults: { format: :json } do
     scope :cart do
       get 'count', to: 'carts#count'
