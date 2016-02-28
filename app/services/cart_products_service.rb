@@ -7,15 +7,15 @@ class CartProductsService
   end
 
   def products
-    products = $redis.hgetall @cart_id
+    hash = $redis.hgetall @cart_id
+    products = Product.where(id: hash.keys)
 
-    products.map do |product_id, count|
-      product = Product.find(product_id)
+    products.each do |product|
+      count = hash[product.id.to_s]
       product.define_singleton_method(:count) { count }
-      @products << product
     end
 
-    @products
+    products
   end
 
   def increment
