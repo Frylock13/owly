@@ -7,7 +7,7 @@ class CreateOrder
 
   def create
     order = Order.new(@params)
-    true if order.save!
+    order.save!
 
     clean_cart
   end
