@@ -43,6 +43,15 @@ class CartProductsService
     reset_cart_count
   end
 
+  # Delete all products from cart
+  def clean
+    product_keys = $redis.hgetall(@cart_id).keys
+    product_keys.each do |key|
+      $redis.hdel(@cart_id, key)
+    end
+
+    reset_cart_count
+  end
 
   private
 
