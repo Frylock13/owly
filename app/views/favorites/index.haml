@@ -1,0 +1,35 @@
+.favorites.page.col-md-12
+  .header.row{style: "background: url(#{@page.image.url}) no-repeat"}
+    .container
+      %h1= @page.heading
+      %p.text= @page.text
+
+  .products-list.cream-bg.row
+    .container
+      .title
+        У Вас в Избранном
+        = get_favorites_count
+        = Russian.p(get_favorites_count, "изделие", "изделия", "изделий")
+
+      .list
+        - @products.each do |product|
+          .product.row
+            .col-md-2
+              = image_tag product.image.url(:small)
+
+            .col-md-10
+              .line
+                .product-name
+                  = link_to product.name, product_path(product.id)
+
+                .product-price
+                  %strong
+                    = product.price
+                    %span руб.
+
+                .add-to-cart
+                  = link_to 'Добавить в корзину', "javascript:void(0);", method: :put, data: { "ng-click"=>"app.addToCart('#{get_cart_id}', #{product.id})" }, class: 'btn btn-red'
+
+                .delete
+                  = link_to image_tag('pages/cart/delete.png'), product_delete_path(product_id: product.id), method: :delete
+                  

@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
+  resources :favorites
   root 'pages#home'
 
   resources :reviews, only: [:new, :create]
+  resource :favorites, only: [:index, :destroy]
 
   namespace :subscriptions do
     post :create
@@ -13,7 +15,6 @@ Rails.application.routes.draw do
     get :blog
     get :our_products
     get :about
-    get :favorites
   end
 
   #get 'cart' => 'carts#show'
