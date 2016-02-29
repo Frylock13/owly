@@ -95,3 +95,12 @@
                 = f.text_area :text, placeholder: 'Ваш отзыв'
                 = f.hidden_field :product_id, value: params[:id]
                 = f.submit 'Отправить отзыв', class: 'btn btn-green'
+
+    .related-products
+      .container
+        %h1.text-center
+          С этим изделием часто приобретают::
+
+        = render 'products/viewed', products: @related_products
+
+      = image_tag 'owly.png', class: 'owly-img'
