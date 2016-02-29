@@ -1,4 +1,10 @@
 $favorites-header-color: $red
+$favorites-items-title-size: 1.8rem
+$favorites-items-title-font: $roboto-slab
+$favorites-items-title-weight: 300
+$favorites-items-product-name-color: $turquoise
+$favorites-items-product-name-font: $roboto-slab
+$favorites-items-product-name-weight: 300
 
 .favorites.page
   .header
@@ -8,9 +14,24 @@ $favorites-header-color: $red
   .line
     margin-top: 38px
 
-    .product-name, .product-price, .delete 
+    .product-name, .product-price, .add-to-cart, .delete
       display: inline-block
       min-width: 150px
 
-  .favorite
-    margin-bottom: 35px
+  .products-list
+    .title
+      font-size: $favorites-items-title-size
+      font-family: $favorites-items-title-font
+      font-weight: $favorites-items-title-weight
+      margin-bottom: 40px
+
+    .product
+      margin-bottom: 35px
+
+      .add-to-cart
+        margin-right: 50px
+
+      .product-name a
+        color: $favorites-items-product-name-color
+        font-family: $favorites-items-product-name-font
+        font-weight: $favorites-items-product-name-weight
