@@ -7,6 +7,7 @@ class CreateOrder
 
   def create
     order = Order.new(@params)
+    order.products = product_list
     order.save!
 
     clean_cart
@@ -16,6 +17,10 @@ class CreateOrder
 
   def cart_id
     "cart_#{@guest_id}"
+  end
+
+  def product_list
+    $redis.hgetall cart_id
   end
 
   def clean_cart

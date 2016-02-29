@@ -3,11 +3,9 @@ class CartProductsService
   def initialize(cart_id, product_id=nil)
     @cart_id = cart_id
     @product_id = product_id
-    @products = []
   end
 
-  def products
-    hash = $redis.hgetall @cart_id
+  def products(hash=product_list)
     products = Product.where(id: hash.keys)
 
     products.each do |product|
@@ -54,6 +52,10 @@ class CartProductsService
   end
 
   private
+
+  def product_list
+    $redis.hgetall @cart_id
+  end
 
   def reset_cart_count
     CartCountService.new(@cart_id).reset

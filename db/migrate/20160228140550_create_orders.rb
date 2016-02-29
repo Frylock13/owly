@@ -13,6 +13,7 @@ class CreateOrders < ActiveRecord::Migration
       t.text :comment
       t.string :company_name
       t.string :inn
+      t.string :products
 
       t.timestamps null: false
     end

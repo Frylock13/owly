@@ -12,7 +12,7 @@
       .title
         У Вас в Корзине
         = get_cart_count
-        = Russian.p(get_cart_count.to_i, "изделие:", "изделия:", "изделий:")
+        = Russian.p(get_cart_count.to_i, "изделие", "изделия", "изделий")
 
       .list
         - @products.each do |product|
