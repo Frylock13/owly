@@ -31,10 +31,4 @@ class CartsController < ApplicationController
     redirect_to :back
   end
 
-  private
-
-  def cart_id
-    "cart_#{session[:guest_id]}"
-  end
-
 end

@@ -24,10 +24,4 @@ class Api::CartsController < ApplicationController
     render text: count, status: 200
   end
 
-  private
-
-  def cart_id
-    "cart_#{session[:guest_id]}"
-  end
-
 end

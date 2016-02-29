@@ -20,4 +20,8 @@ class FavoritesService
     Product.where(id: favorites_ids)
   end
 
+  def delete
+    $redis.srem(@favorites_id, @product_id)
+  end
+
 end

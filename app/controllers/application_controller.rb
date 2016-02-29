@@ -10,4 +10,14 @@ class ApplicationController < ActionController::Base
       session[:guest_id] = SecureRandom.hex(6)
     end
   end
+
+
+  # Define methods for get cart_id, favorites_id, viewed_id. These components served the redis.
+  components = %w( cart favorites viewed )
+  
+  components.each do |component|
+    define_method "#{component}_id" do
+      "#{component}_#{session[:guest_id]}"
+    end
+  end
 end

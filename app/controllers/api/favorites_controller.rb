@@ -8,18 +8,11 @@ class Api::FavoritesController < ApplicationController
     end
   end
 
-  def delete
-  end
-
   def count
     render text: favorites_count, status: 200
   end
 
   private
-
-  def favorites_id
-    "favorites_#{session[:guest_id]}"
-  end
 
   def favorites_count
     $redis.scard favorites_id

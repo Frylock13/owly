@@ -6,17 +6,14 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-
+    FavoritesService.new(favorites_id, params[:product_id]).delete
+    redirect_to :back
   end
 
   private
 
   def favorite_products_list
     FavoritesService.new(favorites_id).favorites_list
-  end
-
-  def favorites_id
-    "favorites_#{session[:guest_id]}"
   end
 
 end
