@@ -2,16 +2,21 @@ class FavoritesController < ApplicationController
   
   def index
     @page = Page.find_by(slug: params[:controller])
-    @products = Product.where(id: favorite_products_list)
+    @products = favorite_products_list
   end
 
   def destroy
+
   end
 
   private
 
   def favorite_products_list
-    $redis.smembers("favorites_#{session[:guest_id]}")
+    FavoritesService.new(favorites_id).favorites_list
+  end
+
+  def favorites_id
+    "favorites_#{session[:guest_id]}"
   end
 
 end

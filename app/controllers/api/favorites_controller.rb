@@ -1,7 +1,7 @@
 class Api::FavoritesController < ApplicationController
 
   def add
-    if SwitchFavorite.call(params[:favorite_id], params[:product_id])
+    if FavoritesService.new(params[:favorite_id], params[:product_id]).switch
       render nothing: true,status: 200
     else
       render nothing: true, status: 404
