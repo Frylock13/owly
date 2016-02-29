@@ -34,3 +34,6 @@ Page.create(slug: 'about', text: Faker::Lorem.sentences(5), image: File.new("#{R
 Page.create(slug: 'carts', text: 'На этой странице Вы можете оформить заказ на все изделия, которые выбрали на нашем сайте. При заказе на сумму от 3 000 руб. мы осуществляем бесплатную доставку по городу!', 
             image: File.new("#{Rails.root}/app/assets/images/pages/cart/bg.jpg"),
             heading: 'Ваша корзина')
+Page.create(slug: 'favorites', text: 'Если Вы еще не приняли решение о приобретении каких-либо изделий от Оули, или у Вас нет времени оформить заказ сразу, Вы всегда можете вернуться к своим избранным изделиям на этой странице!', 
+            image: File.new("#{Rails.root}/app/assets/images/pages/favorites/bg.jpg"),
+            heading: 'Изделия, которые вы выбрали')

@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  before_action :set_page, only: [:blog, :our_products, :about]
+  before_action :set_page, only: [:blog, :our_products, :about, :favorites]
 
   def home
     @categories = Category.all
@@ -18,9 +18,11 @@ class PagesController < ApplicationController
   end
 
   def about
-
   end
 
+  def favorites
+    @products = Product.all.limit(3)
+  end
 
   private
 

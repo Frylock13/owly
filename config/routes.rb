@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get :blog
     get :our_products
     get :about
+    get :favorites
   end
 
   #get 'cart' => 'carts#show'

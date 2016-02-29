@@ -1,4 +1,4 @@
-.cart.col-md-12.cream-bg{{'ng-controller'=>'CartCtrl as cart'}}
+.cart.page.col-md-12.cream-bg{{'ng-controller'=>'CartCtrl as cart'}}
   .header.row{style: "background: url(#{@page.image.url})"}
     .container
       %h1= @page.heading
@@ -7,7 +7,7 @@
         %br/
         Спасибо, что выбираете Оули!
 
-  .cart-items.row
+  .cart-items.cream-bg.row
     .container
       .title
         У Вас в Корзине
@@ -62,7 +62,7 @@
             = link_to 'Оформить заказ', "#order", class: 'btn btn-red', data: {'ng-click'=>'cart.orderBlockSet("open")'}
 
   #order
-  .order.row{{'ng-if'=>'cart.orderBlock == "open"'}}
+  .order.white-bg.row{{'ng-if'=>'cart.orderBlock == "open"'}}
     .container
       %h1.text-center Оформление заказа
 
