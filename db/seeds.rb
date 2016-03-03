@@ -27,7 +27,7 @@ end
 Page.destroy_all
 Page.create(slug: 'blog', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/pages/blog/bg.jpg"),
             heading: 'Добро пожаловать в блог Оули!')
-Page.create(slug: 'our_products', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/pages/our-products/bg.jpg"),
+Page.create(slug: 'our_products', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/pages/our_products/bg.jpg"),
             heading: 'Изделия от оули -')
 Page.create(slug: 'about', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/pages/about/bg.jpg"),
             heading: 'Знакомьтесь, Это Оули!')
@@ -37,3 +37,6 @@ Page.create(slug: 'carts', text: 'На этой странице Вы может
 Page.create(slug: 'favorites', text: 'Если Вы еще не приняли решение о приобретении каких-либо изделий от Оули, или у Вас нет времени оформить заказ сразу, Вы всегда можете вернуться к своим избранным изделиям на этой странице!', 
             image: File.new("#{Rails.root}/app/assets/images/pages/favorites/bg.jpg"),
             heading: 'Изделия, которые вы выбрали')
+Page.create(slug: 'how_to', text: Faker::Lorem.sentences(5), 
+            image: File.new("#{Rails.root}/app/assets/images/pages/how_to/bg.jpg"),
+            heading: 'Как заказать наши изделия?')

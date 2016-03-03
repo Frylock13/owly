@@ -25,6 +25,15 @@ $about-whats-new-title-font-color: $red
 $about-whats-new-subscribe-p-weight: 300
 $about-whats-new-subscribe-p-size: 1.8rem
 
+$how-to-header-h1-color: $red
+$how-to-block-h2-color: $red
+$how-to-block-h2-size: 1.4rem
+$how-to-block-h2-weight: 300
+$how-to-block-h2-font: $roboto-slab
+$how-to-block-strong-font: $roboto
+$how-to-questions-font-family: $roboto-slab
+$how-to-questions-font-color: $red
+
 .home
   .kid
     background: url('home/kid.jpg')
@@ -144,3 +153,50 @@ $about-whats-new-subscribe-p-size: 1.8rem
       font-size: $about-whats-new-subscribe-p-size
       margin-top: 21px
       margin-bottom: 37px
+
+.how-to
+  p
+    max-width: 760px
+    font-weight: 300!important
+
+  .how-to-get, .how-to-pay
+    padding-bottom: 50px
+
+  .header h1
+    color: $how-to-header-h1-color
+
+  .block
+    margin-bottom: 55px
+
+    p
+      line-height: 2.2
+
+    h2, p
+      font-size: $how-to-block-h2-size
+      font-weight: $how-to-block-h2-weight
+
+    h2
+      color: $how-to-block-h2-color
+      margin-bottom: 15px
+      font-family: $how-to-block-h2-font
+
+    strong
+      font-family: $how-to-block-strong-font
+
+  .questions
+    .question
+      max-width: 410px
+      display: block
+      margin: 0 auto
+
+    p
+      color: $how-to-questions-font-color
+      font-family: $how-to-questions-font-family
+      margin-bottom: 15px
+
+    .btn
+      max-width: 170px
+      font-size: 1.4rem
+      display: block
+      margin: 0 auto
+      margin-bottom: 50px

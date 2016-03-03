@@ -1,0 +1,91 @@
+.how-to.page.col-md-12
+  .header.row{style: "background: url(#{@page.image.url}) no-repeat"}
+    .container
+      %h1= @page.heading
+      %p.text= @page.text
+
+  .how-to-get.cream-bg.row
+    .container
+      .header
+        %h1 Как получить покупку?
+        %p 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+      .by-myself.block.row
+        .col-md-1
+          = image_tag 'pages/how_to/by-myself.png', class: 'img'
+
+        .col-md-11
+          %h2.uppercase Забрать самостоятельно
+          %p
+            Вы можете забрать наши изделия самостоятельно по адресу:
+            %br/
+          %strong ул. Льва Толстого, 9 БЦ “Толстой сквер”
+
+      .delivery-truck.block.row
+        .col-md-1
+          = image_tag 'pages/how_to/delivery-truck.png', class: 'img'
+
+        .col-md-11
+          %h2.uppercase Доставка по Санкт-Петербургу
+          %p
+            Мы осуществляем доставку по г. Санкт-Петербург в пределах кольца.
+            %br/
+            %p 
+              Стоимость доставки - 
+              %strong 300
+              руб.
+            %p 
+              При заказе на сумму от 
+              %strong 3 000 
+              руб. - 
+              %strong.uppercase Доставка бесплатно!
+
+      %p 
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+  .how-to-pay.white-bg.row
+    .container
+      .header
+        %h1 Как оплатить?
+        %p 
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+      .cash.block.row
+        .col-md-1
+          = image_tag 'pages/how_to/wallet.png', class: 'img'
+
+        .col-md-11
+          %h2.uppercase Оплата наличными при получении
+          %p
+            Вы можете оплатить свою покупку наличными нашему курьеру при получении заказа (он привезет Вам чек), или когда будете забирать заказ самостоятельно.
+
+      .delivery-truck.block.row
+        .col-md-1
+          = image_tag 'pages/how_to/price.png', class: 'img'
+
+        .col-md-11
+          %h2.uppercase Счет для юридических лиц
+          %p
+            Мы отправляем счет на оплату на адрес почты, указанный при оформлении заказа.
+      %p 
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+  .questions.cream-bg.row
+    .container
+      .question
+        %p.text-center
+          По любым вопросам Вы можете позвонить нам по телефону:  
+          %span +7 (812) 498-10-00
+
+        %p.text-center
+          Или заполните форму обратного звонка и мы свяжемся с Вами в ближайшее время
+
+        .form
+          = form_for '#' do |f|
+            = f.text_field :name, placeholder: 'Ваше имя'
+            = f.text_field :telephone, placeholder: 'Ваш телефон'
+            = f.text_area :question, placeholder: 'Ваш вопрос'
+            = f.submit 'Отправить заявку', class: 'btn btn-green'
+
+        = image_tag 'owly.png', class: 'owly-img'
