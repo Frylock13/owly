@@ -32,7 +32,7 @@
                     = link_to 'Добавить в корзину', "javascript:void(0);", method: :put, data: { "ng-click"=>"app.addToCart('#{get_cart_id}', #{product.id})" }, class: 'btn btn-red'
 
                   .delete
-                    = link_to image_tag('pages/cart/delete.png'), favorites_path(product_id: product.id), method: :delete
+                    = link_to image_tag('pages/cart/delete.png'), favorite_path(product.id), method: :delete
                   
       - else
         .title

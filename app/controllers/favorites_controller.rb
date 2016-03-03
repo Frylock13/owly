@@ -6,7 +6,7 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    FavoritesService.new(favorites_id, params[:product_id]).delete
+    FavoritesService.new(favorites_id, params[:id]).delete
     redirect_to :back
   end
 

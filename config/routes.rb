@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :favorites
   root 'pages#home'
 
   resources :reviews, only: [:new, :create]
-  resource :favorites, only: [:index, :destroy]
+  resources :favorites, only: [:index, :destroy]
+  resources :questions
 
   namespace :subscriptions do
     post :create
