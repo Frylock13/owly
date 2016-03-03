@@ -108,9 +108,9 @@ ActiveRecord::Schema.define(version: 20160303175352) do
     t.string   "name"
     t.string   "tel"
     t.text     "text"
-    t.boolean  "viewed"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.boolean  "viewed",     default: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
   end
 
   create_table "reviews", force: :cascade do |t|

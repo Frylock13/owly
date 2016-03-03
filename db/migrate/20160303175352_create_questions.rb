@@ -4,7 +4,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.string :name
       t.string :tel
       t.text :text
-      t.boolean :viewed, defualt: false
+      t.boolean :viewed, default: false
 
       t.timestamps null: false
     end

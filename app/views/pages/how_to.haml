@@ -82,10 +82,10 @@
           Или заполните форму обратного звонка и мы свяжемся с Вами в ближайшее время
 
         .form
-          = form_for '#' do |f|
+          = form_for Question.new do |f|
             = f.text_field :name, placeholder: 'Ваше имя'
-            = f.text_field :telephone, placeholder: 'Ваш телефон'
-            = f.text_area :question, placeholder: 'Ваш вопрос'
+            = f.text_field :tel, placeholder: 'Ваш телефон'
+            = f.text_area :text, placeholder: 'Ваш вопрос'
             = f.submit 'Отправить заявку', class: 'btn btn-green'
 
         = image_tag 'owly.png', class: 'owly-img'
