@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:new, :create]
   resources :favorites, only: [:index, :destroy]
+  resources :orders, only: [:new, :create]
   resources :questions
 
   namespace :subscriptions do
@@ -11,18 +12,9 @@ Rails.application.routes.draw do
     get :remove
   end
 
-  namespace :pages, path: '/' do
-    get :blog
-    get :our_products
-    get :about
-    get :how_to
-  end
-
-  #get 'cart' => 'carts#show'
   get 'categories/:slug' => 'categories#show', as: 'category'
   get 'products/:id' => 'products#show', as: 'product'
   get 'posts/:id' => 'posts#show', as: 'post'
-
 
   scope :cart do
     get '/' => 'carts#show', as: 'cart'
@@ -32,7 +24,13 @@ Rails.application.routes.draw do
     delete ':product_id/delete' => 'carts#delete', as: 'product_delete'
   end
 
-  resources :orders, only: [:new, :create]
+  namespace :pages, path: '/' do
+    get :blog
+    get :our_products
+    get :about
+    get :how_to
+    get :contacts
+  end
 
   namespace :api, defaults: { format: :json } do
     scope :cart do

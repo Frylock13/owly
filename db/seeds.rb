@@ -40,3 +40,6 @@ Page.create(slug: 'favorites', text: 'Если Вы еще не приняли �
 Page.create(slug: 'how_to', text: Faker::Lorem.sentences(5), 
             image: File.new("#{Rails.root}/app/assets/images/pages/how_to/bg.jpg"),
             heading: 'Как заказать наши изделия?')
+Page.create(slug: 'contacts', text: Faker::Lorem.sentences(5), 
+            image: File.new("#{Rails.root}/app/assets/images/pages/contacts/bg.jpg"),
+            heading: 'Как с нами связаться?')

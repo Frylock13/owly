@@ -1,0 +1,6 @@
+.form
+  = form_for Question.new do |f|
+    = f.text_field :name, placeholder: 'Ваше имя'
+    = f.text_field :tel, placeholder: 'Ваш телефон'
+    = f.text_area :text, placeholder: 'Ваш вопрос'
+    = f.submit 'Отправить заявку', class: 'btn btn-green'

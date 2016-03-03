@@ -71,9 +71,9 @@
       %p 
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-  .questions.cream-bg.row
+  .questions.dark-cream-bg.row
     .container
-      .question
+      .question-form
         %p.text-center
           По любым вопросам Вы можете позвонить нам по телефону:  
           %span +7 (812) 498-10-00
@@ -81,11 +81,6 @@
         %p.text-center
           Или заполните форму обратного звонка и мы свяжемся с Вами в ближайшее время
 
-        .form
-          = form_for Question.new do |f|
-            = f.text_field :name, placeholder: 'Ваше имя'
-            = f.text_field :tel, placeholder: 'Ваш телефон'
-            = f.text_area :text, placeholder: 'Ваш вопрос'
-            = f.submit 'Отправить заявку', class: 'btn btn-green'
+        = render 'shared/question'
 
         = image_tag 'owly.png', class: 'owly-img'

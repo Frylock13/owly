@@ -10,11 +10,6 @@ $home-whats-new-title-size: 2.4rem
 $home-whats-new-title-color: $red
 $home-whats-new-title-font-family: $roboto-slab
 
-$blog-heading-color: $red
-
-$about-how-we-work-h2-size: 1.8rem
-$about-how-we-work-h2-color: $red
-$about-how-we-work-h2-family: $roboto-slab
 $about-more-information-size: 1.8rem
 $about-advantages-title-size: 1.4rem
 $about-advantages-title-color: $turquoise
@@ -25,14 +20,8 @@ $about-whats-new-title-font-color: $red
 $about-whats-new-subscribe-p-weight: 300
 $about-whats-new-subscribe-p-size: 1.8rem
 
-$how-to-header-h1-color: $red
-$how-to-block-h2-color: $red
-$how-to-block-h2-size: 1.4rem
-$how-to-block-h2-weight: 300
-$how-to-block-h2-font: $roboto-slab
 $how-to-block-strong-font: $roboto
-$how-to-questions-font-family: $roboto-slab
-$how-to-questions-font-color: $red
+
 
 .home
   .kid
@@ -80,9 +69,6 @@ $how-to-questions-font-color: $red
   .header
     padding-bottom: 13px
 
-    h1
-      color: $blog-heading-color
-
     .text
       margin-bottom: 18px
 
@@ -103,9 +89,6 @@ $how-to-questions-font-color: $red
 
     .how-we-work
       .title
-        font-size: $about-how-we-work-h2-size
-        color: $about-how-we-work-h2-color
-        font-family: $about-how-we-work-h2-family
         margin-bottom: 28px
 
       .more-information
@@ -162,44 +145,42 @@ $how-to-questions-font-color: $red
   .how-to-get, .how-to-pay
     padding-bottom: 50px
 
-  .header h1
-    color: $how-to-header-h1-color
-
   .block
     margin-bottom: 55px
 
     p
       line-height: 2.2
-
-    h2, p
-      font-size: $how-to-block-h2-size
-      font-weight: $how-to-block-h2-weight
+      font-size: 1.8rem
+      font-weight: 400
 
     h2
-      color: $how-to-block-h2-color
       margin-bottom: 15px
-      font-family: $how-to-block-h2-font
 
     strong
       font-family: $how-to-block-strong-font
 
-  .questions
-    .question
-      max-width: 410px
-      display: block
-      margin: 0 auto
+.contacts
+  .contacts-list
+    padding-bottom: 50px
 
-    p
-      color: $how-to-questions-font-color
-      font-family: $how-to-questions-font-family
-      margin-bottom: 15px
+    .title
+      margin-bottom: 40px
 
-    .btn
-      max-width: 170px
-      font-size: 1.4rem
-      display: block
-      margin: 0 auto
+    .phone, .mail, .address
+      margin-bottom: 30px
+
+      .icon
+        float: left
+        height: 65px
+        margin-right: 17px
+
+    .data
       margin-bottom: 50px
 
-    textarea
-      height: 100px
+    .social-icons
+      .icon
+        display: inline-block
+        margin-right: 44px
+
+    .subscribe-text
+      margin-top: 20px
