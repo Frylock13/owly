@@ -25,7 +25,7 @@ gem 'russian'
 gem 'devise'
 gem 'activeadmin', github: 'activeadmin'
 gem 'active_skin'
-#gem 'active_admin_editor'
+gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
 
 gem 'redis-rails'
 gem 'redis-namespace'
