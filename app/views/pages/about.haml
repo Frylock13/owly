@@ -1,3 +1,8 @@
+- content_for :seo_title, @page.title
+- content_for :seo_keywords, @news.seo_keywords
+- content_for :seo_description, @news.seo_description
+
+
 .about.page.col-md-12
   .header.row{style: "background: url(#{@page.image.url}) no-repeat"}
     .container

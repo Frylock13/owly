@@ -5,17 +5,6 @@ class CartProductsService
     @product_id = product_id
   end
 
-  def products(hash=product_list)
-    products = Product.where(id: hash.keys)
-
-    products.each do |product|
-      count = hash[product.id.to_s]
-      product.define_singleton_method(:count) { count }
-    end
-
-    products
-  end
-
   def increment
     $redis.hincrby(@cart_id, @product_id, 1)
     reset_cart_count
@@ -52,10 +41,6 @@ class CartProductsService
   end
 
   private
-
-  def product_list
-    $redis.hgetall @cart_id
-  end
 
   def reset_cart_count
     CartCountService.new(@cart_id).reset

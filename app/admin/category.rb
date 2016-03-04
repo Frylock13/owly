@@ -2,6 +2,8 @@ ActiveAdmin.register Category do
 
   menu label: "Категории"
 
+  actions :index, :new, :create, :edit, :update, :destroy
+
   permit_params :name, :desc, :slug, :preview, :background
 
   index do
@@ -22,6 +24,9 @@ ActiveAdmin.register Category do
       f.input :slug, label: 'Ссылка'
       f.input :preview, label: 'Превью'
       f.input :background, label: 'Фон'
+      f.input :seo_title, label: 'SEO title'
+      f.input :seo_description, label: 'SEO description'
+      f.input :seo_keywords, label: 'SEO keywords'
     end
 
     actions

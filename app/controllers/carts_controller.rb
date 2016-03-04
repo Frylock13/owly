@@ -2,7 +2,7 @@ class CartsController < ApplicationController
 
   def show
     @page = Page.find_by(slug: params[:controller])
-    @products = CartProductsService.new(cart_id).products
+    @products = GetProductsList.call(products_hash)
   end
 
   def increment
@@ -29,6 +29,12 @@ class CartsController < ApplicationController
   def delete
     CartProductsService.new(cart_id, params[:product_id]).delete
     redirect_to :back
+  end
+
+  private
+
+  def products_hash
+    $redis.hgetall cart_id
   end
 
 end
