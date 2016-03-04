@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
 
-  before_action :set_page, only: [:blog, :our_products, :about, :how_to, :contacts]
+  before_action :set_page
 
   def home
     @categories = Category.all

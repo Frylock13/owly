@@ -13,7 +13,7 @@ if Product.count < DEFAULT_COUNT
     Product.create!(id: count, name: Faker::Lorem.word, desc: Faker::Lorem.sentence, price: rand(1..100), 
                     category: Category.all.sample, rating: rand(1.1..4.9), image: Faker::Avatar.image,
                     height: rand(0..100), width: rand(0..100), depth: rand(0..100),
-                    material: Faker::Lorem.sentences, related: "5, 6, 3, 2")
+                    material: Faker::Lorem.sentences, related: "5, 6, 3, 2", art: Rand(0..4000))
   end
 end
 
@@ -45,3 +45,4 @@ Page.create(slug: 'how_to', text: Faker::Lorem.sentences(5),
 Page.create(slug: 'contacts', text: Faker::Lorem.sentences(5), 
             image: File.new("#{Rails.root}/app/assets/images/pages/contacts/bg.jpg"),
             heading: 'Как с нами связаться?')
+Page.create(slug: 'home')

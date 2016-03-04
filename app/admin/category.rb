@@ -4,7 +4,7 @@ ActiveAdmin.register Category do
 
   actions :index, :new, :create, :edit, :update, :destroy
 
-  permit_params :name, :desc, :slug, :preview, :background
+  permit_params :name, :desc, :slug, :preview, :background, :seo_title, :seo_description, :seo_keywords
 
   index do
     selectable_column

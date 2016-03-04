@@ -4,7 +4,7 @@ ActiveAdmin.register Page do
 
   actions :index, :edit, :update, :destroy
 
-  permit_params :text, :heading, :slug, :image
+  permit_params :text, :heading, :slug, :image, :seo_title, :seo_description, :seo_keywords
 
   index do
     selectable_column

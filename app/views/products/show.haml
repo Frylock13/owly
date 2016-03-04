@@ -1,3 +1,5 @@
+= render partial: 'shared/seo', locals: { page: @product }
+
 .product-item.page.cream-bg
   .item
     .product-card
@@ -24,18 +26,27 @@
                   %strong 
                     Высота:
                     %span= @product.height
+                    мм.
                   %br/
 
                 - if @product.width
                   %strong 
                     Ширина:
                     %span= @product.width
+                    мм.
                   %br/
 
                 - if @product.depth
                   %strong 
                     Глубина:
                     %span= @product.depth
+                    мм.
+
+                - if @product.length
+                  %strong 
+                    Глубина:
+                    %span= @product.length
+                    мм.
 
             - if @product.material
               .material

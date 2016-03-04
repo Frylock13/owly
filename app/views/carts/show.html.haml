@@ -1,3 +1,5 @@
+= render partial: 'shared/seo', locals: { page: @page }
+
 .cart.page.col-md-12.cream-bg{{'ng-controller'=>'CartCtrl as cart'}}
   .header.row{style: "background: url(#{@page.image.url})"}
     .container
