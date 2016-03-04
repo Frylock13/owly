@@ -24,6 +24,8 @@ if Post.count < DEFAULT_COUNT
   end
 end
 
+AdminUser.create(email: 'admin@gmail.com', password: 'password') if AdminUser.count == 0
+
 Page.destroy_all
 Page.create(slug: 'blog', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/pages/blog/bg.jpg"),
             heading: 'Добро пожаловать в блог Оули!')
