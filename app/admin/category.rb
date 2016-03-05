@@ -4,7 +4,7 @@ ActiveAdmin.register Category do
 
   actions :index, :new, :create, :edit, :update, :destroy
 
-  permit_params :name, :desc, :slug, :preview, :background, :seo_title, :seo_description, :seo_keywords
+  permit_params :name, :desc, :slug, :preview, :background, :seo_title, :seo_description, :seo_keywords, :parent_id
 
   index do
     selectable_column
@@ -14,11 +14,13 @@ ActiveAdmin.register Category do
     column "Превью" do |category|
       image_tag category.preview.url(:small)
     end
+    column "Род. категория", :parent
     actions 
   end
 
   form do |f|
     f.inputs do
+      f.input :parent, label: 'Род. категория'
       f.input :name, label: 'Название'
       f.input :desc, as: :html_editor, label: 'Описание'
       f.input :slug, label: 'Ссылка'

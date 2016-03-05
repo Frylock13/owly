@@ -1,17 +1,28 @@
 ActiveAdmin.register Question do
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
+  menu label: "Вопросы"
 
+  actions :index, :edit, :update, :destroy
+
+  permit_params :closed
+
+  index do
+    selectable_column
+
+    column "Имя", :name
+    column "Телефон", :tel
+    column "Вопрос", :text
+    column "Закрыт", :closed
+
+    actions 
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :closed, label: 'Закрыто'
+    end
+
+    actions
+  end
 
 end

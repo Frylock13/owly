@@ -5,4 +5,6 @@ class Category < ActiveRecord::Base
   validates_attachment_content_type :background, content_type: /\Aimage\/.*\Z/
 
   has_many :products, dependent: :destroy
+
+  acts_as_tree :order => 'name'
 end
