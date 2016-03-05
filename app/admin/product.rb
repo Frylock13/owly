@@ -15,6 +15,7 @@ ActiveAdmin.register Product do
     column "Название", :name
     column "Описание", :desc
     column "Категория", :category
+    column "Рейтинг", :rating
 
     actions 
   end

@@ -23,7 +23,7 @@ ActiveAdmin.register Review do
       f.input :email, label: 'Email'
       f.input :text, label: 'Отзыв'
       f.input :rating, label: 'Рейтинг'
-      f.input :product_id, label: 'Товар'
+      f.input :product, label: 'Товар'
     end
 
     actions
