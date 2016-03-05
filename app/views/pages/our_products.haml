@@ -10,7 +10,7 @@
     .container
       .categories-list.row
         %h1.text-center Наши изделия
-        = render @categories
+        = render partial: 'categories/list', locals: { categories: @categories }
 
       .products-list.row
         %h1.our-customers-choice.text-center Выбор наших покупателей

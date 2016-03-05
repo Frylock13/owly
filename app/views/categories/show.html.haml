@@ -29,5 +29,11 @@
         = image_tag 'owly.png', class: 'owly-img'
 
   - else
-    .white-bg.row
-      %h2.text-center В этой категории пока нет товаров
+    .container
+      .row.white-bg
+        - if @category.children.present?
+          %h1.text-center= @category.name
+          = render partial: 'categories/list', locals: { categories: @category.children }
+
+        - else
+          %h2.text-center В этой категории пока нет товаров
