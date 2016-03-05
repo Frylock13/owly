@@ -14,6 +14,8 @@ class CreateOrders < ActiveRecord::Migration
       t.string :company_name
       t.string :inn
       t.string :products
+      t.integer :status, default: 0
+      t.text :admin_comment
 
       t.timestamps null: false
     end

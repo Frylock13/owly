@@ -9,6 +9,8 @@ class CreateProducts < ActiveRecord::Migration
       t.integer :width
       t.integer :depth
       t.text :material
+      t.string :art
+      t.integer :length
       t.references :category, index: true, foreign_key: true
 
       t.timestamps null: false
