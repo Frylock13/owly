@@ -1,17 +1,32 @@
 ActiveAdmin.register Review do
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
+  menu label: "Отзывы"
 
+  actions :index, :new, :create, :edit, :update, :destroy
+
+  permit_params :name, :email, :text, :rating, :product_id
+
+  index do
+    selectable_column
+    column "Имя", :name
+    column "Email", :email
+    column "Отзыв", :text
+    column "Рейтинг", :rating
+    column "Товар", :product
+
+    actions 
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :name, label: 'Имя'
+      f.input :email, label: 'Email'
+      f.input :text, label: 'Отзыв'
+      f.input :rating, label: 'Рейтинг'
+      f.input :product_id, label: 'Товар'
+    end
+
+    actions
+  end
 
 end

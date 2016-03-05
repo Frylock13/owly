@@ -34,9 +34,9 @@ ActiveAdmin.register Product do
       f.input :length, label: 'Длина(мм)'
       f.input :material, label: 'Материал'
       f.input :related, label: 'Похожие товары', placeholder: 'айди товаров через запятую'
-      f.input :seo_title, label: 'SEO title'
-      f.input :seo_description, label: 'SEO description'
-      f.input :seo_keywords, label: 'SEO keywords'
+      f.input :seo_title
+      f.input :seo_description
+      f.input :seo_keywords
     end
 
     actions

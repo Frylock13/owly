@@ -1,17 +1,37 @@
 ActiveAdmin.register Post do
 
-# See permitted parameters documentation:
-# https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
-#
-# permit_params :list, :of, :attributes, :on, :model
-#
-# or
-#
-# permit_params do
-#   permitted = [:permitted, :attributes]
-#   permitted << :other if resource.something?
-#   permitted
-# end
+  menu label: "Блог"
 
+  actions :index, :new, :create, :edit, :update, :destroy
+
+  permit_params :title, :text, :image, :tags, :seo_title, :seo_description, :seo_keywords
+
+  index do
+    selectable_column
+    id_column
+
+    column "Заголовок", :title
+    column "Текст", :text
+    column "Теги", :tags
+    column :seo_title
+    column :seo_description
+    column :seo_keywords
+
+    actions 
+  end
+
+  form do |f|
+    f.inputs do
+      f.input :title, label: 'Заголовок'
+      f.input :text, label: 'Текст'
+      f.input :tags, label: 'Описание'
+      f.input :image, label: 'Изображение'
+      f.input :seo_title
+      f.input :seo_description
+      f.input :seo_keywords
+    end
+
+    actions
+  end
 
 end

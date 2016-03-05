@@ -1,8 +1,8 @@
 = render partial: 'shared/seo', locals: { page: @product }
 
-.product-item.page.cream-bg
+.product-item.page
   .item
-    .product-card
+    .product-card.cream-bg
       .container
         .col-md-12
           %h1.name= @product.name
@@ -71,7 +71,7 @@
                 = link_to "javascript:void(0);", method: :put, data: { "ng-click"=>"app.switchFavorite('#{get_favorites_id}', #{@product.id})" } do
                   = @product.decorate.favorite_status(get_favorites_id)
 
-    .reviews
+    .reviews.white-bg
       .container
         .col-md-6
           %h1.text-center Кто уже приобрел:
@@ -93,7 +93,10 @@
             .img
               = image_tag 'mini-owly.png'
             .title.text-center Оставьте свой отзыв!
-            %p.text-center Тут Вы можете написать отзыв о нашем изделии и оценить его!
+            %p.text-center 
+              Тут Вы можете написать отзыв о нашем изделии
+              %br/
+              и оценить его!
             = link_to 'Оставить отзыв', 'javascript:void();', class: 'btn btn-green', data: { 'ng-click'=>'app.getReviewForm()' }
 
           .review-form{{'ng-if'=>'app.reviewTab === 2'}}
@@ -102,16 +105,41 @@
             .form.col-md-10.col-md-offset-2
               = form_for Review.new do |f|
                 = f.text_field :name, placeholder: 'Ваше имя'
-                = f.text_field :email, placeholder: 'Ваш e-mail'
+                = f.text_field :email, placeholder: 'Ваш e-mail', type: 'email'
                 = f.text_area :text, placeholder: 'Ваш отзыв'
+                %p.rate-product Оцените изделие:
+                %fieldset
+                  %span.star-cb-group
+                    %input#rating-5{:name => "rating", :type => "radio", :value => "5"}/
+                    %label{:for => "rating-5"} 5
+                    %input#rating-4{:checked => "checked", :name => "rating", :type => "radio", :value => "4"}/
+                    %label{:for => "rating-4"} 4
+                    %input#rating-3{:name => "rating", :type => "radio", :value => "3"}/
+                    %label{:for => "rating-3"} 3
+                    %input#rating-2{:name => "rating", :type => "radio", :value => "2"}/
+                    %label{:for => "rating-2"} 2
+                    %input#rating-1{:name => "rating", :type => "radio", :value => "1"}/
+                    %label{:for => "rating-1"} 1
+                    %input#rating-0.star-cb-clear{:name => "rating", :type => "radio", :value => "0"}/
+                    %label{:for => "rating-0"} 0
+
                 = f.hidden_field :product_id, value: params[:id]
                 = f.submit 'Отправить отзыв', class: 'btn btn-green'
 
-    .related-products
+    .related-products.cream-bg.no-bottom-padding
       .container
         %h1.text-center
-          С этим изделием часто приобретают::
+          С этим изделием часто приобретают:
 
         = render 'products/viewed', products: @related_products
 
       = image_tag 'owly.png', class: 'owly-img'
+
+:javascript
+  var logID = 'log',
+    log = $('<div id="'+logID+'"></div>');
+  $('body').append(log);
+    $('[type*="radio"]').change(function () {
+      var me = $(this);
+      log.html(me.attr('value'));
+    });
