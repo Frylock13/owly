@@ -11,7 +11,7 @@ end
 if Product.count < DEFAULT_COUNT
   DEFAULT_COUNT.times do |count|
     Product.create!(id: count, name: Faker::Lorem.word, desc: Faker::Lorem.sentence, price: rand(1..100), 
-                    category: Category.all.sample, rating: rand(1.1..4.9), image: Faker::Avatar.image,
+                    category: Category.all.sample, image: Faker::Avatar.image,
                     height: rand(0..100), width: rand(0..100), depth: rand(0..100),
                     material: Faker::Lorem.sentences, related: "5, 6, 3, 2", art: Rand(0..4000))
   end

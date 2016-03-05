@@ -6,7 +6,7 @@
       .container
         .col-md-12
           %h1.name= @product.name
-          = image_tag "ratings/#{@product.rating.to_i}.png", class: 'rating'
+          = image_tag "ratings/#{@product.rating.round}.png", class: 'rating'
 
         .col-md-4
           .left

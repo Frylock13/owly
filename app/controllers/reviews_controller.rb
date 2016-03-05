@@ -6,14 +6,9 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
-
-    if @review.save
-      redirect_to :back
-      flash[:success] = 'Отзыв успешно оставлен'
-    else
-      redirect_to :back
-      flash[:success] = 'Произошла ошибка при добавлении отзыва'
-    end
+    CreateReview.new(@review, params[:rating]).call
+    redirect_to :back
+    flash[:success] = 'Отзыв успешно оставлен'
   end
 
   private
