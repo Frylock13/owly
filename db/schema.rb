@@ -169,12 +169,6 @@ ActiveRecord::Schema.define(version: 20160305225242) do
 
   add_index "reviews", ["product_id"], name: "index_reviews_on_product_id", using: :btree
 
-  create_table "subscribes", force: :cascade do |t|
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "subscriptions", force: :cascade do |t|
     t.string   "email"
     t.text     "key"
