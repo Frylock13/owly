@@ -17,4 +17,5 @@
 //= require jquery_ujs
 //= require_tree .
 //= require owl.carousel
-//= require smoothproducts.min
+//= require vendor/smoothproducts.min
+//= require vendor/jquery.slidizle

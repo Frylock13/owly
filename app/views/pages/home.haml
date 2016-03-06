@@ -2,6 +2,19 @@
 
 .home.page.col-md-12
   .kid.row
+    %section.sample{"data-slidizle" => ""}
+      %ul.slider-content{"data-slidizle-content" => ""}
+        - @images.each do |image|
+          %li.slider-item{style: "background-image: url(assets/slider/#{image.split('/').last})"}
+      %header
+        %h2 Custom Navigation
+        %h3 I have a custom navigation with image thumbs
+      .slider-next{"data-slidizle-next" => ""}
+      .slider-previous{"data-slidizle-previous" => ""}
+      %ul.slider-navigation{"data-slidizle-navigation" => ""}
+        - @images.each do |image|
+          %li.slider-navigation-item{style: "background-image: url(assets/slider/#{image.split('/').last})"}
+      .slidizle-loading
 
   .about.row
     .container
@@ -55,3 +68,18 @@
                 Узнайте самым первым о наших новых изделиях, скидках, мастерклассах и жизни Оули!
 
             = render 'shared/subscribe'
+
+:javascript
+  jQuery(function($) {
+
+    // setup slidizle
+    $('[data-slidizle]').slidizle({
+      beforeChange : function(api) {
+        console.log('previous', api.getPreviousSlide().index());
+        console.log('current', api.getCurrentSlide().index());
+        console.log('next', api.getNextSlide().index());
+        console.log('previous active', api.getPreviousActiveSlide().index());
+      }
+    });
+
+  });

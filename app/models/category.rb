@@ -12,4 +12,5 @@ class Category < ActiveRecord::Base
 
   acts_as_tree :order => 'name'
   
+  scope :only_parents, -> { where(parent_id: nil) }
 end

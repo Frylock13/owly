@@ -3,9 +3,10 @@ class PagesController < ApplicationController
   before_action :set_page
 
   def home
-    @categories = Category.all
+    @categories = Category.only_parents
     @posts = Post.order('id DESC').limit(3).decorate
     @popular_products = Product.most_popular
+    @images = Dir.glob("app/assets/images/slider/*.jpg")
   end
 
   def blog
