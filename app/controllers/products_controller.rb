@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id]).decorate
+    @additional_images = @product.images
     @reviews = @product.reviews.decorate
     @related_products = Product.where(id: related_product_ids)
 

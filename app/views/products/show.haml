@@ -8,11 +8,16 @@
           %h1.name= @product.name
           = image_tag "ratings/#{@product.rating.round}.png", class: 'rating'
 
-        .col-md-4
-          .left
-            = image_tag @product.image.url(:large)
+        .col-md-5
+          .left.sp-wrap
+            %a{:href => "#{@product.image.url(:full)}"}
+              %img{:alt => "", :src => "#{@product.image.url(:large)}"}/
 
-        .col-md-6.col-md-offset-1
+            - @additional_images.each do |image|
+              = link_to image_tag(image.picture.url(:large)), image.picture.url
+
+
+        .col-md-6
           .right
             %p.desc= @product.desc
             
@@ -143,3 +148,8 @@
       var me = $(this);
       log.html(me.attr('value'));
     });
+
+:javascript
+  $(window).load( function() {
+      $('.sp-wrap').smoothproducts();
+  });
