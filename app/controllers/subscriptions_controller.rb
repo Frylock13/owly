@@ -12,7 +12,7 @@ class SubscriptionsController < ApplicationController
 
   def remove
     # subscriptions/remove?key=1asldkjlas
-    if params[:key] && RemoveSubscription.call(params[:key])
+    if params[:key] && RemoveSubscription.new(params[:key]).call
       redirect_to root_path
       flash[:success] = 'Вы успешно отписались от рассылки.'
     else
