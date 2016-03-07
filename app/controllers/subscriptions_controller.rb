@@ -1,7 +1,7 @@
 class SubscriptionsController < ApplicationController
 
   def create
-    if CreateSubscription.call(params[:email])
+    if CreateSubscription.new(params[:email]).call
       redirect_to :back
       flash[:success] = 'Вы подписались на новости.'
     else

@@ -29,6 +29,7 @@ gem 'active_admin_editor', github: 'ejholmes/active_admin_editor'
 gem 'acts_as_tree'
 gem 'redis-rails'
 gem 'redis-namespace'
+gem 'gibbon'
 
 group :development, :test do
   gem 'bullet'

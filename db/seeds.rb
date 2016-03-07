@@ -45,4 +45,7 @@ Page.create(slug: 'how_to', text: Faker::Lorem.sentences(5),
 Page.create(slug: 'contacts', text: Faker::Lorem.sentences(5), 
             image: File.new("#{Rails.root}/app/assets/images/pages/contacts/bg.jpg"),
             heading: 'Как с нами связаться?')
-Page.create(slug: 'home')
+Page.create(slug: 'home', heading: 'Главная')
+
+Setting.create(key: 'mailchimp_key', value: 'api_key')
+Setting.create(key: 'mailchimp_list_id', value: 'list_id')
