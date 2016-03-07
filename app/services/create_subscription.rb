@@ -2,6 +2,8 @@ class CreateSubscription
 
   def initialize(email)
     @subscription = Subscription.new(email: email)
+    @mailchimp = MailchimpService.object
+    @mailchimp_list_id = MailchimpService.list_id
   end
 
   def call
@@ -16,14 +18,6 @@ class CreateSubscription
   private
 
   def add_to_mailchimp(email)
-    mailchimp.lists(mailchimp_list_id).members.create(body: { email_address: email, status: "subscribed" })
-  end
-
-  def mailchimp
-    Gibbon::Request.new(api_key: Setting.mailchimp_key)
-  end
-
-  def mailchimp_list_id
-    Setting.mailchimp_list_id
+    @mailchimp.lists(@mailchimp_list_id).members.create(body: { email_address: email, status: "subscribed" })
   end
 end

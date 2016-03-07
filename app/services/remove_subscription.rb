@@ -2,6 +2,8 @@ class RemoveSubscription
 
   def initialize(key)
     @subscription = Subscription.find_by(key: key)
+    @mailchimp = MailchimpService.object
+    @mailchimp_list_id = MailchimpService.list_id
   end
 
   def call
@@ -16,15 +18,7 @@ class RemoveSubscription
   private
 
   def remove_from_mailchimp(email)
-    mailchimp.lists(mailchimp_list_id).members(get_md5_email).update(body: { status: "unsubscribed" })
-  end
-
-  def mailchimp
-    Gibbon::Request.new(api_key: Setting.mailchimp_key)
-  end
-
-  def mailchimp_list_id
-    Setting.mailchimp_list_id
+    @mailchimp.lists(@mailchimp_list_id).members(get_md5_email).update(body: { status: "unsubscribed" })
   end
 
   def get_md5_email
