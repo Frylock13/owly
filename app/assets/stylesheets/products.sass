@@ -21,6 +21,11 @@ $product-item-add-review-p-size: 1.8rem
 $product-item-add-review-title-family: $roboto-slab
 $product-item-add-review-title-color: $red
 
+$product-add-to-cart-font-size: 1.4rem
+$product-add-to-cart-font-color: $red
+$product-add-to-cart-font-weight: 300
+$product-add-to-cart-button-hover-color: $pink
+
 .products
   .product
     display: inline-block
@@ -58,13 +63,26 @@ $product-item-add-review-title-color: $red
           margin-top: 9px
 
       .add-to-cart
-        font-size: $home-add-to-cart-font-size
-        font-weight: $home-add-to-cart-font-weight
+        font-size: $product-add-to-cart-font-size
+        font-weight: $product-add-to-cart-font-weight
         padding-top: 10px
         padding-bottom: 12px
+        max-width: 228px
+        margin-left: 80px
+        height: 40px
+
+        &:hover
+          background-color: #ff7070
+          cursor: pointer
+          color: $white
+          color: $product-add-to-cart-button-hover-color
+
+          a
+            color: $white
+            text-decoration: none
         
         a
-          color: $home-add-to-cart-font-color
+          color: $product-add-to-cart-font-color
           margin-left: 8px
 
 .product-item

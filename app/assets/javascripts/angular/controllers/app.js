@@ -28,7 +28,8 @@ function AppCtrl(cartService, favoriteService) {
 
   vm.addToCart = function(cartId, productId) {
     cartService.addToCart(cartId, productId);
-    vm.getCartCount();
+    //vm.getCartCount();
+    vm.cartCount += 1;
   }
 
 

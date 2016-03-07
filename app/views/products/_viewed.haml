@@ -21,8 +21,8 @@
             = link_to "javascript:void(0);", method: :put, data: { "ng-click"=>"app.switchFavorite('#{get_favorites_id}', #{product.id})" } do
               = product.decorate.favorite_status(get_favorites_id)
 
-          .add-to-cart.text-center.uppercase
-            = link_to 'Добавить в корзину', "javascript:void(0);", method: :put, data: { "ng-click"=>"app.addToCart('#{get_cart_id}', #{product.id})" }, id: 'add-to-cart-link'
+          .add-to-cart.text-center.uppercase{{ "ng-click"=>"app.addToCart('#{get_cart_id}', #{product.id})" }}
+            = link_to 'Добавить в корзину', "javascript:void(0);", method: :put, id: 'add-to-cart-link'
 
 :javascript
   $(document).ready(function() {
