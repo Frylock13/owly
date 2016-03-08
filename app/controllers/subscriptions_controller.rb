@@ -1,18 +1,20 @@
 class SubscriptionsController < ApplicationController
 
   def create
-    if CreateSubscription.new(params[:email]).call
+    begin
+      SubscriptionCreateService.new(email: params[:email]).call
       redirect_to :back
-      flash[:success] = 'Вы подписались на новости.'
-    else
+      flash[:success] = 'Вы успешно подписались на новости.'
+    rescue Gibbon::MailChimpError
+      SubscriptionRestoreService.new(email: params[:email]).call
       redirect_to :back
-      flash[:danger] = 'Произошла ошибка. Возможно, вы уже подписаны.'
+      flash[:success] = 'И снова добро пожаловать! Вы подписаны на новости.'
     end
   end
 
   def remove
     # subscriptions/remove?key=1asldkjlas
-    if params[:key] && RemoveSubscription.new(params[:key]).call
+    if params[:key] && SubscriptionRemoveService.new(key: params[:key]).call
       redirect_to root_path
       flash[:success] = 'Вы успешно отписались от рассылки.'
     else

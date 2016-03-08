@@ -1,15 +1,14 @@
-class CreateSubscription
+class SubscriptionCreateService < SubscriptionService
 
-  def initialize(email)
-    @subscription = Subscription.new(email: email)
-    @mailchimp = MailchimpService.object
-    @mailchimp_list_id = MailchimpService.list_id
+  def initialize(options)
+    @subscription = Subscription.new(email: options[:email]) if options[:email]
+    super
   end
 
   def call
     if add_to_mailchimp(@subscription.email)
       @subscription.key = SecureRandom.hex # key for unsubscribe
-      @subscription.save!
+      @subscription.save
     else
       false
     end
