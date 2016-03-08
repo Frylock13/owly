@@ -4,7 +4,7 @@ ActiveAdmin.register Product do
 
   actions :index, :new, :create, :edit, :update, :destroy
 
-  permit_params :name, :desc, :price, :rating, :category_id, :image, :height, :width, :depth, 
+  permit_params :name, :desc, :price, :rating, :category_id, :image, :height, :width, :depth, :length, 
                 :material, :related, :seo_title, :seo_description, :seo_keywords, images_attributes: [:picture, :id, :_destroy]
 
   index do

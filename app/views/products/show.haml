@@ -28,30 +28,32 @@
 
               .stats
                 - if @product.height
-                  %strong 
-                    Высота:
-                    %span= @product.height
-                    мм.
-                  %br/
+                  .stat
+                    .key
+                      %strong Высота:
+                      
+                    .value= "#{@product.height} мм."
 
                 - if @product.width
-                  %strong 
-                    Ширина:
-                    %span= @product.width
-                    мм.
-                  %br/
+                  .stat
+                    .key
+                      %strong Ширина:
+
+                    .value= "#{@product.width} мм."
 
                 - if @product.depth
-                  %strong 
-                    Глубина:
-                    %span= @product.depth
-                    мм.
+                  .stat
+                    .key
+                      %strong Глубина:
+
+                    .value= "#{@product.depth} мм."
 
                 - if @product.length
-                  %strong 
-                    Глубина:
-                    %span= @product.length
-                    мм.
+                  .stat
+                    .key
+                      %strong Длина:
+                    
+                    .value= "#{@product.length} мм."
 
             - if @product.material
               .material

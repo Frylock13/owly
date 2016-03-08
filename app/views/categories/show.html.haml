@@ -6,7 +6,7 @@
       %h1= @category.name
       %p= @category.desc
 
-  - if @product.present?
+  - if @products.present?
     .products.cream-bg.row
       .container
         .sort-options.col-md-12
@@ -19,8 +19,7 @@
         = render partial: @products, locals: { col: 3 }
 
     - unless get_viewed_list.count == 0
-      = get_viewed_list
-      .recent-showed.cream-bg.row
+      .recent-showed.cream-bg.row.no-bottom-padding
         .container
           %h1.text-center Вы недавно смотрели:
           

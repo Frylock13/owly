@@ -11,7 +11,6 @@ class Product < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   validates :name, :desc, :price, :rating, :category_id, presence: true
-  validates :rating, inclusion: { in: 1..5 }
 
   scope :cheapest, -> { order(:price) }
   scope :most_expensive, -> { order('price DESC') }
