@@ -16,5 +16,4 @@ module CartsHelper
 
     total_amount
   end
-
 end
