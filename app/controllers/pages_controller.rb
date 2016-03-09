@@ -27,6 +27,9 @@ class PagesController < ApplicationController
   def contacts
   end
 
+  def search
+  end
+
   private
 
   def set_page

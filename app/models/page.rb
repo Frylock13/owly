@@ -4,5 +4,5 @@ class Page < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
   
   validates :heading, :slug, presence: true
-
+  validates :slug, uniqueness: true
 end

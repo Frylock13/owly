@@ -1,0 +1,24 @@
+= render partial: 'shared/seo', locals: { page: @page }
+
+.how-to.page.col-md-12
+  .header.row{style: "background: url(#{@page.image.url}) no-repeat"}
+    .container
+      %h1.text-center Поиск
+      .row
+        .col-md-4
+          .results
+            %h2 Товары
+            - @products.each do |product|
+              = link_to product.name, product_path(product.id)
+
+        .col-md-4
+          .results
+            %h2 Категории
+            - @categories.each do |category|
+              = link_to category.name, category_path(category.slug) 
+
+        .col-md-4
+          .results
+            %h2 Статьи
+            - @posts.each do |post|
+              = link_to post.title, post_path(post.id)

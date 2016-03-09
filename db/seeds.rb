@@ -1,12 +1,9 @@
 DEFAULT_COUNT = 10
 
-if Category.count < 4
-  DEFAULT_COUNT.times do |count|
-    Category.create!(name: Faker::Lorem.word, preview: Faker::Avatar.image, 
-                     background: 'https://marciepettitta2.files.wordpress.com/2011/11/backgroun-effect.jpg', 
-                     slug: "cat_#{count}", desc: Faker::Lorem.sentences(5))
-  end
-end
+Category.create!(name: Faker::Lorem.word, preview: Faker::Avatar.image, 
+                 background: 'https://marciepettitta2.files.wordpress.com/2011/11/backgroun-effect.jpg', 
+                 name: "cat_#{count}", desc: Faker::Lorem.sentences(5))
+
 
 if Product.count < DEFAULT_COUNT
   DEFAULT_COUNT.times do |count|
@@ -26,7 +23,6 @@ end
 
 AdminUser.create(email: 'admin@gmail.com', password: 'password') if AdminUser.count == 0
 
-Page.destroy_all
 Page.create(slug: 'blog', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/pages/blog/bg.jpg"),
             heading: 'Добро пожаловать в блог Оули!')
 Page.create(slug: 'our_products', text: Faker::Lorem.sentences(5), image: File.new("#{Rails.root}/app/assets/images/pages/our_products/bg.jpg"),
@@ -46,6 +42,7 @@ Page.create(slug: 'contacts', text: Faker::Lorem.sentences(5),
             image: File.new("#{Rails.root}/app/assets/images/pages/contacts/bg.jpg"),
             heading: 'Как с нами связаться?')
 Page.create(slug: 'home', heading: 'Главная')
+Page.create(slug: 'search', heading: 'Поиск')
 
 Setting.create(key: 'mailchimp_key', value: 'api_key')
 Setting.create(key: 'mailchimp_list_id', value: 'list_id')

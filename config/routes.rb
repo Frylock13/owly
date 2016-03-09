@@ -7,15 +7,14 @@ Rails.application.routes.draw do
   resources :favorites, only: [:index, :destroy]
   resources :orders, only: [:new, :create]
   resources :questions
+  resources :products, only: :show
+  resources :posts, only: :show
+  resources :categories, only: :show
 
   namespace :subscriptions do
     post :create
     get :remove
   end
-
-  get 'categories/:slug' => 'categories#show', as: 'category'
-  get 'products/:id' => 'products#show', as: 'product'
-  get 'posts/:id' => 'posts#show', as: 'post'
 
   scope :cart do
     get '/' => 'carts#show', as: 'cart'
@@ -31,6 +30,7 @@ Rails.application.routes.draw do
     get :about
     get :how_to
     get :contacts
+    get :search
   end
 
   namespace :api, defaults: { format: :json } do

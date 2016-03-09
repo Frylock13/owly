@@ -16,5 +16,4 @@ class Product < ActiveRecord::Base
   scope :most_expensive, -> { order('price DESC') }
   scope :newest, -> { order(:id) }
   scope :most_popular, -> { order('rating DESC') }
-
 end
