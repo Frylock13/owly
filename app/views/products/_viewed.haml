@@ -22,15 +22,25 @@
               = product.decorate.favorite_status(get_favorites_id)
 
           .add-to-cart.text-center.uppercase{{ "ng-click"=>"app.addToCart('#{get_cart_id}', #{product.id})" }}
-            = link_to 'Добавить в корзину', "javascript:void(0);", method: :put, id: 'add-to-cart-link'
+            = link_to 'Добавить в корзину', "javascript:void(0);"
 
 :javascript
   $(document).ready(function() {
    
     $(".owl-carousel").owlCarousel({
       items : 3,
-      lazyLoad : true,
       navigation : true
     }); 
    
+  });
+
+:javascript
+  $(document).ready(function() {
+    $(".add-to-cart").click(function() {
+      $(this).find('a').text('Добавлено');
+
+      window.setInterval(function() {
+        $(this).find('a').text('Добавить в корзину');
+      }, 2000);    
+    })
   });
