@@ -28,6 +28,11 @@ class PagesController < ApplicationController
   end
 
   def search
+    if params[:query]
+      @products   =   SearchService.call(model: 'Product', field: 'name', query: params[:query])
+      @categories =   SearchService.call(model: 'Category', field: 'name', query: params[:query])
+      @posts      =   SearchService.call(model: 'Post', field: 'title', query: params[:query])
+    end
   end
 
   private

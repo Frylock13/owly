@@ -1,24 +1,46 @@
 = render partial: 'shared/seo', locals: { page: @page }
 
-.how-to.page.col-md-12
+.search.page.col-md-12
   .header.row{style: "background: url(#{@page.image.url}) no-repeat"}
     .container
-      %h1.text-center Поиск
-      .row
-        .col-md-4
-          .results
-            %h2 Товары
-            - @products.each do |product|
-              = link_to product.name, product_path(product.id)
 
-        .col-md-4
-          .results
-            %h2 Категории
-            - @categories.each do |category|
-              = link_to category.name, category_path(category.slug) 
+      - if @products || @categories || @posts
+        .row
+          .col-md-4
+            .results
+              %h2.block-title Товары
 
-        .col-md-4
-          .results
-            %h2 Статьи
-            - @posts.each do |post|
-              = link_to post.title, post_path(post.id)
+              - if @products.present?
+                - @products.each do |product|
+                  .product
+                    = link_to product.name, product_path(product.id)
+
+              - else
+                %p Ничего не найдено
+
+          .col-md-4
+            .results
+              %h2.block-title Категории
+
+              - if @categories.present?
+                - @categories.each do |category|
+                  .category
+                    = link_to category.name, category_path(category.slug)
+
+              - else
+                %p Ничего не найдено
+
+          .col-md-4
+            .results
+              %h2.block-title Статьи
+
+              - if @posts.present?
+                - @posts.each do |post| 
+                  .post
+                    = link_to post.title, post_path(post.id)
+
+              - else
+                %p Ничего не найдено
+
+      - else
+        %p.text-center Ничего не найдено или введен пустой запрос

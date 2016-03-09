@@ -16,5 +16,5 @@ class Category < ActiveRecord::Base
   
   scope :only_parents, -> { where(parent_id: nil) }
 
-  acts_as_tree :order => 'name'
+  acts_as_tree order: 'name'
 end

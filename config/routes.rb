@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     get :how_to
     get :contacts
     get :search
+    post :search
   end
 
   namespace :api, defaults: { format: :json } do
