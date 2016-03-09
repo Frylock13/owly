@@ -10,11 +10,16 @@
     .products.cream-bg.row
       .container
         .sort-options.col-md-12
-          %span.uppercase Сортировать по:
-          = link_to 'Цене', category_path(@category.slug, sort: 'cheapest'), class: 'uppercase'
-          = link_to 'Цене', category_path(@category.slug, sort: 'most_expensive'), class: 'uppercase'
-          = link_to 'Новизне', category_path(@category.slug, sort: 'newest'), class: 'uppercase'
-          = link_to 'Популярности', category_path(@category.slug, sort: 'most_popular'), class: 'uppercase'
+          %span.uppercase 
+            Сортировать по:
+
+          %span.uppercase.option
+            Цене
+            = link_to image_tag('sort-up.png'), category_path(@category.slug, sort: 'most_expensive')
+            = link_to image_tag('sort-down.png'), category_path(@category.slug, sort: 'cheapest')
+            
+          = link_to 'Новизне', category_path(@category.slug, sort: 'newest'), class: 'uppercase option'
+          = link_to 'Популярности', category_path(@category.slug, sort: 'most_popular'), class: 'uppercase option'
 
         = render partial: @products, locals: { col: 3 }
 
