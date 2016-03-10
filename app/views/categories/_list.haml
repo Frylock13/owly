@@ -1,8 +1,30 @@
-.categories
+%ul.gallery-items.categories
   - categories.each do |category|
     - cache category do
-      .category.col-md-3.col-xs-6
-        = image_tag category.preview.url(:medium)
+      %li.gallery-item.category
+        .gallery-contents
+          .thumbnail.gallery-trigger
+            = image_tag category.preview.url(:medium)
 
-        .title.text-center.uppercase
-          = link_to category.name, category_path(category.slug)
+          .title= link_to category.name, category_path(category.slug)
+
+        .gallery-expander
+          .gallery-expander-contents
+            .gallery-trigger-close.close x
+
+            .col
+              .image
+                = image_tag category.preview
+
+            .col
+              .title 
+                Gallery Item
+              .contents
+                = category.desc
+
+:javascript
+  (function(global, $){
+      $('.gallery-items').imagelistexpander({
+          prefix: "gallery-"
+      });
+  })(this, jQuery)

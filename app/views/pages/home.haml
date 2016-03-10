@@ -35,7 +35,7 @@
       %h1.text-center
         Наши изделия
 
-      = render @categories
+      = render 'categories/list', categories: @categories
 
   .choices-from-our-customers.white-bg.row
     .container

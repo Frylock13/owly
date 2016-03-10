@@ -19,3 +19,4 @@
 //= require owl.carousel
 //= require vendor/smoothproducts.min
 //= require vendor/jquery.slidizle
+//= require vendor/jquery.imagelistexpander.min
