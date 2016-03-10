@@ -40,7 +40,7 @@ group :development, :test do
   gem "awesome_print"
   #gem 'rails_db'
   gem 'byebug'
-  gem 'rack-mini-profiler'
+  #gem 'rack-mini-profiler'
 end
 
 group :test do
