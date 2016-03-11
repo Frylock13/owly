@@ -18,9 +18,7 @@
           = link_to 'Новизне', category_path(@category.slug, sort: 'newest'), class: 'uppercase option'
           = link_to 'Популярности', category_path(@category.slug, sort: 'most_popular'), class: 'uppercase option'
 
-        = render @products, locals: { col: 3 }
-
-      = will_paginate @products
+        = render @products
 
     - unless get_viewed_list.count == 0
       .recent-showed.cream-bg.row.no-bottom-padding

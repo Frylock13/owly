@@ -31,9 +31,6 @@ gem 'acts_as_tree'
 gem 'redis-rails'
 gem 'redis-namespace'
 gem 'gibbon'
-gem 'will_paginate', '~> 3.0.5'
-gem 'betterlorem', '~> 0.1.2'
-gem 'bootstrap-will_paginate', '~> 0.0.10'
 
 group :development, :test do
   gem 'bullet'
