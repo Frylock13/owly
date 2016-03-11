@@ -20,3 +20,4 @@
 //= require vendor/smoothproducts.min
 //= require vendor/jquery.slidizle
 //= require vendor/jquery.imagelistexpander.min
+//= require jquery.infinite-pages

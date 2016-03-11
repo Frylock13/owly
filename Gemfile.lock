@@ -366,6 +366,7 @@ DEPENDENCIES
   haml-rails (~> 0.9)
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   lodash-rails
   owlcarousel-rails
   paperclip (~> 4.3)

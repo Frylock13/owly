@@ -31,6 +31,7 @@ gem 'acts_as_tree'
 gem 'redis-rails'
 gem 'redis-namespace'
 gem 'gibbon'
+gem 'kaminari'
 
 group :development, :test do
   gem 'bullet'
