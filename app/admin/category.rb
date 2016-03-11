@@ -33,4 +33,12 @@ ActiveAdmin.register Category do
 
     actions
   end
+
+  controller do
+    before_filter :set_category, only: [:update, :edit, :destroy]
+
+    def set_category
+      @category = Category.friendly.find(params[:id])
+    end
+  end
 end

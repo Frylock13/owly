@@ -1,25 +1,23 @@
-DEFAULT_COUNT = 10
+DEFAULT_COUNT = 40
 
-Category.create!(name: Faker::Lorem.word, preview: Faker::Avatar.image, 
-                 background: 'https://marciepettitta2.files.wordpress.com/2011/11/backgroun-effect.jpg', 
-                 name: "cat_#{count}", desc: Faker::Lorem.sentences(5))
-
-
-if Product.count < DEFAULT_COUNT
-  DEFAULT_COUNT.times do |count|
-    Product.create!(id: count, name: Faker::Lorem.word, desc: Faker::Lorem.sentence, price: rand(1..100), 
-                    category: Category.all.sample, image: Faker::Avatar.image,
-                    height: rand(0..100), width: rand(0..100), depth: rand(0..100),
-                    material: Faker::Lorem.sentences, related: "5, 6, 3, 2", art: rand(0..4000))
-  end
+DEFAULT_COUNT.times do |count|
+  Category.create!(name: Faker::Lorem.word, preview: Faker::Avatar.image, 
+                   background: 'https://marciepettitta2.files.wordpress.com/2011/11/backgroun-effect.jpg', 
+                   name: "cat_#{count}", desc: Faker::Lorem.sentences(5))
 end
 
-if Post.count < DEFAULT_COUNT
-  DEFAULT_COUNT.times do 
-    Post.create!(title: Faker::Lorem.word, text: Faker::Lorem.sentences(5), tags: 'tag1, tag2',
-                 image: File.new("#{Rails.root}/app/assets/images/pages/blog/post-bg.jpg"))
-  end
+DEFAULT_COUNT.times do |count|
+  Product.create!(id: count, name: Faker::Lorem.word, desc: Faker::Lorem.sentence, price: rand(1..100), 
+                  category: Category.all.sample, image: Faker::Avatar.image,
+                  height: rand(0..100), width: rand(0..100), depth: rand(0..100),
+                  material: Faker::Lorem.sentences, related: "5, 6, 3, 2", art: rand(0..4000))
 end
+
+DEFAULT_COUNT.times do 
+  Post.create!(title: Faker::Lorem.word, text: Faker::Lorem.sentences(5), tags: 'tag1, tag2',
+               image: File.new("#{Rails.root}/app/assets/images/pages/blog/post-bg.jpg"))
+end
+
 
 AdminUser.create(email: 'admin@gmail.com', password: 'password') if AdminUser.count == 0
 
