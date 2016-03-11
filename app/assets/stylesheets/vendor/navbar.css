@@ -25,6 +25,7 @@
   font-size: 17px;
   display: inline-block;
   outline: 0;
+  padding-bottom: 23px;
 }
 
 .navigation li:hover ul.dropdown { display: block; }

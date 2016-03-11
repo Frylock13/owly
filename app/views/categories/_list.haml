@@ -6,21 +6,27 @@
           .thumbnail.gallery-trigger
             = image_tag category.preview.url(:medium)
 
-          .title= link_to category.name, category_path(category.slug)
+          .title
+            = link_to category.name, category_path(category.slug)
 
         .gallery-expander
           .gallery-expander-contents
-            .gallery-trigger-close.close x
+            .gallery-trigger-close.close
+              = image_tag 'close-category.png'
 
             .col
               .image
                 = image_tag category.preview
 
             .col
-              .title 
-                Gallery Item
-              .contents
-                = category.desc
+              .header
+                %h2= category.name
+
+              %p.desc= category.desc
+
+              = link_to pages_blog_path, class: 'btn btn-green-transparent' do
+                Перейти к изделиям
+                = image_tag 'home/about-arrow.png', class: 'btn-transparent-img'
 
 :javascript
   (function(global, $){

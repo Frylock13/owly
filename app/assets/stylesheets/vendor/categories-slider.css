@@ -85,13 +85,8 @@
   transition: border-bottom-width 500ms ease;
 }
 
-.gallery-item.active .gallery-contents:after { border-bottom-width: 30px; }
+.gallery-item.active .gallery-contents:after { display: none; }
 
-body {
-  font-family: 'Nanum Barun Gothic';
-  font-weight: 200;
-  color: #555;
-}
 
 ul {
   margin: 0;
@@ -105,6 +100,23 @@ ul {
   font-size: 25px;
   margin: 0 10px;
   padding: 10px 0;
+}
+
+.gallery-item .header {
+  padding-bottom: 27px!important;
+}
+
+.gallery-item h2 {
+  font-weight: 300;
+  color: #277770;
+}
+
+.gallery-item .desc {
+  font-family: Roboto;
+}
+
+.gallery-item .btn {
+  margin-top: 57px;
 }
 
 .gallery-item .thumbnail {
@@ -126,7 +138,10 @@ ul {
 
 .gallery-contents:after { border-bottom-color: #F6F3ED; }
 
-.gallery-expander { background: #F6F3ED; }
+.gallery-expander { 
+  background: #f4f4f4; 
+  margin-top: 10px;
+}
 
 .gallery-expander-contents {
   margin: 0 auto;

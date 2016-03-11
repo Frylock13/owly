@@ -1,4 +1,16 @@
+//.subscribe.form
+//  = form_tag subscriptions_create_path, method: :post do
+//    = text_field_tag :email, nil, placeholder: 'Ваш e-mail', type: 'email'
+//    = submit_tag 'Быть в курсе', class: 'btn btn-green'
+
 .subscribe.form
-  = form_tag subscriptions_create_path, method: :post do
-    = text_field_tag :email, nil, placeholder: 'Ваш e-mail', type: 'email'
-    = submit_tag 'Быть в курсе', class: 'btn btn-green'
+  / Begin MailChimp Signup Form
+
+  #mc_embed_signup
+    %form#mc-embedded-subscribe-form.validate{:action => "//owly.us13.list-manage.com/subscribe/post?u=22d33eef9a1e848bf8bdcf202&id=c5c5ae31b1", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
+      #mc_embed_signup_scroll
+        %input#mce-EMAIL.email{:name => "EMAIL", :placeholder => "Ваш e-mail", :required => "", :type => "email", :value => ""}/
+        %div{"aria-hidden" => "true", :style => "position: absolute; left: -5000px;"}
+          %input{:name => "b_22d33eef9a1e848bf8bdcf202_c5c5ae31b1", :tabindex => "-1", :type => "text", :value => ""}/
+        .clear
+          %input#mc-embedded-subscribe.button.btn-green.uppercase{:name => "subscribe", :type => "submit", :value => "Быть в курсе"}/
