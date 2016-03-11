@@ -135,6 +135,10 @@
   transition: left 0.3s linear;
 }
 
+.navbar ul li {
+  width: 100%;
+}
+
 .nav_bg {
   display: inline-block;
   vertical-align: middle;
@@ -218,3 +222,4 @@
   right: 0;
 }
 }
+

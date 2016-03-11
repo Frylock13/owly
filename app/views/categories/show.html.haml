@@ -1,10 +1,7 @@
 = render partial: 'shared/seo', locals: { page: @category }
 
 .category.page.col-md-12
-  .header.row{style: "background: url(#{@category.background.url})"}
-    .container
-      %h1= @category.name
-      %p= @category.desc
+
 
   - if @products.present?
     .products.cream-bg.row
@@ -30,7 +27,8 @@
         .container
           %h1.text-center Вы недавно смотрели:
           
-          = render 'products/viewed', products: @viewed_products
+          .cateogory-viewed
+            = render 'products/viewed', products: @viewed_products
 
         = image_tag 'owly.png', class: 'owly-img'
 
@@ -43,3 +41,4 @@
 
         - else
           %h2.text-center В этой категории пока нет товаров
+
