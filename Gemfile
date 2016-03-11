@@ -13,6 +13,7 @@ gem 'haml-rails', '~> 0.9'
 gem 'faker'
 gem "paperclip", "~> 4.3"
 gem 'pg_search'
+gem 'therubyracer'
 gem 'quiet_assets'
 gem 'bourbon'
 gem 'bitters'

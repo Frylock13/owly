@@ -24,7 +24,7 @@
 
               %p.desc= category.desc
 
-              = link_to pages_blog_path, class: 'btn btn-green-transparent' do
+              = link_to category_path(category.slug), class: 'btn btn-green-transparent' do
                 Перейти к изделиям
                 = image_tag 'home/about-arrow.png', class: 'btn-transparent-img'
 
