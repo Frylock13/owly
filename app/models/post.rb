@@ -5,4 +5,5 @@ class Post < ActiveRecord::Base
   
   validates :title, :text, presence: true
 
+  paginates_per 10
 end

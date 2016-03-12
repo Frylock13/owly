@@ -3,12 +3,17 @@
 .blog.page.col-md-12
   .header.row{style: "background: url(#{@page.image.url}) no-repeat"}
     .container
-      %h1= @page.heading
-      %p.text= @page.text
-      %p Узнайте самым первым о наших новых изделиях, скидках, мастерклассах и жизни Оули!
+      .row
+        .col-md-10
+          %h1= @page.heading
+          %p.text= @page.text
+          %p Узнайте самым первым о наших новых изделиях, скидках, мастерклассах и жизни Оули!
 
-      = render 'shared/subscribe'
+        .col-md-5
+          = render 'shared/subscribe'
 
   .posts.cream-bg.row
     .container
       = render @posts
+
+      = paginate @posts

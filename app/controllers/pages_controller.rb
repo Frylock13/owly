@@ -10,7 +10,7 @@ class PagesController < ApplicationController
   end
 
   def blog
-    @posts = Post.all
+    @posts = Post.all.page(params[:page])
   end
 
   def our_products
