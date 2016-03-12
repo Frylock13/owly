@@ -7,3 +7,8 @@
 
   .desc
     %p= raw(post.text)
+
+  - if post.tags.present?
+    .tags
+      - post.tags.delete(' ').split(',').each do |tag|
+        = link_to tag, pages_blog_path(tag: tag)

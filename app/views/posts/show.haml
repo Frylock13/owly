@@ -3,13 +3,8 @@
 .blog-posts.posts.page.col-md-12
   .header.row{style: "background: url(#{@post.image.url})"}
   
-  .container
+  .container.white-bg
     = render @post
-
-    .tags
-      - if @post.tags
-        - @post.tags.split(',').each do |tag|
-          = link_to tag, pages_blog_path(tag: tag)
 
     .actions.row
       .col-md-6
@@ -20,6 +15,6 @@
 
       .col-md-6
         - unless @next_post.nil?
-          .right
+          .right.next-post
             = link_to 'Следующая статья', post_path(@next_post.id)
             = image_tag 'pages/blog/next.png'

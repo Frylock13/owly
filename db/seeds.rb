@@ -44,3 +44,4 @@ Page.create(slug: 'search', heading: 'Поиск')
 
 Setting.create(key: 'mailchimp_key', value: 'api_key')
 Setting.create(key: 'mailchimp_list_id', value: 'list_id')
+Setting.create(key: 'tags', value: 'first,second')

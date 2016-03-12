@@ -10,7 +10,9 @@ class PagesController < ApplicationController
   end
 
   def blog
-    @posts = Post.all.page(params[:page])
+    @posts = Post.page(params[:page]).order('id')
+    @posts = Post.where("tags LIKE ?", "%#{params[:tag]}%").page(params[:page]) if params[:tag]
+    @tags = Setting.tags.delete(' ').split(',').uniq
   end
 
   def our_products

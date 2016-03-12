@@ -3,8 +3,16 @@ $post-title-size: 1.8rem
 $post-title-color: $red
 $post-link-title-color: $turquoise
 $post-link-title-size: 1.4rem
+$post-tag-color: $turquoise
+$post-tag-weight: 300
+$post-tag-size: 1.4rem
 
 .posts
+  .tags-list
+    h2, .tag-name a
+      color: $turquoise
+      margin-bottom: 10px
+
   .post
     margin-bottom: 40px
 
@@ -22,14 +30,12 @@ $post-link-title-size: 1.4rem
       font-size: $post-title-size
       color: $post-title-color
 
+
+
 .blog-posts
   .header
     min-height: 298px
 
-  .tags, .actions
-    a
-      color: $post-link-title-color
-      font-size: $post-link-title-size
 
   .tags
     margin-bottom: 140px
@@ -39,3 +45,12 @@ $post-link-title-size: 1.4rem
 
     .right
       float: right
+
+.tags, .next-post
+  a
+    color: $post-tag-color
+    font-size: $post-tag-size
+    font-weight: $post-tag-weight
+
+  .next-post
+    font-size: 1.6rem

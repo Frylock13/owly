@@ -12,7 +12,7 @@ ActiveAdmin.register Post do
 
     column "Заголовок", :title
     column "Текст", :text
-    column "Теги", :tags
+    column "Тэги", :tags
     column :seo_title
     column :seo_description
     column :seo_keywords
@@ -26,6 +26,7 @@ ActiveAdmin.register Post do
       f.input :text, label: 'Текст'
       f.input :tags, label: 'Описание'
       f.input :image, label: 'Изображение'
+      f.input :tags, label: 'Тэги'
       f.input :seo_title
       f.input :seo_description
       f.input :seo_keywords
