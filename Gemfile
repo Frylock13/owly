@@ -32,6 +32,7 @@ gem 'redis-rails'
 gem 'redis-namespace'
 gem 'gibbon'
 gem 'kaminari'
+gem 'brakeman'
 
 group :development, :test do
   gem 'bullet'
