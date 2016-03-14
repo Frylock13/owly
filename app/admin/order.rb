@@ -118,4 +118,13 @@ ActiveAdmin.register Order do
     end
   end
 
+  member_action :ship, method: :patch do
+    resource.shipped!
+    redirect_to :back, notice: "Статус товара успешно изменен."
+  end
+
+  member_action :complete, method: :patch do
+    resource.completed!
+    redirect_to :back, notice: "Статус товара успешно изменен."
+  end
 end

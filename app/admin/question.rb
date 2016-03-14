@@ -12,7 +12,7 @@ ActiveAdmin.register Question do
     column "Имя", :name
     column "Телефон", :tel
     column "Вопрос", :text
-    column "Закрыт", :closed
+    column "Статус", :status
 
     actions 
   end
@@ -23,6 +23,11 @@ ActiveAdmin.register Question do
     end
 
     actions
+  end
+
+  member_action :close, method: :patch do
+    resource.closed!
+    redirect_to :back, notice: "Запрос закрыт!"
   end
 
 end

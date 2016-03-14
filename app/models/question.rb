@@ -1,5 +1,6 @@
 class Question < ActiveRecord::Base
 
-  validates :name, :tel, :text, presence: true
+  enum status: %w( active closed )
 
+  validates :name, :tel, :text, presence: true
 end
