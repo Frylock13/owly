@@ -6,12 +6,9 @@ class SubscriptionCreateService < SubscriptionService
   end
 
   def call
-    if add_to_mailchimp(@subscription.email)
-      @subscription.key = SecureRandom.hex # key for unsubscribe
-      @subscription.save
-    else
-      false
-    end
+    add_to_mailchimp(@subscription.email)
+    @subscription.key = SecureRandom.hex # key for unsubscribe
+    @subscription.save
   end
 
   private

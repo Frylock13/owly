@@ -4,5 +4,5 @@ class Subscription < ActiveRecord::Base
   validates :email, uniqueness: true
   validates :email, format: { with: /\A[^@\s]+@([^@.\s]+\.)+[^@.\s]+\z/ }
 
-  enum status: [:active, :inactive]
+  enum status: %w( active inactive )
 end

@@ -3,13 +3,13 @@ class SubscriptionsController < ApplicationController
   def create
     begin
       SubscriptionCreateService.new(email: params[:email]).call
-      redirect_to :back
-      flash[:success] = 'Вы успешно подписались на новости.'
+    # if email in unsuscribe list - restore it  
     rescue Gibbon::MailChimpError
       SubscriptionRestoreService.new(email: params[:email]).call
-      redirect_to :back
-      flash[:success] = 'И снова добро пожаловать! Вы подписаны на новости.'
     end
+
+    redirect_to :back
+    flash[:success] = 'Вы успешно подписались на новости.'
   end
 
   def remove
@@ -22,5 +22,4 @@ class SubscriptionsController < ApplicationController
       flash[:danger] = 'Произошла ошибка. Возможно, вы не подписаны.'
     end
   end
-
 end
