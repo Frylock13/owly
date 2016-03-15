@@ -11,7 +11,6 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
   # Define methods for get cart_id, favorites_id, viewed_id. These components served the redis.
   components = %w( cart favorites viewed )
   
