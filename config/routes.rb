@@ -5,7 +5,9 @@ Rails.application.routes.draw do
 
   resources :reviews, only: [:new, :create]
   resources :favorites, only: [:index, :destroy]
-  resources :orders, only: [:new, :create]
+  resources :orders, only: [:new, :create] do
+    get :invoice
+  end
   resources :questions
   resources :products, only: :show
   resources :posts, only: :show

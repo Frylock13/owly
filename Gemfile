@@ -33,6 +33,10 @@ gem 'redis-namespace'
 gem 'gibbon'
 gem 'kaminari'
 gem 'brakeman'
+gem 'prawn'
+gem 'prawn-table'
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
 
 group :development, :test do
   gem 'bullet'

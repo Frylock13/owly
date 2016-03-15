@@ -8,8 +8,8 @@ class CreateOrder
   def create
     order = Order.new(@params)
     order.products = product_list
+    order.invoice_key = SecureRandom.hex
     order.save!
-
     clean_cart
   end
 
@@ -26,5 +26,4 @@ class CreateOrder
   def clean_cart
     CartProductsService.new(cart_id).clean
   end
-
 end

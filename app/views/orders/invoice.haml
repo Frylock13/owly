@@ -1,0 +1,158 @@
+.container.invoice.white-bg
+  .col-md-12
+    .contacts-table
+      %p.text-center Внимание! Оплата данного счета означает согласие с условиями поставки товара. Уведомление об оплате обязательно, в противном случае не гарантируется наличие товара на складе. Товар отпускается по факту прихода денег на р/с Поставщика, самовывозом, при наличии доверенности и паспорта.
+      %br/
+
+      //= wicked_pdf_image_tag 'invoices/table.png'
+
+      %table
+        %tr
+          %td{rowspan: 2, colspan: 2} 
+            Ф. ОПЕРУ БАНКА ВТБ (ПАО) В САНКТ-ПЕТЕРБУРГЕ Г.
+            %br/
+            САНКТ-ПЕТЕРБУРГ
+            %br
+            .small Банк получателя
+          %td БИК
+          %td{:rowspan => "2"} 
+            044030704
+            %br/
+            %br
+            30101810200000000704
+
+        %tr
+          %td Сч. №
+
+        %tr
+          %td
+            1
+          %td
+            2
+          %td
+            3
+          %td
+            4
+
+        %tr
+          %td{colspan: 4}
+            2
+
+    %strong.large.invoice-header
+      = "Счет на оплату № #{@order.invoice_created_at} от #{@order.invoice_from_date}"
+
+    .line
+
+    .contacts.col-md-12
+      .row
+        .left
+          %strong Поставщик
+
+        .right
+          ООО"АРС", ИНН 7801182348, КПП 781301001, 197022, Санкт-Петербург г, Льва Толстого ул, дом №9, корпус лит. А, тел.: 498-1000
+
+      %br/
+
+      .row
+        .left
+          %strong Покупатель
+
+        .right
+          = @order.contact_info
+
+    .products-table
+      %table
+        %tr
+          %th №
+          %th Товары(работы, услуги)
+          %th Кол-во
+          %th Ед.
+          %th Цена
+          %th Сумма
+
+        = render partial: 'orders/products', locals: { products: @products }
+
+    .result
+      %table
+        %tr
+          %td Итого:
+          %td= get_total_amount(@products).to_f
+
+        %tr
+          %td В том числе НДС:
+          %td= (get_total_amount(@products) * 0.13).round(3)
+
+        %tr
+          %td Всего к оплате:
+          %td= get_total_amount(@products).to_f
+
+      %p= "Всего наименований #{@products.count}, на сумму #{get_total_amount(@products).to_f} руб."
+
+    .line
+
+    .signatures
+      %strong Руководитель
+      .signature
+        = wicked_pdf_image_tag 'invoices/signature.png', class: 'sign'
+        Алексеев И.Г.
+      %br/
+      %strong Бухгалтер
+      .signature
+        = wicked_pdf_image_tag 'invoices/signature.png', class: 'sign'
+        Алексеев И.Г.
+
+      = wicked_pdf_image_tag 'invoices/stamp.png', class: 'stamp'
+
+
+// SASS //
+:sass
+  table, th, td
+    border: 1px solid black
+    border-collapse: collapse
+
+  th, td
+    padding: 5px
+    text-align: left
+
+  .contacts-table, .contacts
+    margin-bottom: 20px
+
+  .line
+    margin-bottom: 20px
+    border-bottom: 3px solid
+
+  .small
+    font-size: 14px
+
+  .large
+    font-size: 20px
+
+  .result
+    margin-top: 10px
+
+    table
+      border: none
+      margin-left: 70%
+
+      td
+        text-align: right
+        font-weight: 500
+        border: none
+
+  .signatures
+    strong, img, .signature
+      display: inline-block
+
+    .sign
+      max-width: 100px
+
+    .signature
+      margin-right: 50px
+      border-bottom: 1px solid
+      margin-bottom: 20px
+
+  .stamp
+    position: absolute
+    max-width: 200px
+    margin-top: -115px
+    margin-left: 157px

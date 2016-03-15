@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160314154240) do
+ActiveRecord::Schema.define(version: 20160315103546) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -105,6 +105,7 @@ ActiveRecord::Schema.define(version: 20160314154240) do
     t.datetime "updated_at",                null: false
     t.integer  "status",        default: 0
     t.text     "admin_comment"
+    t.string   "invoice_key"
   end
 
   create_table "pages", force: :cascade do |t|
@@ -196,7 +197,7 @@ ActiveRecord::Schema.define(version: 20160314154240) do
     t.text     "key"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.integer  "status",     default: 0
+    t.integer  "status",     default: 1
   end
 
   add_foreign_key "images", "products"
