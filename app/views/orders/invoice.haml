@@ -4,7 +4,7 @@
       = wicked_pdf_image_tag 'invoices/header.png'
 
     %strong.large.invoice-header
-      = "Счет на оплату № #{@order.invoice_created_at} от #{@order.invoice_from_date}"
+      = "Счет на оплату № #{@order.invoice_condensed_date(@monthly_orders_count)} от #{@order.invoice_from_date}"
 
     .line
 

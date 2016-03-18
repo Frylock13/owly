@@ -9,6 +9,10 @@ class OrderDecorator < Draper::Decorator
     object.created_at.strftime("%m/%d/%Y")
   end
 
+  def invoice_condensed_date(count)
+    object.created_at.strftime("%m/%d/") + count.to_s # 12/18/6 => 6 is sum of all invoices
+  end
+
   def invoice_from_date
     number = object.created_at.day
     month = get_month_name(object.created_at.month)
