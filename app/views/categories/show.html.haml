@@ -20,6 +20,8 @@
 
         = render @products
 
+        = paginate @products
+
     - unless get_viewed_list.count == 0
       .recent-showed.cream-bg.row.no-bottom-padding
         .container

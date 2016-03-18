@@ -17,5 +17,5 @@ class Product < ActiveRecord::Base
   scope :newest, -> { order(:id) }
   scope :most_popular, -> { order('rating DESC') }
 
-  paginates_per 10
+  paginates_per 100
 end

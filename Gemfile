@@ -37,6 +37,7 @@ gem 'prawn'
 gem 'prawn-table'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'dotenv'
 
 group :development, :test do
   gem 'bullet'
@@ -47,7 +48,7 @@ group :development, :test do
   gem "awesome_print"
   #gem 'rails_db'
   gem 'byebug'
-  #gem 'rack-mini-profiler'
+  gem 'rack-mini-profiler'
 end
 
 group :test do

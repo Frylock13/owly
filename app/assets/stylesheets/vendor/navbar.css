@@ -20,6 +20,8 @@
   margin-right: 45px;
 }
 
+
+
 .navigation li a {
   padding: 9px 0px;
   font-size: 17px;
@@ -42,6 +44,7 @@
 .navigation li ul.dropdown li {
   display: block;
   list-style-type: none;
+  margin-right: 0px;
 }
 
 .navigation li ul.dropdown li a {

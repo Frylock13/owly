@@ -11,9 +11,9 @@
 
     .col-md-3.contacts
       .social
-        .icon= mail_to 'owly@owly.ru', image_tag('header/email.png')
-        .icon= link_to image_tag('header/vk.png'), 'http://owly.ru'
-        .icon= link_to image_tag('header/instagram.png'), 'http://owly.ru'
+        .icon= mail_to 'shop@owly.ru', image_tag('header/email.png')
+        .icon= link_to image_tag('header/vk.png'), 'http://vk.com/owlyshopspb'
+        .icon= link_to image_tag('header/instagram.png'), 'https://www.instagram.com/owlyshop'
         .icon= link_to image_tag('header/twitter.png'), 'http://owly.ru'
         .icon= link_to image_tag('header/facebook.png'), 'http://owly.ru'
 
@@ -38,11 +38,8 @@
               Наши изделия
 
             %ul.dropdown
-              %li= link_to 'Как заказать', pages_how_to_path
-              %li= link_to 'Как заказать', pages_how_to_path
-              %li= link_to 'Как заказать', pages_how_to_path
-              %li= link_to 'Как заказать', pages_how_to_path
-
+              - @categories.each do |category|
+                %li= link_to category.name, category_path(category.id)
 
           %li= link_to 'Как заказать', pages_how_to_path
           %li= link_to 'Кто такая Оули?', pages_about_path
