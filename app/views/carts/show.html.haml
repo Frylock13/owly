@@ -76,9 +76,9 @@
               .title 
                 1. Контактное лицо:
 
-              = f.text_field :name, placeholder: 'Ваше имя'
-              = f.text_field :tel, placeholder: 'Ваш телефон'
-              = f.text_field :email, placeholder: 'Ваш e-mail'
+              = f.text_field :name, placeholder: 'Ваше имя', required: true
+              = f.text_field :tel, placeholder: 'Ваш телефон', required: true
+              = f.text_field :email, placeholder: 'Ваш e-mail', required: true
 
             .delivery
               .title

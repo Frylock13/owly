@@ -1,42 +1,7 @@
 .container.invoice.white-bg
   .col-md-12
     .contacts-table
-      %p.text-center Внимание! Оплата данного счета означает согласие с условиями поставки товара. Уведомление об оплате обязательно, в противном случае не гарантируется наличие товара на складе. Товар отпускается по факту прихода денег на р/с Поставщика, самовывозом, при наличии доверенности и паспорта.
-      %br/
-
-      //= wicked_pdf_image_tag 'invoices/table.png'
-
-      %table
-        %tr
-          %td{rowspan: 2, colspan: 2} 
-            Ф. ОПЕРУ БАНКА ВТБ (ПАО) В САНКТ-ПЕТЕРБУРГЕ Г.
-            %br/
-            САНКТ-ПЕТЕРБУРГ
-            %br
-            .small Банк получателя
-          %td БИК
-          %td{:rowspan => "2"} 
-            044030704
-            %br/
-            %br
-            30101810200000000704
-
-        %tr
-          %td Сч. №
-
-        %tr
-          %td
-            1
-          %td
-            2
-          %td
-            3
-          %td
-            4
-
-        %tr
-          %td{colspan: 4}
-            2
+      = wicked_pdf_image_tag 'invoices/header.png'
 
     %strong.large.invoice-header
       = "Счет на оплату № #{@order.invoice_created_at} от #{@order.invoice_from_date}"
@@ -88,20 +53,8 @@
 
       %p= "Всего наименований #{@products.count}, на сумму #{get_total_amount(@products).to_f} руб."
 
-    .line
-
-    .signatures
-      %strong Руководитель
-      .signature
-        = wicked_pdf_image_tag 'invoices/signature.png', class: 'sign'
-        Алексеев И.Г.
-      %br/
-      %strong Бухгалтер
-      .signature
-        = wicked_pdf_image_tag 'invoices/signature.png', class: 'sign'
-        Алексеев И.Г.
-
-      = wicked_pdf_image_tag 'invoices/stamp.png', class: 'stamp'
+    .footer
+      = wicked_pdf_image_tag 'invoices/footer.png'
 
 
 // SASS //
@@ -138,21 +91,3 @@
         text-align: right
         font-weight: 500
         border: none
-
-  .signatures
-    strong, img, .signature
-      display: inline-block
-
-    .sign
-      max-width: 100px
-
-    .signature
-      margin-right: 50px
-      border-bottom: 1px solid
-      margin-bottom: 20px
-
-  .stamp
-    position: absolute
-    max-width: 200px
-    margin-top: -115px
-    margin-left: 157px

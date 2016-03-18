@@ -17,8 +17,7 @@ class CartsController < ApplicationController
 
   def set_count
     if params[:count].to_i > 0
-      CartProductsService.new(cart_id, params[:product_id])
-                          .set_count(params[:count])
+      CartProductsService.new(cart_id, params[:product_id]).set_count(params[:count])
       redirect_to :back
     else
       redirect_to :back
@@ -36,5 +35,4 @@ class CartsController < ApplicationController
   def products_hash
     $redis.hgetall cart_id
   end
-
 end

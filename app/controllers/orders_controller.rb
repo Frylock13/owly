@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    order = CreateOrder.new(order_params, session[:guest_id])
+    OrderCreateService.new(order_params, session[:guest_id]).call
     redirect_to :back
     flash[:success] = 'Вы успешно оформили заказ'
   end
@@ -14,10 +14,11 @@ class OrdersController < ApplicationController
     @order = Order.find(params[:order_id]).decorate
     @products = GetProductsList.call(eval(@order.products))
 
+    not_found unless params[:key] && @order.invoice_key == params[:key]
+
     respond_to do |format|
-      format.html
       format.pdf do
-        render pdf: "file_name", encoding: 'UTF-8'
+        render pdf: "", encoding: 'UTF-8'
       end
     end
   end

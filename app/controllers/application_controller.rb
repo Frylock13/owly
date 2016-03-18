@@ -19,4 +19,8 @@ class ApplicationController < ActionController::Base
       "#{component}_#{session[:guest_id]}"
     end
   end
+
+  def not_found
+    raise ActionController::RoutingError.new('Not Found')
+  end
 end
