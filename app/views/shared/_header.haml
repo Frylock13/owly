@@ -11,11 +11,11 @@
 
     .col-md-3.contacts
       .social
-        .icon= mail_to Setting.contact_email, image_tag('header/email.png')
-        .icon= link_to image_tag('header/vk.png'), Setting.vkontakte_link
-        .icon= link_to image_tag('header/instagram.png'), Setting.instagram_link
-        .icon= link_to image_tag('header/twitter.png'), Setting.twitter_link
-        .icon= link_to image_tag('header/facebook.png'), Setting.facebook_link
+        .icon= mail_to 'owly@owly.ru', image_tag('header/email.png')
+        .icon= link_to image_tag('header/vk.png'), 'http://owly.ru'
+        .icon= link_to image_tag('header/instagram.png'), 'http://owly.ru'
+        .icon= link_to image_tag('header/twitter.png'), 'http://owly.ru'
+        .icon= link_to image_tag('header/facebook.png'), 'http://owly.ru'
 
       .telephone
         = image_tag 'header/phone.png'
