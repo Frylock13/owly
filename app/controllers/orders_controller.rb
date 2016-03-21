@@ -16,12 +16,7 @@ class OrdersController < ApplicationController
     @monthly_orders_count = Order.only_legal_entity.count + 1
 
     not_found unless params[:key] && @order.invoice_key == params[:key]
-
-    respond_to do |format|
-      format.pdf do
-        render pdf: "", encoding: 'UTF-8'
-      end
-    end
+    render pdf: "", encoding: 'UTF-8'
   end
 
   private
