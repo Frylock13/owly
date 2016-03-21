@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
 
-  ActiveAdmin.routes(self)
   root 'pages#home'
+
+  ActiveAdmin.routes(self)
+  devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :reviews, only: [:new, :create]
   resources :favorites, only: [:index, :destroy]
