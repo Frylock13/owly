@@ -17,4 +17,6 @@ class Category < ActiveRecord::Base
   scope :only_parents, -> { where(parent_id: nil) }
 
   acts_as_tree order: 'name'
+
+  paginates_per 20
 end

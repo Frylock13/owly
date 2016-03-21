@@ -21,12 +21,16 @@ class ApplicationController < ActionController::Base
   end
 
   def get_categories
-    @categories = Category.only_parents
+    @categories = Category.only_parents if not admin_page?
   end
 
   private
 
   def not_found
     raise ActionController::RoutingError.new('Not Found')
+  end
+
+  def admin_page?
+    params[:controller].split('/').first == 'admin'
   end
 end
