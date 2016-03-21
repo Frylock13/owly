@@ -1,6 +1,6 @@
 ActiveAdmin.register Setting do
 
-  menu label: "Настройки"
+  menu label: "Настройки", priority: 9
 
   permit_params :value
   

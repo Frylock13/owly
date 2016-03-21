@@ -1,6 +1,6 @@
 ActiveAdmin.register Post do
 
-  menu label: "Блог"
+  menu label: "Блог", priority: 6
 
   actions :index, :new, :create, :edit, :update, :destroy
 

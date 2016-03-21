@@ -1,6 +1,6 @@
 ActiveAdmin.register Category do
 
-  menu label: "Категории"
+  menu label: "Категории", priority: 2
 
   actions :index, :new, :create, :edit, :update, :destroy
 

@@ -1,6 +1,6 @@
 ActiveAdmin.register Review do
 
-  menu label: "Отзывы"
+  menu label: "Отзывы", priority: 5
 
   actions :index, :new, :create, :edit, :update, :destroy
 

@@ -1,6 +1,6 @@
 ActiveAdmin.register Page do
 
-  menu label: "Страницы"
+  menu label: "Страницы", priority: 8
 
   actions :index, :edit, :update, :destroy
 

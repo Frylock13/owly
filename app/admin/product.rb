@@ -1,6 +1,6 @@
 ActiveAdmin.register Product do
 
-  menu label: "Товары"
+  menu label: "Товары", priority: 2
 
   actions :index, :new, :create, :edit, :update, :destroy
 

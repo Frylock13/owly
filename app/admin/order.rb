@@ -2,7 +2,7 @@ include ActiveAdminHelpers
 
 ActiveAdmin.register Order do
 
-  menu label: "Заказы"
+  menu label: "Заказы", priority: 3
 
   actions :index, :show, :edit, :update, :destroy
 
