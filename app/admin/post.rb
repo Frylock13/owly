@@ -9,7 +9,6 @@ ActiveAdmin.register Post do
   index do
     selectable_column
     id_column
-
     column "Заголовок", :title
     column "Текст", :text
     column "Тэги", :tags

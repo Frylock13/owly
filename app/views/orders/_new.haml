@@ -1,0 +1,87 @@
+#order
+.order.white-bg.row{{'ng-if'=>'cart.orderBlock == "open"'}}
+  .container
+    %h1.text-center Оформление заказа
+
+    .order-form.form
+      = form_for Order.new do |f|
+
+        .col-md-6
+          .customer
+            .title 
+              1. Контактное лицо:
+
+            = f.text_field :name, placeholder: 'Ваше имя', required: true
+            = f.text_field :tel, placeholder: 'Ваш телефон', required: true
+            = f.text_field :email, placeholder: 'Ваш e-mail', required: true
+
+          .delivery
+            .title
+              2. Выберите способ доставки:
+
+            .options-heading
+              %p.option.uppercase{{'ng-class'=>'cart.deliveryTab === 1 ? "active" : "inactive"', 'ng-click'=>'cart.deliveryTabSet(1)'}} Заберу сам
+              %p.option.uppercase{{'ng-class'=>'cart.deliveryTab === 2 ? "active" : "inactive"', 'ng-click'=>'cart.deliveryTabSet(2)'}} Нужна доставка
+
+            .options-delivery
+              .by-myself{{'ng-if'=>'cart.deliveryTab === 1'}}
+                %p Забрать свой заказ Вы можете по адресу:
+                %br/
+                %strong Санкт-Петербург,
+                %br/
+                %strong ул. Льва Толстого, 9
+
+                .map
+                  %iframe{:allowfullscreen => "", :frameborder => "0", :height => "300", :src => "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1996.9955369752358!2d30.314029486827778!3d59.9653975082703!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4696315b68bf319d%3A0x55e2da220927d7f3!2z0YPQuy4g0JvRjNCy0LAg0KLQvtC70YHRgtC-0LPQviwgOSwg0KHQsNC90LrRgi3Qn9C10YLQtdGA0LHRg9GA0LMsIDE5NzEwMQ!5e0!3m2!1sru!2sru!4v1456675245288", :style => "border:0", :width => "500"}
+
+              .need-delivery{{'ng-if'=>'cart.deliveryTab === 2'}}
+                .info
+                  %p 
+                    Доставка по Санкт-Петербургу - 
+                    %strong 300 
+                    руб. 
+
+                  %p
+                    При заказе на сумму от
+                    %strong 3 000
+                    руб. - доставка 
+                    %strong бесплатная!
+
+                %strong Введите адрес доставки:
+
+                .address
+                  = f.text_field :city, placeholder: 'Город'
+                  = f.text_field :street, placeholder: 'Улица'
+
+                  .apartment
+                    = f.text_field :building, placeholder: 'Дом'
+                    = f.text_field :block, placeholder: 'Корпус'
+                    = f.text_field :apt, placeholder: 'Квартира'
+                    = f.number_field :floor, placeholder: 'Этаж'
+
+                  = f.text_area :comment, placeholder: 'Дополнительный комментарий', class: 'comment'
+
+          .payment
+            .title
+              3. Выберите способ оплаты:
+
+            .options-heading
+              %p.option.uppercase{{'ng-class'=>'cart.paymentTab === 1 ? "active" : "inactive"', 'ng-click'=>'cart.paymentTabSet(1)'}} Оплата наличными
+              %p.option.uppercase{{'ng-class'=>'cart.paymentTab === 2 ? "active" : "inactive"', 'ng-click'=>'cart.paymentTabSet(2)'}} Cчет для юридических лиц
+            
+            .cash
+              %p Оплатить заказ Вы можете при получении товара в пункте выдачи или нашему курьеру!
+              %p Курьер привезет Вам чек и все необходимые документы.
+
+            .legal-entity{{'ng-if'=>'cart.paymentTab === 2'}}
+              .options-payment
+                %p 
+                  Введите информацию о компании и Вам будет выслан счет на почту, которую Вы указали в контактной информации!
+
+              .details
+                = f.text_field :company_name, placeholder: 'Название компании'
+                = f.text_field :inn, placeholder: 'ИНН'
+
+          .actions
+            = f.submit 'Отправить заказ', class: 'btn btn-green create-order'
+            = link_to 'Отмена', '#menu', class: 'cancel-link', data: {'ng-click'=>'cart.orderBlockSet("close")'}

@@ -11,6 +11,7 @@ ActiveAdmin.register Order do
 
   index do
     selectable_column
+    id_column
     column "Статус" do |order|
       convert_status(order.status)
     end

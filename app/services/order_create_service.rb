@@ -8,9 +8,11 @@ class OrderCreateService
 
   def call
     @order.products = products_in_cart
-    create_invoice if legal_entity?
+    generate_invoice if legal_entity?
     clean_cart
     @order.save!
+    send_mail_to_user(@order)
+    send_mail_to_admin(@order)
   end
 
   private
@@ -31,7 +33,15 @@ class OrderCreateService
     @params[:company_name] && @params[:inn]
   end
 
-  def create_invoice
+  def generate_invoice
     @order.invoice_key = SecureRandom.hex
+  end
+
+  def send_mail_to_user(order)
+    OrderMailer.order_created_to_user(order).deliver
+  end
+
+  def send_mail_to_admin(order)
+    OrderMailer.order_created_to_admin(order).deliver
   end
 end
