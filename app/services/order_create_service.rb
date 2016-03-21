@@ -11,8 +11,8 @@ class OrderCreateService
     generate_invoice if legal_entity?
     clean_cart
     @order.save!
-    send_mail_to_user(@order)
-    send_mail_to_admin(@order)
+    send_mail_to_user(@order.id)
+    send_mail_to_admin(@order.id)
   end
 
   private
@@ -37,11 +37,11 @@ class OrderCreateService
     @order.invoice_key = SecureRandom.hex
   end
 
-  def send_mail_to_user(order)
-    OrderMailer.order_created_to_user(order).deliver
+  def send_mail_to_user(order_id)
+    OrderMailer.order_created_to_user(order_id).deliver
   end
 
-  def send_mail_to_admin(order)
-    OrderMailer.order_created_to_admin(order).deliver
+  def send_mail_to_admin(order_id)
+    OrderMailer.order_created_to_admin(order_id).deliver
   end
 end

@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
-  root 'pages#home'
-
   ActiveAdmin.routes(self)
   devise_for :admin_users, ActiveAdmin::Devise.config
+
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq' if Rails.env == 'development'
+
+  root 'pages#home'
 
   resources :reviews, only: [:new, :create]
   resources :favorites, only: [:index, :destroy]

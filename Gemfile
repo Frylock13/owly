@@ -14,7 +14,6 @@ gem 'faker'
 gem "paperclip", "~> 4.3"
 gem 'pg_search'
 gem 'therubyracer'
-gem 'quiet_assets'
 gem 'bourbon'
 gem 'bitters'
 gem 'angularjs-rails'
@@ -38,6 +37,9 @@ gem 'prawn-table'
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'dotenv'
+gem 'sidekiq'
+gem 'sinatra'
+gem 'sidekiq_mailer'
 
 group :development, :test do
   gem 'bullet'
@@ -46,9 +48,10 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem "awesome_print"
-  #gem 'rails_db'
+  gem 'rails_db'
   gem 'byebug'
   gem 'rack-mini-profiler'
+  gem 'quiet_assets'
 end
 
 group :test do
