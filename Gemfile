@@ -41,7 +41,7 @@ gem 'sidekiq'
 gem 'sinatra'
 gem 'sidekiq_mailer'
 
-group :development, :test do
+group :development do
   gem 'bullet'
   gem 'web-console'
   gem 'spring'

@@ -11,7 +11,7 @@
       getCartCount : getCartCount 
     }
 
-    var baseUrl = 'http://localhost:3000/api'
+    var baseUrl = 'http://37.143.11.71/api'
 
     return service;
     ///////////////////
