@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
 
   require 'sidekiq/web'
-  mount Sidekiq::Web => '/sidekiq' if Rails.env == 'development'
+  mount Sidekiq::Web => '/sidekiq'# if Rails.env == 'development'
 
   root 'pages#home'
 
