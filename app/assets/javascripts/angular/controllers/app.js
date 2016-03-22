@@ -1,6 +1,4 @@
-app.controller('AppCtrl', AppCtrl)
-
-function AppCtrl(cartService, favoriteService) {
+app.controller('AppCtrl', ['cartService', 'favoriteService', function(cartService, favoriteService) {
   var vm = this;
 
   vm.reviewTab = 1;
@@ -37,5 +35,4 @@ function AppCtrl(cartService, favoriteService) {
     favoriteService.switchFavorite(favoriteId, productId);
     vm.getFavoritesCount();
   }
-
-}
+}]);
