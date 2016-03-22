@@ -5,7 +5,7 @@ class PagesController < ApplicationController
   def home
     @posts = Post.order('id DESC').limit(3).decorate
     @popular_products = Product.most_popular
-    @images = Dir.glob("app/assets/images/slider/*.jpg")
+    @images = Slider.enable
   end
 
   def blog
