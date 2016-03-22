@@ -4,3 +4,4 @@ Settings keys:
   mailchimp_key
   mailchimp_list_id
   tags (for blog page)
+  admin_email
