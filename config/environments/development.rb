@@ -49,5 +49,10 @@ Rails.application.configure do
     password:             '(*Yijhd23',
     authentication:       'plain',
     enable_starttls_auto: true  }
-
+  if ENV['NG_FORCE'] == 'true'
+    config.assets.compress = true
+    config.assets.compile = false
+    config.assets.digest = true
+    config.assets.debug = false
+  end
 end
