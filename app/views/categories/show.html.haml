@@ -34,7 +34,7 @@
 
   - else
     .container
-      .row.white-bg
+      .row.can-be-empty.white-bg
         - if @category.children.present?
           %h1.text-center= @category.name
           = render partial: 'categories/list', locals: { categories: @category.children }

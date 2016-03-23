@@ -3,8 +3,8 @@
     .col-md-4.carousel-item.carousel-item
       .product.item
         .top
-          = image_tag product.image.url(:medium), class: 'lazyOwl'
-          
+          = link_to image_tag(product.image.url(:medium), class: 'lazyOwl'), product_path(product)
+
           .name.text-center
             = link_to product.name, product_path(product)
 

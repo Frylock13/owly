@@ -9,7 +9,7 @@
     .actions.row
       .col-md-6
         - unless @previous_post.nil?
-          .left
+          .left.prev-post
             = image_tag 'pages/blog/previous.png'
             = link_to 'Предыдущая статья', post_path(@previous_post.id)
 
