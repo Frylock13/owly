@@ -2,10 +2,10 @@ class SubscriptionsController < ApplicationController
 
   def create
     begin
-      SubscriptionCreateService.new(email: params[:email]).call
+      SubscriptionCreateService.new(params[:email]).call
     # if email in unsuscribe list - restore it  
     rescue Gibbon::MailChimpError
-      SubscriptionRestoreService.new(email: params[:email]).call
+      SubscriptionRestoreService.new(params[:email]).call
     end
 
     redirect_to :back

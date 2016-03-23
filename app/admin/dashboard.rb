@@ -79,7 +79,7 @@ ActiveAdmin.register_page "Dashboard" do
           end
         end
 
-        panel "Активные запросы" do
+        panel "Отзывы" do
           section do
             table_for Review.pending do
               column 'Имя', :name
