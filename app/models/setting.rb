@@ -1,6 +1,6 @@
 class Setting < ActiveRecord::Base
 
-  SETTINGS = %w( tags
+  SETTINGS = %w( blog_tags
                  mailchimp_key 
                  mailchimp_list_id 
                  admin_email )
