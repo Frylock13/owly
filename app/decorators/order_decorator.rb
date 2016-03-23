@@ -21,7 +21,7 @@ class OrderDecorator < Draper::Decorator
   end
 
   def contact_info
-    "#{company_name}, #{inn}, #{city}, #{street}, #{building}#{block}, #{apt}, #{name} #{tel}"
+    "#{company_name}, ИНН #{inn}, КПП #{kpp}, #{city} г, #{street} ул, дом №#{building}#{block}, кв. #{apt}, #{name} тел.: #{tel}"
   end
 
   private

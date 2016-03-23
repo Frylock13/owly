@@ -7,14 +7,16 @@ ActiveAdmin.register Order do
   actions :index, :show, :edit, :update, :destroy
 
   permit_params :name, :tel, :email, :city, :street, :building, :block, :apt, :floor,
-                :company_name, :inn, :comment, :admin_comment, :status
+                :company_name, :inn, :comment, :admin_comment, :status, :kpp
 
   index do
     selectable_column
     id_column
+
     column "Статус" do |order|
       convert_status(order.status)
     end
+
     column "Имя", :name
     column "Телефон", :tel
     column "Email", :email
@@ -26,6 +28,7 @@ ActiveAdmin.register Order do
     column "Этаж", :floor
     column "Компания", :company_name
     column "ИНН",   :inn
+    column "КПП",   :kpp
     column "Комментарий",   :comment
     actions 
   end
@@ -46,6 +49,7 @@ ActiveAdmin.register Order do
       f.input :floor, label: 'Этаж'
       f.input :company_name, label: 'Компания'
       f.input :inn, label: 'ИНН'
+      f.input :kpp, label: 'КПП'
       f.input :comment, label: 'Комментарий'
       f.input :admin_comment, label: 'Комментарий от администратора'
     end

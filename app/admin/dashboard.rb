@@ -12,7 +12,7 @@ ActiveAdmin.register_page "Dashboard" do
               column 'Создан', :created_at
 
               column 'Действия' do |order|
-                link_to 'Редактировать', edit_admin_order_path(order.id)
+                link_to 'Перейти', admin_order_path(order.id)
               end
 
               column 'Изменить статус на' do |order|
@@ -33,7 +33,7 @@ ActiveAdmin.register_page "Dashboard" do
               column 'Создан', :created_at
 
               column 'Действия' do |order|
-                link_to 'Редактировать', edit_admin_order_path(order.id)
+                link_to 'Перейти', admin_order_path(order.id)
               end
 
               column 'Изменить статус на' do |order|
@@ -54,7 +54,7 @@ ActiveAdmin.register_page "Dashboard" do
               column 'Создан', :created_at
 
               column 'Действия' do |order|
-                link_to 'Редактировать', edit_admin_order_path(order.id)
+                link_to 'Перейти', admin_order_path(order.id)
               end
             end
 
