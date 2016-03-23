@@ -1,5 +1,7 @@
 class Review < ActiveRecord::Base
 
+  enum status: %w( pending approved )
+
   belongs_to :product
   
   validates :name, :email, :text, :rating, presence: true

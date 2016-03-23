@@ -25,28 +25,7 @@ ActiveAdmin.register_page "Dashboard" do
             strong { link_to "Посмотреть все заказы", admin_orders_path }
           end
         end
-      end
 
-      column do
-        panel "Активные запросы" do
-          section do
-            table_for Question.active do
-              column 'Вопрос', :text
-              column 'Имя', :name
-              column 'Телефон', :tel
-              column 'Действия' do |question|
-                link_to 'Закрыть', close_admin_question_path(question.id), method: :patch
-              end
-            end
-
-            strong { link_to "Посмотреть все запросы", admin_questions_path }
-          end
-        end
-      end
-    end
-
-    columns do
-      column do
         panel "Отправленные заказы" do
           section do
             table_for Order.shipped.limit(30).decorate do
@@ -67,13 +46,7 @@ ActiveAdmin.register_page "Dashboard" do
             strong { link_to "Посмотреть все заказы", admin_orders_path }
           end
         end
-      end
 
-      column do; end
-    end
-
-    columns do
-      column do
         panel "Последние завершенные заказы" do
           section do
             table_for Order.completed.limit(5).decorate do
@@ -90,7 +63,43 @@ ActiveAdmin.register_page "Dashboard" do
         end
       end
 
-      column do; end
+      column do
+        panel "Активные запросы" do
+          section do
+            table_for Question.active do
+              column 'Вопрос', :text
+              column 'Имя', :name
+              column 'Телефон', :tel
+              column 'Действия' do |question|
+                link_to 'Закрыть', close_admin_question_path(question.id), method: :patch
+              end
+            end
+
+            strong { link_to "Посмотреть все запросы", admin_questions_path }
+          end
+        end
+
+        panel "Активные запросы" do
+          section do
+            table_for Review.pending do
+              column 'Имя', :name
+              column 'Email', :email
+              column 'Отзыв', :text
+              column 'Рейтинг', :rating
+
+              column 'Подтвердить' do |review|
+                link_to 'Подтвердить', approve_admin_review_path(review.id), method: :patch
+              end
+              
+              column 'Удалить' do |review|
+                link_to 'Удалить', delete_admin_review_path(review.id), method: :delete
+              end
+            end
+
+            strong { link_to "Посмотреть все отзывы", admin_reviews_path }
+          end
+        end
+      end
     end
   end
 end

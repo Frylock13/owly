@@ -29,4 +29,13 @@ ActiveAdmin.register Review do
     actions
   end
 
+  member_action :approve, method: :patch do
+    resource.approved!
+    redirect_to :back, notice: "Отзыв подтвержден."
+  end
+
+  member_action :delete, method: :delete do
+    resource.destroy
+    redirect_to :back, notice: "Отзыв удален."
+  end
 end

@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
     @review = Review.new(review_params)
     CreateReview.new(@review, params[:rating]).call
     redirect_to :back
-    flash[:success] = 'Отзыв успешно оставлен'
+    flash[:success] = 'Спасибо за Ваш отзыв! Он будет опубликован после проверки модератором.'
   end
 
   private

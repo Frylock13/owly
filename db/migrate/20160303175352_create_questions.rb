@@ -4,7 +4,7 @@ class CreateQuestions < ActiveRecord::Migration
       t.string :name
       t.string :tel
       t.text :text
-      t.boolean :closed, default: false
+      t.integer :status, default: 0
 
       t.timestamps null: false
     end
