@@ -54,6 +54,9 @@
           .posts
             = render @posts
 
+            .all-posts
+              = link_to 'Все статьи', pages_blog_path
+              = image_tag 'pages/blog/next.png'
 
         .col-md-5.col-md-offset-1
           .whats-new
