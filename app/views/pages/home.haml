@@ -23,7 +23,7 @@
           = image_tag 'home/slogan.png'
 
         %p.text
-          = @page.text
+          = raw @page.text
 
         .about-btn
           = link_to pages_about_path, class: 'btn btn-green-transparent' do

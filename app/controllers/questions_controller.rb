@@ -9,7 +9,7 @@ class QuestionsController < ApplicationController
     
     if @question.save
       redirect_to :back
-      flash[:success] = 'Запрос успешно оставлен'
+      flash[:success] = 'Заявка успешно отправлена'
     else
       redirect_to :back
       flash[:danger] = 'Произошла ошибка'

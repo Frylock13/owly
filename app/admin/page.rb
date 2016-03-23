@@ -17,7 +17,7 @@ ActiveAdmin.register Page do
   form do |f|
     f.inputs do
       f.input :heading, label: 'Название'
-      f.input :text, label: 'Описание'
+      f.input :text, as: :html_editor, label: 'Описание'
       f.input :slug, label: 'Ссылка'
       f.input :seo_title, label: 'SEO title'
       f.input :seo_description, label: 'SEO description'

@@ -22,7 +22,7 @@
               .header
                 %h2= category.name
 
-              %p.desc= category.desc
+              %p.desc= raw category.desc
 
               = link_to category_path(category.slug), class: 'btn btn-green-transparent' do
                 Перейти к изделиям

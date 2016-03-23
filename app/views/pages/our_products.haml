@@ -4,7 +4,7 @@
   .header.row{style: "background: url(#{@page.image.url}) no-repeat"}
     .container
       %h1= @page.heading
-      %p.text= @page.text
+      %p.text= raw @page.text
 
   .our-products-list.cream-bg.no-bottom-padding.row
     .container

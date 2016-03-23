@@ -6,7 +6,7 @@
       .row
         .col-md-10
           %h1= @page.heading
-          %p.text= @page.text
+          %p.text= raw @page.text
           %p Узнайте самым первым о наших новых изделиях, скидках, мастерклассах и жизни Оули!
 
         .col-md-5
@@ -20,6 +20,8 @@
 
         - else
           %h2.text-center Статей не найдено
+          %h3.turn-back.text-center
+            = link_to 'Вернуться в блог', pages_blog_path
 
         = paginate @posts
 

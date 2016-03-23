@@ -4,7 +4,7 @@
   .header.row{style: "background: url(#{@page.image.url}) no-repeat"}
     .container
       %h1= @page.heading
-      %p.text= @page.text
+      %p.text= raw @page.text
 
   .how-to-get.cream-bg.row
     .container
@@ -73,7 +73,7 @@
       %p 
         Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
-  .questions.dark-cream-bg.no-bottom-padding.row
+  .questions.dark-cream-bg.no-bottom-padding.row#question-form
     .container
       .question-form
         %p.text-center

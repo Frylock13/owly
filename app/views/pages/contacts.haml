@@ -4,7 +4,7 @@
   .header.row{style: "background: url(#{@page.image.url}) no-repeat"}
     .container
       %h1= @page.heading
-      %p.text= @page.text
+      %p.text= raw @page.text
 
   .contacts-list.cream-bg.row
     .container
@@ -46,9 +46,9 @@
           
           .social-icons
             .icon
-              = link_to image_tag('pages/contacts/vk.png'), root_path
+              = link_to image_tag('pages/contacts/vk.png'), 'http://vk.com/owlyshopspb'
             .icon
-              = link_to image_tag('pages/contacts/instagram.png'), root_path
+              = link_to image_tag('pages/contacts/instagram.png'), 'https://www.instagram.com/owlyshop'
             .icon
               = link_to image_tag('pages/contacts/twitter.png'), root_path
             .icon

@@ -22,7 +22,7 @@ ActiveAdmin.register Post do
   form do |f|
     f.inputs do
       f.input :title, label: 'Заголовок'
-      f.input :text, label: 'Текст'
+      f.input :text, as: :html_editor, label: 'Текст'
       f.input :tags, label: 'Описание'
       f.input :image, label: 'Изображение'
       f.input :tags, label: 'Тэги'

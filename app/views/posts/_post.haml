@@ -6,8 +6,8 @@
     = link_to post.title, post_path(post)
 
   .desc
-    %p= raw(post.text)
-
+    %p= raw post.text
+    
   - if post.tags.present?
     .tags
       - post.tags.delete(' ').split(',').each do |tag|
