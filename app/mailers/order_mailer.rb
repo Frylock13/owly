@@ -1,7 +1,5 @@
 class OrderMailer < ApplicationMailer
 
-  include Sidekiq::Mailer
-
   def order_created_to_user(order_id)
     @order = Order.find(order_id)
     @order_id = order_id

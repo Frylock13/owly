@@ -38,10 +38,10 @@ class OrderCreateService
   end
 
   def send_mail_to_user(order_id)
-    OrderMailer.order_created_to_user(order_id).deliver
+    OrderMailer.delay.order_created_to_user(order_id)
   end
 
   def send_mail_to_admin(order_id)
-    OrderMailer.order_created_to_admin(order_id).deliver
+    OrderMailer.delay.order_created_to_admin(order_id)
   end
 end

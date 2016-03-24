@@ -39,7 +39,6 @@ gem 'wkhtmltopdf-binary'
 gem 'dotenv'
 gem 'sidekiq'
 gem 'sinatra'
-gem 'sidekiq_mailer'
 gem 'ngannotate-rails'
 
 group :development do
