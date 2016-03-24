@@ -14,7 +14,7 @@ class Product < ActiveRecord::Base
 
   scope :cheapest, -> { order(:price) }
   scope :most_expensive, -> { order('price DESC') }
-  scope :newest, -> { order(:id) }
+  scope :newest, -> { order('id DESC') }
   scope :most_popular, -> { order('rating DESC') }
 
   paginates_per 100
