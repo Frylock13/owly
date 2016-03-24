@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "owlyspb@gmail.com"
+  default from: "shop@owly.ru"
   layout 'mailer'
 end
