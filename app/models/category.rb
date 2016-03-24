@@ -9,12 +9,16 @@ class Category < ActiveRecord::Base
   validates_attachment_content_type :preview, content_type: /\Aimage\/.*\Z/
   validates_attachment_content_type :background, content_type: /\Aimage\/.*\Z/
 
-  validates :name, :desc, :slug, presence: true
+  validates :name, 
+            :desc, 
+            :slug, 
+            :sort, presence: true
   validates :name, :slug, uniqueness: true
   
   has_many :products, dependent: :destroy
   
   scope :only_parents, -> { where(parent_id: nil) }
+  scope :manual_sort, -> { order(:sort) }
 
   acts_as_tree order: 'name'
 

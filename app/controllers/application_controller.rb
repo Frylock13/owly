@@ -21,7 +21,7 @@ class ApplicationController < ActionController::Base
   end
 
   def get_categories
-    @categories = Category.only_parents if not admin_page?
+    @categories = Category.only_parents.manual_sort if not admin_page?
   end
 
   private
