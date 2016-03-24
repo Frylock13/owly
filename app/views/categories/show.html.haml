@@ -1,7 +1,11 @@
 = render partial: 'shared/seo', locals: { page: @category }
 
 .category.page.col-md-12
-
+  .header.row{style: "background: url(#{@category.background.url}) no-repeat"}
+    .container
+      .col-md-12
+        %h1= @category.name
+        %p.text= raw @category.desc
 
   - if @products.present?
     .products.cream-bg.row
