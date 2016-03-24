@@ -120,7 +120,7 @@ ul {
 }
 
 .gallery-item .thumbnail {
-  height: 280px;
+  height: 260px;
   width: 300px;
   overflow: hidden;
   cursor: pointer;
