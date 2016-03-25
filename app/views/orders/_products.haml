@@ -4,5 +4,5 @@
     %td= product.name
     %td= product.count
     %td шт
-    %td= product.price
-    %td= product.count.to_f * product.price.to_f
+    %td= number_with_precision(product.price, precision: 2)
+    %td= number_with_precision((product.count.to_f * product.price.to_f), precision: 2)

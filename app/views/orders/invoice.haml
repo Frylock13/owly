@@ -41,17 +41,17 @@
       %table
         %tr
           %td Итого:
-          %td= get_total_amount(@products).to_f
+          %td= number_with_precision(get_total_amount(@products), precision: 2)
 
         %tr
           %td В том числе НДС:
-          %td= (get_total_amount(@products) * 0.13).round(3)
+          %td= number_with_precision((get_total_amount(@products) * 0.18), precision: 2)
 
         %tr
           %td Всего к оплате:
-          %td= get_total_amount(@products).to_f
+          %td= number_with_precision(get_total_amount(@products), precision: 2)
 
-      %p= "Всего наименований #{@products.count}, на сумму #{get_total_amount(@products).to_f} руб."
+      %p= "Всего наименований #{@products.count}, на сумму #{number_with_precision(get_total_amount(@products), precision: 2)} руб."
 
     .footer
       = wicked_pdf_image_tag 'invoices/footer.png'
