@@ -11,6 +11,7 @@ ActiveAdmin.register AdminUser do
     column :current_sign_in_at
     column :sign_in_count
     column :created_at
+    column :role
     actions
   end
 
@@ -22,8 +23,9 @@ ActiveAdmin.register AdminUser do
   form do |f|
     f.inputs "Admin Details" do
       f.input :email
-      f.input :password
-      f.input :password_confirmation
+      f.input :password, label: 'Пароль'
+      f.input :password_confirmation, label: 'Подтверждение пароля'
+      f.input :role, label: 'Роль', as: :select, collection: [['Админ', 'admin'], ['Модератор', 'moderator']]#Order.statuses.keys
     end
     f.actions
   end
