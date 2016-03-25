@@ -65,6 +65,10 @@
   transition: max-height 500ms ease;
 }
 
+.gallery-expander .header {
+    padding-top: 0px;
+}
+
 .gallery-contents { position: relative; }
 
 .gallery-contents:after {
@@ -113,7 +117,7 @@ ul {
 }
 
 .gallery-item .desc {
-  font-family: Roboto;
+  font-family: Roboto!important;
 }
 
 .gallery-item .btn {
