@@ -1,4 +1,4 @@
 .subscribe.form
   = form_tag subscriptions_create_path, method: :post do
-    = text_field_tag :email, nil, placeholder: 'Ваш e-mail', type: 'email'
+    = text_field_tag :email, nil, placeholder: 'Ваш e-mail', type: 'email', required: true
     = submit_tag 'Быть в курсе', class: 'btn btn-green'
