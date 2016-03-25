@@ -4,7 +4,7 @@ ActiveAdmin.register Post do
 
   actions :index, :new, :create, :edit, :update, :destroy
 
-  permit_params :title, :text, :image, :tags, :seo_title, :seo_description, :seo_keywords
+  permit_params :title, :text, :image, :tags, :seo_title, :seo_description, :seo_keywords, :summary
 
   index do
     selectable_column
@@ -22,8 +22,8 @@ ActiveAdmin.register Post do
   form do |f|
     f.inputs do
       f.input :title, label: 'Заголовок'
+      f.input :summary, as: :html_editor, label: 'Превью'
       f.input :text, as: :html_editor, label: 'Текст'
-      f.input :tags, label: 'Описание'
       f.input :image, label: 'Изображение'
       f.input :tags, label: 'Тэги'
       f.input :seo_title

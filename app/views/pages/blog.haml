@@ -16,7 +16,8 @@
     .container
       .col-md-8
         - if @posts.present?
-          = render @posts
+          = render 'posts/list'
+          //= render @posts
 
         - else
           %h2.text-center Статей не найдено
