@@ -10,7 +10,7 @@ ActiveAdmin.register Post do
     selectable_column
     id_column
     column "Заголовок", :title
-    column "Текст", :text
+    column "Превью", :summary
     column "Тэги", :tags
     column :seo_title
     column :seo_description
