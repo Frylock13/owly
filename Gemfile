@@ -40,6 +40,7 @@ gem 'dotenv'
 gem 'sidekiq'
 gem 'sinatra'
 gem 'ngannotate-rails'
+gem 'cancancan', '~> 1.10'
 
 group :development do
   gem 'bullet'

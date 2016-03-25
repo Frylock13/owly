@@ -20,6 +20,10 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def access_denied(exception)
+    redirect_to root_path
+  end
+
   def get_categories
     @categories = Category.only_parents.manual_sort if not admin_page?
   end

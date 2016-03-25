@@ -2,7 +2,7 @@ ActiveAdmin.register AdminUser do
 
   menu label: "Админы", priority: 11
 
-  permit_params :email, :password, :password_confirmation
+  permit_params :email, :password, :password_confirmation, :role
 
   index do
     selectable_column
