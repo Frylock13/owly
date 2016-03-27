@@ -2,7 +2,7 @@ var app = angular.module('Owly', ['restangular']);
 
 app.config(['RestangularProvider', function(RestangularProvider) {
     
-    RestangularProvider.setBaseUrl("http://37.143.11.71/api");
+    RestangularProvider.setBaseUrl("http://owly.ru/api");
     //RestangularProvider.setRequestSuffix('.json');
     //RestangularProvider.setDefaultHttpFields({xsrfCookieName:'csrftoken', xsrfHeaderName:'X-CSRFToken'});
 }]);

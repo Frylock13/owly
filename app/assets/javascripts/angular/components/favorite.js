@@ -11,7 +11,7 @@
       getFavoritesCount : getFavoritesCount 
     }
 
-    var baseUrl = 'http://37.143.11.71/api'
+    var baseUrl = 'http://owly.ru/api'
 
     return service;
     ///////////////////

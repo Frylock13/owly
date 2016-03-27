@@ -42,17 +42,14 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => "localhost:3000" }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address:              'smtp.gmail.com',
-    port:                 587,
-    domain:               'localhost:3000',
-    user_name:            'owlyspb@gmail.com',
-    password:             '(*Yijhd23',
+    tls: true,
+    address:              'smtp.yandex.ru',
+    port:                 465,
+    domain:               'owly.ru',
+    user_name:            'shop@owly.ru',
+    password:             'D%b*Sfk9',
     authentication:       'plain',
-    enable_starttls_auto: true  }
-  if ENV['NG_FORCE'] == 'true'
-    config.assets.compress = true
-    config.assets.compile = false
-    config.assets.digest = true
-    config.assets.debug = false
-  end
+    enable_starttls_auto: true
+  }
+
 end
