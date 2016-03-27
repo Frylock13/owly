@@ -1,6 +1,6 @@
 ActiveAdmin.register Question do
 
-  menu label: "Вопросы", priority: 4
+  menu label: "Запросы", priority: 4
 
   actions :index, :edit, :update, :destroy
 

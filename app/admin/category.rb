@@ -2,7 +2,7 @@ ActiveAdmin.register Category do
 
   menu label: "Категории", priority: 2
 
-  actions :index, :new, :create, :edit, :update, :destroy
+  actions :index, :new, :create, :edit, :update
 
   permit_params :name, :desc, :slug, :preview, :background, :seo_title, :seo_description, :seo_keywords, :parent_id, :sort
 
