@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   root 'pages#home'
 
+  get '/robots.txt' => 'pages#robots'
+
   resources :reviews, only: [:new, :create]
   resources :favorites, only: [:index, :destroy]
   resources :orders, only: [:new, :create] do
@@ -21,14 +23,6 @@ Rails.application.routes.draw do
   namespace :subscriptions do
     post :create
     get :remove
-  end
-
-  scope :cart do
-    get '/' => 'carts#show', as: 'cart'
-    put ':product_id/increment' => 'carts#increment', as: 'increment'
-    put ':product_id/decrement' => 'carts#decrement', as: 'decrement'
-    patch ':product_id/set_count' => 'carts#set_count', as: 'set_count'
-    delete ':product_id/delete' => 'carts#delete', as: 'product_delete'
   end
 
   namespace :pages, path: '/' do
@@ -54,4 +48,11 @@ Rails.application.routes.draw do
     end
   end
 
+  scope :cart do
+    get '/' => 'carts#show', as: 'cart'
+    put ':product_id/increment' => 'carts#increment', as: 'increment'
+    put ':product_id/decrement' => 'carts#decrement', as: 'decrement'
+    patch ':product_id/set_count' => 'carts#set_count', as: 'set_count'
+    delete ':product_id/delete' => 'carts#delete', as: 'product_delete'
+  end
 end
