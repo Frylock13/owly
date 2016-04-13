@@ -73,3 +73,26 @@
 %noscript
   %div
     %img{:alt => "", :src => "https://mc.yandex.ru/watch/36286840", :style => "position:absolute; left:-9999px;"}/
+
+/ Google Code for Remarketing Tag
+/
+  \------------------------------------------------
+  Remarketing tags may not be associated with personally identifiable information or placed on pages related to sensitive categories. See more information and instructions on how to setup the tag on: http://google.com/ads/remarketingsetup
+  \-------------------------------------------------
+:javascript
+  var google_tag_params = {
+  ecomm_prodid: 'REPLACE_WITH_VALUE',
+  ecomm_pagetype: 'REPLACE_WITH_VALUE',
+  ecomm_totalvalue: 'REPLACE_WITH_VALUE',
+  };
+:javascript
+  /* <![CDATA[ */
+  var google_conversion_id = 924617115;
+  var google_custom_params = window.google_tag_params;
+  var google_remarketing_only = true;
+  /* ]]> */
+%script{:src => "//www.googleadservices.com/pagead/conversion.js", :type => "text/javascript"}
+  :cdata
+%noscript
+  %div{:style => "display:inline;"}
+    %img{:alt => "", :height => "1", :src => "//googleads.g.doubleclick.net/pagead/viewthroughconversion/924617115/?value=0&guid=ON&script=0", :style => "border-style:none;", :width => "1"}/
