@@ -41,6 +41,7 @@ gem 'sidekiq'
 gem 'sinatra'
 gem 'ngannotate-rails'
 gem 'cancancan', '~> 1.10'
+gem "dynamic_sitemaps"
 
 group :development do
   gem 'bullet'
