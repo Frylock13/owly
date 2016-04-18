@@ -14,7 +14,6 @@
     var baseUrl = 'http://owly.ru/api'
 
     return service;
-    ///////////////////
     
     function switchFavorite(favoriteId, productId) {
       return Restangular.oneUrl('favorite', baseUrl + '/favorites/add').customPUT({'favorite_id': favoriteId, product_id: productId});

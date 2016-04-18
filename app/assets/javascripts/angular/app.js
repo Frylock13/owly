@@ -8,3 +8,4 @@ app.config(['RestangularProvider', function(RestangularProvider) {
 }]);
 
 _.contains = _.includes
+

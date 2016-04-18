@@ -14,7 +14,6 @@
     var baseUrl = 'http://owly.ru/api'
 
     return service;
-    ///////////////////
     
     function addToCart(cartId, productId) {
       return Restangular.oneUrl('cart', baseUrl + '/cart/add/').customPUT({'cart_id': cartId, product_id: productId});
