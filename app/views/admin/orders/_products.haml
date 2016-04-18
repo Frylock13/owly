@@ -1,23 +1,24 @@
 .cart-items
   .list
     - products.each do |product|
-      .product.row
-        .col-md-2
-          = image_tag product.image.url(:small)
+      - cache product do
+        .product.row
+          .col-md-2
+            = image_tag product.image.url(:small)
 
-        .col-md-5.first-block
-          .product-name
-            = link_to product.name, product_path(product.id)
+          .col-md-5.first-block
+            .product-name
+              = link_to product.name, product_path(product.id)
 
-          .product-price
-            %strong
-              = product.price
-              %span руб.
+            .product-price
+              %strong
+                = product.price
+                %span руб.
 
-          .product-calc
-            .value
-              Количество:
-              = product.count
+            .product-calc
+              .value
+                Количество:
+                = product.count
 
     .total
       %p

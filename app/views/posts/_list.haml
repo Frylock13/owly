@@ -1,15 +1,16 @@
 - @posts.each do |post|
-  .post
-    .date
-      %p= post.created_at
+  - cache post
+    .post
+      .date
+        %p= post.created_at
 
-    .title
-      = link_to post.title, post_path(post)
+      .title
+        = link_to post.title, post_path(post)
 
-    .desc
-      %p= raw post.summary
-      
-    - if post.tags.present?
-      .tags
-        - post.tags.delete(' ').split(',').each do |tag|
-          = link_to tag, pages_blog_path(tag: tag)
+      .desc
+        %p= raw post.summary
+        
+      - if post.tags.present?
+        .tags
+          - post.tags.delete(' ').split(',').each do |tag|
+            = link_to tag, pages_blog_path(tag: tag)

@@ -5,7 +5,8 @@
     %section.sample{"data-slidizle" => ""}
       %ul.slider-content{"data-slidizle-content" => ""}
         - @images.each do |image|
-          %li.slider-item{style: "background-image: url(#{image.image.url(:full)})"}
+          - cache image do
+            %li.slider-item{style: "background-image: url(#{image.image.url(:full)})"}
       %header
         %h2 Custom Navigation
         %h3 I have a custom navigation with image thumbs
@@ -13,7 +14,8 @@
       .slider-previous{"data-slidizle-previous" => ""}
       %ul.slider-navigation{"data-slidizle-navigation" => ""}
         - @images.each do |image|
-          %li.slider-navigation-item{style: "background-image: url(#{image.image.url(:preview)})"}
+          - cache image do
+            %li.slider-navigation-item{style: "background-image: url(#{image.image.url(:preview)})"}
       .slidizle-loading
 
   .about.row

@@ -29,5 +29,6 @@
       .col-md-4.tags-list
         %h2 Тэги:
         - @tags.each do |tag|
-          %p.tag-name
-            = link_to tag, pages_blog_path(tag: tag) 
+          - cache tag do
+            %p.tag-name
+              = link_to tag, pages_blog_path(tag: tag) 
