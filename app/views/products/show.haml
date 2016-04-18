@@ -14,8 +14,7 @@
               %img{:alt => "", :src => "#{@product.image.url(:large)}"}/
 
             - @additional_images.each do |image|
-              - cache image do 
-                = link_to image_tag(image.picture.url(:large)), image.picture.url
+              = link_to image_tag(image.picture.url(:large)), image.picture.url
 
 
         .col-md-6
