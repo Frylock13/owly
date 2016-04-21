@@ -2,7 +2,7 @@ ActiveAdmin.register Question do
 
   menu label: "Запросы", priority: 4
 
-  actions :index, :edit, :update, :destroy
+  actions :index, :destroy
 
   permit_params :closed
 
@@ -13,6 +13,7 @@ ActiveAdmin.register Question do
     column "Телефон", :tel
     column "Вопрос", :text
     column "Статус", :status
+    column "Создан", :created_at
 
     actions 
   end
