@@ -70,6 +70,7 @@ ActiveAdmin.register_page "Dashboard" do
               column 'Вопрос', :text
               column 'Имя', :name
               column 'Телефон', :tel
+              column 'Создан', :created_at
               column 'Действия' do |question|
                 link_to 'Закрыть', close_admin_question_path(question.id), method: :patch
               end
@@ -86,6 +87,7 @@ ActiveAdmin.register_page "Dashboard" do
               column 'Email', :email
               column 'Отзыв', :text
               column 'Рейтинг', :rating
+              column 'Создан', :created_at
 
               column 'Подтвердить' do |review|
                 link_to 'Подтвердить', approve_admin_review_path(review.id), method: :patch

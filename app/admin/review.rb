@@ -13,6 +13,7 @@ ActiveAdmin.register Review do
     column "Отзыв", :text
     column "Рейтинг", :rating
     column "Товар", :product
+    column 'Создан', :created_at
 
     actions 
   end
