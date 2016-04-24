@@ -1,6 +1,6 @@
 = render partial: 'shared/seo', locals: { page: @category }
 
-.category.page.col-md-12{"ng-controller"=>"CategoryCtrl as category"}
+.category.page.col-md-12{"ng-controller"=>"CategoryCtrl as category", "ng-init"=>'CategoryCtrl.getProducts("#{@params[:action]}")'}
   .header.row{style: "background: url(#{@category.background.url}) no-repeat"}
     .container
       .col-md-12
@@ -21,6 +21,7 @@
             
           = link_to 'Новизне', category_path(@category.slug, sort: 'newest'), class: 'uppercase option'
           = link_to 'Популярности', category_path(@category.slug, sort: 'most_popular'), class: 'uppercase option'
+
 
         - @products.each do |product|
           %div.col-md-3.col-sm-6

@@ -4,15 +4,12 @@ app.controller('CategoryCtrl', ['categoryService', function(categoryService) {
     var vm = this;
 
     vm.getProducts = function() {
-      categoryService.getProducts().then(function(res) {
+      categoryService.getProducts('cat_0').then(function(res) {
         vm.products = nilGuard(res);
-        console.log(vm.products);
+        console.log(res);
       });
     }
 
-
-    //////////////////////////////////
     vm.getProducts();
-    //////////////////////////////////
   }
 }]);
