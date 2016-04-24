@@ -28,6 +28,7 @@
   display: inline-block;
   outline: 0;
   padding-bottom: 23px;
+  text-transform: none;
 }
 
 .navigation li:hover ul.dropdown { display: block; }
