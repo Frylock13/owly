@@ -16,6 +16,7 @@
         .icon= link_to image_tag('header/instagram.png'), 'https://www.instagram.com/owlyshop'
         .icon= link_to image_tag('header/twitter.png'), 'https://twitter.com/owlyshopspb'
         .icon= link_to image_tag('header/facebook.png'), 'https://www.facebook.com/owlyshopspb'
+        .icon= link_to image_tag('header/youtube.png'), 'https://www.youtube.com/channel/UC_IlJ71Pes4q0ttKCpQs_iw'
 
       .telephone
         = image_tag 'header/phone.png'
@@ -67,7 +68,7 @@
               ({{app.cartCount}})
 
 :javascript
-  $('.nav_bar').click(function(){
+  $('.nav_bar').click(function() {
     $('.navigation').toggleClass('visible');
     $('body').toggleClass('opacity');
   });

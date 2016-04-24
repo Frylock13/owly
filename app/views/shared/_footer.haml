@@ -1,6 +1,6 @@
 .col-md-12
   .container
-    .col-md-4
+    .col-md-3
       .logo
         = image_tag 'footer/owly.png'
 
@@ -27,13 +27,17 @@
               %br/
               Бизнес центр "Толстой сквер"
 
-    .col-md-2
+    .col-md-3
       .social
         .icon= link_to image_tag('footer/vk.png'), 'http://vk.com/owlyshopspb', target: '_blank'
         .icon= link_to image_tag('footer/instagram.png'), 'https://www.instagram.com/owlyshop', target: '_blank'
         .icon= link_to image_tag('footer/twitter.png'), 'https://twitter.com/owlyshopspb', target: '_blank'
         .icon= link_to image_tag('footer/facebook.png'), 'https://www.facebook.com/owlyshopspb', target: '_blank'
+        .icon= link_to image_tag('footer/youtube.png'), 'https://www.youtube.com/channel/UC_IlJ71Pes4q0ttKCpQs_iw'
 
+  .copyright
+    %p.text-center © owly.ru 2015  Все права защищены.
+    %p.text-center Полное или частичное копирование материалов запрещено, при согласованном копировании ссылка на ресурс обязательна.
 
   / Google metrica
   :javascript
@@ -44,8 +48,6 @@
 
     ga('create', 'UA-75830184-1', 'auto');
     ga('send', 'pageview');
-
-
 
 
   / Yandex.Metrika counter
