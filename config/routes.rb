@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'# if Rails.env == 'development'
 
+  match '*any' => 'application#options', :via => [:options]
+
   root 'pages#home'
 
   get '/robots.txt' => 'pages#robots'
