@@ -26,7 +26,13 @@
         %p Мы работаем с 10:00 до 18:00
 
       .call-back
-        = link_to 'Заказать обратный звонок', pages_contacts_path(anchor: 'question-form'), class: 'uppercase'
+        = link_to 'Заказать обратный звонок', '#0', class: 'cd-popup-trigger uppercase'
+
+
+      .cd-popup{:role => "alert"}
+        .cd-popup-container
+          = render partial: 'questions/new'
+          %a.cd-popup-close.img-replace{:href => "#0"} Close
 
 .col-md-12.menu#menu
   .container

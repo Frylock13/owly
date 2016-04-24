@@ -42,6 +42,7 @@ gem 'sinatra'
 gem 'ngannotate-rails'
 gem 'cancancan', '~> 1.10'
 gem "dynamic_sitemaps"
+gem 'compass-rails', github: 'Compass/compass-rails'
 
 group :development do
   gem 'bullet'
