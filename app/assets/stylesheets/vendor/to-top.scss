@@ -69,7 +69,7 @@ Main components
   text-indent: 100%;
   white-space: nowrap;
 
-  background: rgba($link, .8) url(cd-top-arrow.svg) no-repeat center 50%;
+  background: rgba($link, .8) asset-url('cd-top-arrow.svg') no-repeat center 50%;
 
   visibility: hidden;
   opacity: 0;
