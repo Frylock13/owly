@@ -49,6 +49,7 @@
 }
 
 .navigation li ul.dropdown li a {
+  text-transform: none!important;
   padding: 10px;
   font-size: 15px;
   display: block;

@@ -26,7 +26,6 @@ app.controller('AppCtrl', ['cartService', 'favoriteService', function(cartServic
 
   vm.addToCart = function(cartId, productId) {
     cartService.addToCart(cartId, productId);
-    //vm.getCartCount();
     vm.cartCount += 1;
   }
 

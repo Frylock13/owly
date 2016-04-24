@@ -1,6 +1,6 @@
 = render partial: 'shared/seo', locals: { page: @category }
 
-.category.page.col-md-12{"ng-controller"=>"CategoryCtrl as category", "ng-init"=>'CategoryCtrl.getProducts("#{@params[:action]}")'}
+.category.page.col-md-12{"ng-controller"=>"CategoryCtrl as category"}
   .header.row{style: "background: url(#{@category.background.url}) no-repeat"}
     .container
       .col-md-12
@@ -22,7 +22,7 @@
           = link_to 'Новизне', category_path(@category.slug, sort: 'newest'), class: 'uppercase option'
           = link_to 'Популярности', category_path(@category.slug, sort: 'most_popular'), class: 'uppercase option'
 
-
+        {{category.l}}
         - @products.each do |product|
           %div.col-md-3.col-sm-6
             .product
@@ -47,7 +47,6 @@
 
                 .add-to-cart.text-center.uppercase
                   = link_to 'Добавить в корзину', "javascript:void(0);", method: :put, data: { "ng-click"=>"app.addToCart('#{get_cart_id}', #{product.id})" }
-
 
         = paginate @products
         
