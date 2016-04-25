@@ -13,7 +13,8 @@ gem 'haml-rails', '~> 0.9'
 gem 'faker'
 gem "paperclip", "~> 4.3"
 gem 'pg_search'
-gem 'therubyracer'
+gem 'execjs'
+gem 'therubyracer', :platforms => :ruby
 gem 'bourbon'
 gem 'bitters'
 gem 'angularjs-rails'
