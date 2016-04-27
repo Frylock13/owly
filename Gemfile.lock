@@ -463,6 +463,7 @@ DEPENDENCIES
   dotenv
   draper
   dynamic_sitemaps
+  execjs
   factory_girl_rails
   faker
   friendly_id (~> 5.1.0)

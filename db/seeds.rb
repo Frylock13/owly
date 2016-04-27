@@ -41,6 +41,7 @@ Page.create(slug: 'contacts', text: Faker::Lorem.sentences(5),
             heading: 'Как с нами связаться?')
 Page.create(slug: 'home', heading: 'Главная', text: 'Description')
 Page.create(slug: 'search', heading: 'Поиск')
+Page.create(slug: 'garantee', heading: 'Возврат товара и гарантии')
 
 Setting.create(key: 'mailchimp_key', value: 'api_key')
 Setting.create(key: 'mailchimp_list_id', value: 'list_id')

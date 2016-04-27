@@ -1,0 +1,24 @@
+= render partial: 'shared/seo', locals: { page: @page }
+
+.blog.page.col-md-12
+  .header.row
+    .container
+      .row
+        .col-md-10
+          %h1= @page.heading
+          %p.text= raw @page.text
+          %p Узнайте самым первым о наших новых изделиях, скидках, мастерклассах и жизни Оули!
+
+  .questions.dark-cream-bg.no-bottom-padding.row#question-form
+    .container
+      .question-form
+        %p.text-center
+          По любым вопросам Вы можете позвонить нам по телефону:  
+          %span +7 (812) 498-10-00
+
+        %p.text-center
+          Или заполните форму обратного звонка и мы свяжемся с Вами в ближайшее время
+
+        = render 'questions/new'
+
+        = image_tag 'owly.png', class: 'owly-img'
