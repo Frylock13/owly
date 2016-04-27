@@ -40,6 +40,10 @@ class PagesController < ApplicationController
     render text: robots, layout: false, content_type: "text/plain"
   end
 
+  def certificate
+    send_file "#{Rails.root}/public/71-20706.jpg", :type => 'image/jpeg', :disposition => 'inline'
+  end
+
   private
 
   def set_page
