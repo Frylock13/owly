@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     get :how_to
     get :contacts
     get :search
-    get :guarantees
+    get :warranty
     post :search
   end
 
