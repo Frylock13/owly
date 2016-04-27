@@ -10,7 +10,6 @@ ActiveAdmin.register Page do
     selectable_column
     column "Заголовок", :heading
     column "Описание", :text
-    column "Ссылка", :slug
     actions 
   end
 
@@ -18,7 +17,6 @@ ActiveAdmin.register Page do
     f.inputs do
       f.input :heading, label: 'Название'
       f.input :text, as: :html_editor, label: 'Описание'
-      f.input :slug, label: 'Ссылка'
       f.input :seo_title, label: 'SEO title'
       f.input :seo_description, label: 'SEO description'
       f.input :seo_keywords, label: 'SEO keywords'
