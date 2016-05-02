@@ -29,9 +29,8 @@ app.controller('AppCtrl', ['cartService', 'favoriteService', function(cartServic
     vm.cartCount += 1;
   }
 
-
   vm.switchFavorite = function(favoriteId, productId) {
     favoriteService.switchFavorite(favoriteId, productId);
-    vm.getFavoritesCount();
+    setTimeout(vm.getFavoritesCount, 200)
   }
 }]);
