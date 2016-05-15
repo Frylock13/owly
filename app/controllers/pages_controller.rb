@@ -27,6 +27,9 @@ class PagesController < ApplicationController
   def contacts
   end
 
+  def warranty
+  end
+
   def search
     if params[:query]
       @products   =   SearchService.call(model: 'Product', field: 'name', query: params[:query])
