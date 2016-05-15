@@ -15,8 +15,8 @@
 
     return service;
     
-    function addToCart(productId) {
-      return Restangular.oneUrl('cart', baseUrl + '/cart/add/').customPUT({product_id: productId});
+    function addToCart(cartId, productId) {
+      return Restangular.oneUrl('cart', baseUrl + '/cart/add/').customPUT({'cart_id': cartId, product_id: productId});
     };
 
     function getCartCount() {

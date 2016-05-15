@@ -17,8 +17,6 @@ class AddToCart
     reset_cart_count
   end
 
-
-
   private
 
   def product_is_added?
@@ -29,5 +27,4 @@ class AddToCart
   def reset_cart_count
     CartCountService.new(@cart).reset
   end
-
 end

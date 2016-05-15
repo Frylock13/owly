@@ -1,7 +1,9 @@
 class Api::CartsController < ApplicationController
 
   def add
-    if AddToCart.new(params[:cart_id], params[:product_id]).call
+    service = AddToCart.new(params[:cart_id], params[:product_id])
+
+    if service.call
       render nothing: true, status: 200
     else
       render nothing: true, status: 404
