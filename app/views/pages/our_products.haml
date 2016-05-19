@@ -12,7 +12,7 @@
         %h1.text-center Наши изделия
         = render partial: 'categories/list', locals: { categories: @categories }
 
-      .products-list.row
+      .products-list.choices-from-our-customers.row
         %h1.our-customers-choice.text-center Выбор наших покупателей
         = render 'products/viewed', products: @popular_products
 
