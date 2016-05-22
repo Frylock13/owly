@@ -1,5 +1,5 @@
 == README
-
+d
 Settings keys:
   mailchimp_key
   mailchimp_list_id
