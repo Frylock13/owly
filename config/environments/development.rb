@@ -45,9 +45,9 @@ Rails.application.configure do
     tls: true,
     address:              'smtp.yandex.ru',
     port:                 465,
-    domain:               'owly.ru',
-    user_name:            'shop@owly.ru',
-    password:             'D%b*Sfk9',
+    domain:               '',
+    user_name:            '',
+    password:             '',
     authentication:       'plain',
     enable_starttls_auto: true
   }
